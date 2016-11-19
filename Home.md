@@ -1,1 +1,1 @@
-![](http://libgames.com/img/big/2012/07/Space_Station_13_0.jpg)
+![](http://doobly.izz.moe/unitystation/wiki/rrowss13.png)
