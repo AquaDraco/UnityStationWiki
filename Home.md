@@ -18,8 +18,8 @@ As this project is in its early stages, this wiki will serve the purpose of prov
 | Sprite Manager | Map Manager    | Item Manager | Inventory Manager |
 |:--------------:|:--------------:|:------------:|:-----------------:|
 | ![](http://181.224.159.204/unitystation/wiki/__SpriteManager.png)|![](http://181.224.159.204/unitystation/wiki/__MapManager.png)|![](http://181.224.159.204/unitystation/wiki/ItemManager.png)|![](http://181.224.159.204/unitystation/wiki/InvManager.png)|
-|[Dev Guide](https://github.com/unitystation/unitystation/wiki/Sprite-Manager)|[Dev Manager](https://github.com/unitystation/unitystation/wiki/Map-Manager)|[Dev Guide](https://github.com/unitystation/unitystation/wiki/Item-Manager)|[Dev Guide](https://github.com/unitystation/unitystation/wiki/Inventory-Manager)|
-| tba               | tba               |    tba          |         tba          |
+|[Sprite Manager](https://github.com/unitystation/unitystation/wiki/Sprite-Manager)|[Map Manager](https://github.com/unitystation/unitystation/wiki/Map-Manager)|[Item Manager](https://github.com/unitystation/unitystation/wiki/Item-Manager)|[Inventory Manager](https://github.com/unitystation/unitystation/wiki/Inventory-Manager)|
+| To load and<br>catalogue all the possible<br> sprites to be used<br> throughout the game| Create, store and load<br>station maps | To catalogue game items<br>and associated properties| To handle the realtime<br>storage of Inventory game items<br>|
 
 
 **Stage 2**
@@ -29,16 +29,10 @@ As this project is in its early stages, this wiki will serve the purpose of prov
 | UI Manager     | Sound Manager  | Game Manager | Network Manager   |
 |:--------------:|:--------------:|:------------:|:-----------------:|
 |![](http://181.224.159.204/unitystation/wiki/UiManager.png)|![](http://181.224.159.204/unitystation/wiki/SoundManager.png)|![](http://181.224.159.204/unitystation/wiki/GameManager.png)|![](http://181.224.159.204/unitystation/wiki/NetworkManager.png)|
-|[Dev Guide](https://github.com/unitystation/unitystation/wiki/UI-Manager)|[Dev Guide](https://github.com/unitystation/unitystation/wiki/Sound-Manager)|[Dev Guide](https://github.com/unitystation/unitystation/wiki/Game-Manager)|[Dev Guide](https://github.com/unitystation/unitystation/wiki/Network-Manager)|
-|    tba            |     tba           |     tba         |      tba             |
-
-**Stage 3**
+|[UI Manager](https://github.com/unitystation/unitystation/wiki/UI-Manager)|[Sound Manager](https://github.com/unitystation/unitystation/wiki/Sound-Manager)|[Game Manager](https://github.com/unitystation/unitystation/wiki/Game-Manager)|[Network Manager](https://github.com/unitystation/unitystation/wiki/Network-Manager)|
+|To handle UI events, actions,<br>access to the inventory<br>and chat|To store the soundbank of sources<br>and provide general sound functions| To monitor ingame progress,<br>generate realtime reporting,<br>load and save player prefs<br>and to provide global <br>functionality to other modules | Handle connection, game creation,<br>player accounts, chat, monitoring and more|
 
 ***
 
 
-| Combat Manager | Job Manager    |   
-|:--------------:|:--------------:|
-|![](http://181.224.159.204/unitystation/wiki/CombatManager.png)|![](http://181.224.159.204/unitystation/wiki/JobManager.png)|                                
-|[Dev Guide](https://github.com/unitystation/unitystation/wiki/Combat-Manager)|[Dev Guide](https://github.com/unitystation/unitystation/wiki/Job-Manager)|                              
-|       tba         |        tba        |                                 
+                             
