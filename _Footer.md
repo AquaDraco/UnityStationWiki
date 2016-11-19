@@ -1,1 +1,1 @@
-To talk please join ##unitystation on freenode
+To contact, please join ##unitystation on freenode
