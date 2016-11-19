@@ -9,4 +9,5 @@ As this project is in its early stages, this wiki will serve the purpose of prov
 <br>
 ## Current Focus 
 Architecture 
+Global Inventory | Map Handling
 
