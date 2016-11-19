@@ -8,6 +8,37 @@ As this project is in its early stages, this wiki will serve the purpose of prov
 ***
 <br>
 ## Current Focus 
-Architecture 
-Global Inventory | Map Handling
+### Architecture - management systems
 
+**Stage 1**
+
+***
+
+
+| Sprite Manager | Map Manager    | Item Manager | Inventory Manager |
+|----------------|----------------|--------------|-------------------|
+|                |                |              |                   |
+|                |                |              |                   |
+|                |                |              |                   |
+
+
+**Stage 2**
+
+***
+
+| UI Manager     | Sound Manager  | Game Manager | Network Manager   |
+|----------------|----------------|--------------|-------------------|
+|                |                |              |                   |
+|                |                |              |                   |
+|                |                |              |                   |
+
+**Stage 3**
+
+***
+
+
+| Combat Manager | Job Manager    |   
+|----------------|----------------|
+|                |                |                                
+|                |                |                              
+|                |                |                                 
