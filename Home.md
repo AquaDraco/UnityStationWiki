@@ -17,7 +17,7 @@ As this project is in its early stages, this wiki will serve the purpose of prov
 
 | Sprite Manager | Map Manager    | Item Manager | Inventory Manager |
 |----------------|----------------|--------------|-------------------|
-| ![](http://181.224.159.204/unitystation/wiki/SpriteManager.png)|![](http://181.224.159.204/unitystation/wiki/MapManager.png)                 |              |                   |
+| ![](http://181.224.159.204/unitystation/wiki/_SpriteManager.png)|![](http://181.224.159.204/unitystation/wiki/_MapManager.png)                 |              |                   |
 |                |                |              |                   |
 |                |                |              |                   |
 
