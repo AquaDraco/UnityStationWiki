@@ -1,1 +1,1 @@
-![](http://doobly.izz.moe/unitystation/wiki/ss13mainhall.png)
+![](http://doobly.izz.moe/unitystation/wiki/unitystationLOGO.png)
