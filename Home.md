@@ -1,1 +1,1 @@
-![](http://smashingpixels.com.au/unitystation/wiki/spclown.png)
+![](http://i.imgur.com/IGEyFVY.gif)
