@@ -1,1 +1,1 @@
-test
+To talk please join ##unitystation on freenode
