@@ -1,1 +1,1 @@
-![](http://i.imgur.com/IGEyFVY.gif)
+![](http://libgames.com/img/big/2012/07/Space_Station_13_0.jpg)
