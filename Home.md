@@ -1,1 +1,1 @@
-![](http://smashingpixels.com.au/unitystation/wiki/lazysusan.png)
+![](http://smashingpixels.com.au/unitystation/wiki/commandtrial.png)
