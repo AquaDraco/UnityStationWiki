@@ -18,7 +18,7 @@ As this project is in its early stages, this wiki will serve the purpose of prov
 | Map Manager    | Item Manager | Inventory Manager |
 |:--------------:|:------------:|:-----------------:|
 |![](http://181.224.159.204/unitystation/wiki/__MapManager.png)|![](http://181.224.159.204/unitystation/wiki/ItemManager.png)|![](http://181.224.159.204/unitystation/wiki/InvManager.png)|
-|[Sprite Manager](https://github.com/unitystation/unitystation/wiki/Sprite-Manager)|[Map Manager](https://github.com/unitystation/unitystation/wiki/Map-Manager)|[Item Manager](https://github.com/unitystation/unitystation/wiki/Item-Manager)|[Inventory Manager](https://github.com/unitystation/unitystation/wiki/Inventory-Manager)|
+|[Map Manager](https://github.com/unitystation/unitystation/wiki/Map-Manager)|[Item Manager](https://github.com/unitystation/unitystation/wiki/Item-Manager)|[Inventory Manager](https://github.com/unitystation/unitystation/wiki/Inventory-Manager)|[Inventory Manager](https://github.com/unitystation/unitystation/wiki/Inventory-Manager)|
 | Create, store and load<br>station maps | To catalogue game items<br>and associated properties| To handle the realtime<br>storage of Inventory game items<br>|
 
 
