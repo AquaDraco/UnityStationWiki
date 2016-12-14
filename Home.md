@@ -8,33 +8,6 @@ As this project is in its early stages, this wiki will serve the purpose of prov
 ***
 <br>
 ## Current Focus 
-### Architecture - management systems
-
-**Stage 1**
-
-***
-
-
-| Map Manager    | Item Manager | Inventory Manager |
-|:--------------:|:------------:|:-----------------:|
-|![](http://181.224.159.204/unitystation/wiki/__MapManager.png)|![](http://181.224.159.204/unitystation/wiki/ItemManager.png)|![](http://181.224.159.204/unitystation/wiki/InvManager.png)|
-|[Map Manager](https://github.com/unitystation/unitystation/wiki/Map-Manager)|[Item Manager](https://github.com/unitystation/unitystation/wiki/Item-Manager)|[Inventory Manager](https://github.com/unitystation/unitystation/wiki/Inventory-Manager)|[Inventory Manager](https://github.com/unitystation/unitystation/wiki/Inventory-Manager)|
-| Create, store and load<br>station maps | To catalogue game items<br>and associated properties| To handle the realtime<br>storage of Inventory game items<br>|
-
-
-
-**Stage 2**
-
-***
-
-| UI Manager     | Sound Manager  | Game Manager | Network Manager   |
-|:--------------:|:--------------:|:------------:|:-----------------:|
-|![](http://181.224.159.204/unitystation/wiki/UiManager.png)|![](http://181.224.159.204/unitystation/wiki/SoundManager.png)|![](http://181.224.159.204/unitystation/wiki/GameManager.png)|![](http://181.224.159.204/unitystation/wiki/NetworkManager.png)|
-|[UI Manager](https://github.com/unitystation/unitystation/wiki/UI-Manager)|[Sound Manager](https://github.com/unitystation/unitystation/wiki/Sound-Manager)|[Game Manager](https://github.com/unitystation/unitystation/wiki/Game-Manager)|[Network Manager](https://github.com/unitystation/unitystation/wiki/Network-Manager)|
-|To handle UI events, actions,<br>access to the inventory<br>and chat|To store the soundbank of sources<br>and provide general sound functions| To monitor ingame progress,<br>generate realtime reporting,<br>load and save player prefs<br>and to provide global <br>functionality to other modules | Handle connection, game creation,<br>player accounts, chat, monitoring and more|
-
-
-***
-
+###[Milestone 1](https://github.com/unitystation/unitystation/milestone/1)
 
                              
