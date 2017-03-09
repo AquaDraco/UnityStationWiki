@@ -9,6 +9,6 @@ This provides a road map of the things that have to be done, their order, and th
 * Role Management
 * Context Menus
 * Modding
-* Network Optimization
+* Networking
 * Hunger
 * Diseases
