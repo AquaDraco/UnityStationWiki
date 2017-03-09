@@ -1,1 +1,1 @@
-To contact, please join ##unitystation on freenode
+Please join us on Discord: https://discord.gg/tFcTpBp 
