@@ -14,3 +14,10 @@ This provides a road map of the things that have to be done, their order, and th
 * Diseases
 * Account System
 * Pulling stuff
+
+| Version | Requirements | Comments |
+|---|---|---|
+| 0.1 |   |   |
+| 0.2 |   |   |
+| 0.3 |   |   |
+
