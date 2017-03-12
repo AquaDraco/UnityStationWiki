@@ -24,7 +24,7 @@ This provides a road map of the things that have to be done, their order, and th
     </tr>
     <tr>
       <td>0.1</td>
-      <td align="right">
+      <td>
         <ul>
           <li>Basic Health</li>
           <li>Basic Combat (Melee + Range)</li>
@@ -38,7 +38,7 @@ This provides a road map of the things that have to be done, their order, and th
     </tr>
     <tr>
       <td>0.2</td>
-      <td align="right">
+      <td>
         <ul>
           <li>menus, e.g. right click menu, machine interaction menu</li>
           <li>Pulling stuff, e.g. closets</li>
@@ -50,7 +50,7 @@ This provides a road map of the things that have to be done, their order, and th
     </tr>
     <tr>
       <td>0.3</td>
-      <td align="right">
+      <td>
         <ul>
           <li></li>
           <li></li>
@@ -60,7 +60,7 @@ This provides a road map of the things that have to be done, their order, and th
     </tr>
     <tr>
       <td> to be continued... </td>
-      <td align="center">
+      <td>
       </td>
       <td align="center"></td>
     </tr>
