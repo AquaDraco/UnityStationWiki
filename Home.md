@@ -7,8 +7,8 @@ As this project is in its early stages, this wiki will serve the purpose of prov
 <br><br><br>
 ***
 <br>
-## Current Focus 
-###[Milestone 1](https://github.com/unitystation/unitystation/milestone/1) DONE
+
+## Overview 
 
 ###[Current Project](https://github.com/unitystation/unitystation/projects/2)
 
