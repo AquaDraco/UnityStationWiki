@@ -17,7 +17,10 @@ This provides a road map of the things that have to be done, their order, and th
 
 | Version | Requirements | Comments |
 |---|---|---|
-| 0.1 |   |   |
+| 0.1 |  
+*a
+* b
+ |   |
 | 0.2 |   |   |
 | 0.3 |   |   |
 
