@@ -36,16 +36,6 @@ This provides a road map of the things that have to be done, their order, and th
       <td align="center"></td>
     </tr>
     <tr>
-      <td>0.3</td>
-      <td>
-        <ul>
-          <li></li>
-          <li></li>
-        </ul>
-      </td>
-      <td align="center"></td>
-    </tr>
-    <tr>
       <td> to be continued... </td>
       <td>
       </td>
