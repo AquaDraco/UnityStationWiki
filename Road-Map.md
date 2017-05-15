@@ -39,7 +39,7 @@ This provides a road map of the things that have to be done, their order, and th
       <td>0.3</td>
       <td>
         <ul>
-          <li>Atmospherics</li>
+          <li>Basic Atmospherics, no pipes needed</li>
           <li>Basic roles & door rights</li>
           <li>basic Modding</li>
           <li>...</li>
@@ -55,19 +55,30 @@ This provides a road map of the things that have to be done, their order, and th
           <li>Basic Admin controls</li>
           <li>Easy server deployment, maybe even automatic</li>
           <li>24 / 7 Server</li>
+          <li>...</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>0.5</td>
+      <td>
+        <ul>
+          <li>Advanced Health System, Hunger, Disease</li>
+          <li>Roles, such as Cook, Botanist, Security, Engineer</li>
+          <li>Role Management</li>
+          <li>Piping of Atmospherics</li>
+          <li>Disposals</li>
+          <li>...</li>
         </ul>
       </td>
     </tr>
     <tr>
       <td> to be continued... </td>
-      <td align="center"></td>
+      <td></td>
     </tr>
   </tbody>
 </table>
 
 ### Not yet assigned
 
-* Round Management
-* Role Management
-* Hunger
-* Diseases
+* TODO
