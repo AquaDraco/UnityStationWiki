@@ -48,7 +48,7 @@ This provides a road map of the things that have to be done, their order, and th
     </tr>
     <tr>
       <td>0.4</td>
-      <td align="center">
+      <td>
         <ul>
           <li>Account System, e.g. character design, stats, ...</li>
           <li>Advanced Round Management, e.g. map rotating, messages</li>
