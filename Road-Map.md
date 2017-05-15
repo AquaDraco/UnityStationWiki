@@ -41,7 +41,20 @@ This provides a road map of the things that have to be done, their order, and th
         <ul>
           <li>Atmospherics</li>
           <li>Basic roles & door rights</li>
+          <li>basic Modding</li>
           <li>...</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>0.4</td>
+      <td align="center">
+        <ul>
+          <li>Account System, e.g. character design, stats, ...</li>
+          <li>Advanced Round Management, e.g. map rotating, messages</li>
+          <li>Basic Admin controls</li>
+          <li>Easy server deployment, maybe even automatic</li>
+          <li>24 / 7 Server</li>
         </ul>
       </td>
     </tr>
@@ -54,11 +67,7 @@ This provides a road map of the things that have to be done, their order, and th
 
 ### Not yet assigned
 
-* Atmos
-* Electricity
 * Round Management
 * Role Management
-* Modding
 * Hunger
 * Diseases
-* Account System
