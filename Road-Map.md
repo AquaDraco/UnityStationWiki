@@ -7,7 +7,7 @@ This provides a road map of the things that have to be done, their order, and th
     <tr>
       <th>Version</th>
       <th align="center">Requirements</th>
-      <th align="right">Comments</th>
+      <th align="right">Coder</th>
     </tr>
     <tr>
       <td>0.1</td>
@@ -28,22 +28,27 @@ This provides a road map of the things that have to be done, their order, and th
       <td>
         <ul>
           <li>basic electricity</li>
+          <li>basic building</li>
           <li>menus, e.g. right click menu, machine interaction menu</li>
           <li>Pulling stuff, e.g. closets</li>
           <li>interactions between players</li>
           <li>editor tools, e.g. to create items</li>
         </ul>
       </td>
-      <td align="center"></td>
+      <td align="center">
+          <li>Necromunger</li>
+          <li>Necromunger</li>
+          <li></li>
+          <li></li>
+          <li>Pulsey</li>
+      </td>
     </tr>
 <tr>
       <td>0.3</td>
       <td>
         <ul>
           <li>Atmospherics</li>
-          <li>Pulling stuff, e.g. closets</li>
-          <li>interactions between players</li>
-          <li>tools, e.g. to create items</li>
+          <li>Basic roles & door rights</li>
         </ul>
       </td>
       <td align="center"></td>
