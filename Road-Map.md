@@ -27,7 +27,20 @@ This provides a road map of the things that have to be done, their order, and th
       <td>0.2</td>
       <td>
         <ul>
+          <li>basic electricity</li>
           <li>menus, e.g. right click menu, machine interaction menu</li>
+          <li>Pulling stuff, e.g. closets</li>
+          <li>interactions between players</li>
+          <li>editor tools, e.g. to create items</li>
+        </ul>
+      </td>
+      <td align="center"></td>
+    </tr>
+<tr>
+      <td>0.3</td>
+      <td>
+        <ul>
+          <li>Atmospherics</li>
           <li>Pulling stuff, e.g. closets</li>
           <li>interactions between players</li>
           <li>tools, e.g. to create items</li>
