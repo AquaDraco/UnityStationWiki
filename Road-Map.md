@@ -29,7 +29,8 @@ This provides a road map of the things that have to be done, their order, and th
           <li>basic building (Necromunger)</li>
           <li>menus, e.g. right click menu, machine interaction menu</li>
           <li>Pulling stuff, e.g. closets</li>
-          <li>interactions between players</li>
+          <li>players intentions</li>
+          <li>space walk, incl. death in space</li>
           <li>editor tools, e.g. to create items (Pulsey)</li>
         </ul>
       </td>
