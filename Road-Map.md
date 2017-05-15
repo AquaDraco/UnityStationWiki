@@ -40,6 +40,7 @@ This provides a road map of the things that have to be done, their order, and th
         <ul>
           <li>Atmospherics</li>
           <li>Basic roles & door rights</li>
+          <li>...</li>
         </ul>
       </td>
     </tr>
