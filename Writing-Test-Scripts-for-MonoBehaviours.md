@@ -1,5 +1,3 @@
-# Writing Test Scripts for MonoBehaviours
-
 Game code can get very complicated. You may want to explore test automation to help prevent bugs, drive your design, and save time. However, writing components that are testable and also functional Unity components has its own set of challenges. 
 
 Here are a couple of guidelines for writing test scripts:
