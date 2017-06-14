@@ -1,4 +1,4 @@
-## Creating item prefabs for use in game:
+## THIS TUT IS OBSOLETE BECAUSE OF UNICLOTH - Leaving for reference
 
 ***
 
