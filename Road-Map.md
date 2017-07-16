@@ -18,6 +18,7 @@ This provides a road map of the things that have to be done, their order, and th
           <li>randomized spawn points </li>
           <li>Blood, e.g. foot prints, gibbing explosion </li>
           <li>Networking, e.g. interpolated movement of players, shooting </li>
+          <li>standalone and webgl clients </li>
         </ul>
       </td>
     </tr>
