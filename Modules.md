@@ -1,7 +1,9 @@
 **PlayerManager**
+
 Sets up the local player.
 
 **SoundManager**
+
 Loads all sounds and plays them on demand.
 
 **GameData**
