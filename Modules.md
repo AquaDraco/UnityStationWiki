@@ -1,15 +1,13 @@
 **PlayerManager**
 
 Sets up the local player.
-
 ___
-
 
 **SoundManager**
 
 Loads all sounds and plays them on demand.
-
 ___
+
 **GameData**
 
 Loads/saves game data locally, and sets other managers on scene load.
