@@ -86,4 +86,4 @@
 * Separation of Responsibility
     * i.e. Refactoring Project structure
 * Auto updater
-*
+* To be continued
