@@ -24,8 +24,8 @@
       <td>0.2</td>
       <td>
         <ul>
-          <li>basic electricity (Necromunger)</li>
-          <li>basic building (Necromunger)</li>
+          <li>basic electricity</li>
+          <li>basic building</li>
           <li>menus, e.g. right click menu, machine interaction menu</li>
           <li>Pulling stuff, e.g. closets</li>
           <li>players intentions</li>
