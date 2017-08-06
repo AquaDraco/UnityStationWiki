@@ -1,6 +1,4 @@
-### Work in Progress
-
-This provides a road map of the things that have to be done, their order, and the associated version. In the end, version 0.8, should be on the same or a similar level as the original ss13. Following Versions should provide extensions (0.9) and bug fixing (1.0).
+# Feature Goals
 
 <table>
   <tbody>
@@ -80,6 +78,12 @@ This provides a road map of the things that have to be done, their order, and th
   </tbody>
 </table>
 
-### Not yet assigned
+### Long-term Goals
 
-* TODO
+* Networking Overhaul
+ * Own Networking Layer
+ * Headless Server shouldn't start as a Player
+* Separation of Responsibility
+ * i.e. Refactoring Project structure
+* Auto updater
+*
