@@ -81,9 +81,9 @@
 ### Long-term Goals
 
 * Networking Overhaul
- * Own Networking Layer
- * Headless Server shouldn't start as a Player
+    * Own Networking Layer
+    * Headless Server shouldn't start as a Player
 * Separation of Responsibility
- * i.e. Refactoring Project structure
+    * i.e. Refactoring Project structure
 * Auto updater
 *
