@@ -86,4 +86,8 @@
 * Separation of Responsibility
     * i.e. Refactoring Project structure
 * Auto updater
+* Editor Tools
+    * Item Creation
+    * Tilemapper / Sectioning
+    * GUI creation ?
 * To be continued
