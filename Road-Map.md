@@ -16,7 +16,6 @@
           <li>randomized spawn points </li>
           <li>Blood, e.g. foot prints, gibbing explosion </li>
           <li>Networking, e.g. interpolated movement of players, shooting </li>
-          <li>standalone and webgl clients </li>
         </ul>
       </td>
     </tr>
@@ -30,7 +29,7 @@
           <li>Pulling stuff, e.g. closets</li>
           <li>players intentions</li>
           <li>space walk, incl. death in space</li>
-          <li>editor tools, e.g. to create items (Pulsey)</li>
+          <li>independent local matrices, e.g. one for a station and another one for a spaceship</li>
         </ul>
       </td>
     </tr>
