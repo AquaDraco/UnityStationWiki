@@ -30,6 +30,7 @@
           <li>players intentions</li>
           <li>space walk, incl. death in space</li>
           <li>independent local matrices, e.g. one for a station and another one for a spaceship</li>
+          <li>basic auto updating functionality</li>
         </ul>
       </td>
     </tr>
