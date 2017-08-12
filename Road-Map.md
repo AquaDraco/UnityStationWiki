@@ -10,12 +10,12 @@
       <td>0.1</td>
       <td>
         <ul>
-          <li>Basic Health</li>
-          <li>Basic Combat (Melee + Range)</li>
-          <li>Death, e.g. respawning</li>
-          <li>randomized spawn points </li>
-          <li>Blood, e.g. foot prints, gibbing explosion </li>
-          <li>Networking, e.g. interpolated movement of players, shooting </li>
+          <li>Basic Health (done)</li>
+          <li>Basic Combat (Melee + Range) (done)</li>
+          <li>Death, e.g. respawning (done)</li>
+          <li>randomized spawn points (done)</li>
+          <li>Blood, e.g. foot prints, gibbing explosion (open)</li>
+          <li>Networking, e.g. interpolated movement of players, shooting (done)</li>
         </ul>
       </td>
     </tr>
