@@ -14,8 +14,9 @@
           <li>Basic Combat (Melee + Range) (done)</li>
           <li>Death, e.g. respawning (done)</li>
           <li>randomized spawn points (done)</li>
-          <li>Blood, e.g. foot prints, gibbing explosion (open)</li>
           <li>Networking, e.g. interpolated movement of players, shooting (done)</li>
+          <li>exploding fuel tanks (done)</li>
+          <li>pulling fuel tanks and closets (done)</li>
         </ul>
       </td>
     </tr>
@@ -26,11 +27,11 @@
           <li>basic electricity</li>
           <li>basic building</li>
           <li>menus, e.g. right click menu, machine interaction menu</li>
-          <li>Pulling stuff, e.g. closets</li>
           <li>players intentions</li>
           <li>space walk, incl. death in space</li>
           <li>independent local matrices, e.g. one for a station and another one for a spaceship</li>
           <li>basic auto updating functionality</li>
+          <li>Blood, e.g. foot prints, gibbing explosion</li>
         </ul>
       </td>
     </tr>
