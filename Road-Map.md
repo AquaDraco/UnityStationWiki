@@ -31,7 +31,6 @@
           <li>space walk, incl. death in space</li>
           <li>independent local matrices, e.g. one for a station and another one for a spaceship</li>
           <li>basic auto updating functionality</li>
-          <li>Blood, e.g. foot prints, gibbing explosion</li>
         </ul>
       </td>
     </tr>
@@ -42,6 +41,7 @@
           <li>Basic Atmospherics, no pipes needed</li>
           <li>Basic roles & door rights</li>
           <li>basic Modding</li>
+          <li>Blood, e.g. foot prints, gibbing explosion</li>
           <li>...</li>
         </ul>
       </td>
