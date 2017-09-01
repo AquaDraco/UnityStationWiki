@@ -27,10 +27,10 @@
           <li>basic electricity</li>
           <li>basic building</li>
           <li>menus, e.g. right click menu, machine interaction menu</li>
-          <li>players intentions</li>
           <li>space walk, incl. death in space</li>
           <li>independent local matrices, e.g. one for a station and another one for a spaceship</li>
           <li>basic auto updating functionality</li>
+          <li>Basic roles & door rights</li>
         </ul>
       </td>
     </tr>
@@ -39,8 +39,8 @@
       <td>
         <ul>
           <li>Basic Atmospherics, no pipes needed</li>
-          <li>Basic roles & door rights</li>
           <li>basic Modding</li>
+          <li>players intentions</li>
           <li>Blood, e.g. foot prints, gibbing explosion</li>
           <li>...</li>
         </ul>
