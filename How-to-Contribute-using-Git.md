@@ -1,5 +1,6 @@
 ## This is a step by step guide for contributors who are unfamiliar with the git workflow:
 
+### Note: This is for macOS. Windows instructions coming soon
 ***
 
 If you have never used git before the easiest solution is to download and install the github desktop.
