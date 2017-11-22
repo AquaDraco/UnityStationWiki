@@ -42,6 +42,7 @@
           <li>basic Modding</li>
           <li>players intentions</li>
           <li>Blood, e.g. foot prints, gibbing explosion</li>
+          <li>Complete chat system dependent on telecomms</li>
           <li>...</li>
         </ul>
       </td>
