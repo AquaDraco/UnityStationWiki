@@ -1,3 +1,5 @@
+# This page is note actual. Please do **NOT** follow it
+
 ## Mapping Quick Guide
 
 To access the mapping tool go to Window --> Map Editor
