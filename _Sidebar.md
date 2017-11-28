@@ -12,6 +12,6 @@
     * [[Roadmap]]
     * [[Directory Structure]]
     * [[Module Structure]]
-    * [[Development-Basics]]
+    * [[Development Basics]]
     * [[How to Map]]
     * [[Writing Scripts]]
