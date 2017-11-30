@@ -2,7 +2,6 @@ Prefab2tile is a tool made to create tiles for all object prefabs under /Resourc
 
 ## Usage instructions: 
 
-  ## 
 Using this tool is simple:
 * In the top window, select “Tools/Prefab2Tile”. 
 * Wait till finished. ..
