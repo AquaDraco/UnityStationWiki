@@ -1,32 +1,20 @@
-# This page is note actual. Please do **NOT** follow it
+# This page is already changed for the upcoming Tile Map System (tms) and is currently only usable in the Tilemap_Overhault branch
 
 ## Mapping Quick Guide
 
-To access the mapping tool go to Window --> Map Editor
+To access the mapping tool go to Window --> Palette
 
-Activate the map editor by ticking the 'Map Editor Mode' box
+From here you can select a palette with tiles and multiple tools, like a placement tool (brush), a square fill tool (square) or a deletion tool (gum).
 
-From here you can adjust some options like using the mouse Left click to place tiles and to enable the tile placement preview. Alternatively you can use keyboard shortcuts:
+The Map Editor will create the child GameObjects (walls, floors, doors, tables etc) in the right categories automatically and place the tiles accordingly. 
 
-- A = place tile
-- D = delete selected tile
+Tiles are added to the palettes as they are created. To create a new Tile follow this example:
 
-To create a new section to work on simply create a GameObject underneath the parent Map_BoxStation(DO_NOT_PREFAB) GameObject in the hierarchy and give it the name of your new section (i.e MedBay). Then on the Map Editor click on 'Refresh Data' and your new section will now appear in the sections roll out. The Map Editor will create the child GameObjects (walls, floors, doors, tables etc) automatically and place the tiles accordingly. 
+### Example: Adding a new object
 
-Tiles are added to the map editor as they are needed. To create a new Tile follow this example:
-
-### Example: Adding a new floor tile
-
-- Choose a floor tile from Prefabs --> Floors and drag it into the scene
-- With the tile highlighted in the Hierarchy go to GameObject --> Break Prefab Instance (in the menu)
-- Rename the tile to what you want (i.e MedBayTile_RightBlue)
-- Now click on the child GameObject named sprite and look in the inspector for the Sprite Renderer
-- By clicking on the Sprite already in the Sprite Renderer it should bring you to the SpriteSheet with all the floor sprites (this only works if you have the Project Files window open when you click on the sprite)
-- Find the sprite you are looking for and drag it into the Sprite Renderer
-- When you are all done, drag your new Tile GameObject into Prefabs --> Floors in the project files window to make it a prefab
-- Then go back to your Map Editor and click Refresh Data. Your new tile will now be ready to use
-- Don't forget to clean up the Hierarchy by removing the GameObject after you have turned it into a prefab
+- Choose a tile from /Tilemaps/Tiles/Objects
+- Drag a tile to a palette
 
 ### Pull Requests
 
-When you have made all your changes, you must submit a pull request to the mapping branch where your PR will be inspected and then merged. Any questions please join ##unitystation on freenode
+Almost never would you need to actually PR a palette change, if you do please make sure NOT to include anything other than the palette file and its .meta file.
