@@ -7,6 +7,7 @@ Here you'll find all changelog entries, that are implemented in development, but
 - ID required door access (with all of the animations and sounds)
 - Chairs and beds
 - Ability to drag other players
+- Simple health system with damage zones and bleeding
 - UI overlays for when you are unconscious / critical (Fading out shroud, heart beat etc)
 - Updated outpost map with most of the objects and machines (now they just need to be coded)
 - Space drift (if you go too far from the hull of the station you will now drift off into the abyss)
