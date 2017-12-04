@@ -1,4 +1,5 @@
 * **[[Home]]**
+    * [[Current changelog]]
 
 * **Tools**
     * [[GIT]]
@@ -15,3 +16,5 @@
     * [[Development Basics]]
     * [[How to Map]]
     * [[Writing Scripts]]
+    * [[Networking (Network Messages)]]
+
