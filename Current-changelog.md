@@ -16,6 +16,14 @@ Here you'll find all changelog entries, that are implemented in development, but
 - Adjustable Right Panel, The overlay hud will adjust itself to any right panel size
 - ALT + LMB item list.
 - New Tilemap-based backend
+- Improved Ghost vision
+- Added preliminary TravisCI support
+- Changed the Licence to AGPLv3
+- Cleaned up the code formatting of 300+ scripts
+- Added Issue template on GITHUB
+- Added PR template on GITHUB
+- Added code of conduct
+- Added Contribution guidelines
 
 ### Bugs removed
 - Bursting out of a closed locker twice stops all movement
