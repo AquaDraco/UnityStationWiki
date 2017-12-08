@@ -7,6 +7,7 @@
 ## Downloading unity :
 * [Unity personal edition](https://store.unity.com/download?ref=personal),
 Just check the little box and download the installer, it's a , at some point, you'll have to make an account, but that doesn't need any explaining.
+**Note that you should use Unity 2017.2 or later.**
 
   *  **Keeping unity updated**:
       Since unity is updated from time to time, there is a need to update the client, but worry not, theres a nice little button in the _Help_ tab of the client.
@@ -21,6 +22,12 @@ Just check the little box and download the installer, it's a , at some point, yo
 So now that you have downloaded unity and the repo, press _open_ and just browse to where you put it, be it through GIT or the direct link.
 
      ![](https://cdn.discordapp.com/attachments/381634542911488001/388740773601869834/unknown.png)
+
+First import will take some time.
+
+After import is finished, you can open scenes: Select `File > Open Scene`, navigate to `Scenes` folder and open a scene (map) of your liking. At the moment of writing the preferred map is OutpostDeathmatch.
+
+Then you can press `Play` button on the `Game` tab to start the game in editor.
 
 # But now what ?
 ***
