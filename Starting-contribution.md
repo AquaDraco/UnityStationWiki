@@ -30,7 +30,7 @@ After import is finished, you can open scenes: Select `File > Open Scene`, navig
 
 ![](https://image.prntscr.com/image/T7s9wVR7RhyXwwTxf4jEFg.png)
 
-At the moment of writing the preferred map is OutpostDeathmatch.
+At the moment of writing the preferred map is OutpostDeathmatch. _12/8/17_
 
 Then you can press `Play` button on the `Game` tab to start the game in editor.
 
