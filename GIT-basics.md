@@ -52,7 +52,5 @@ After you have saved your changes in unity, open Github Desktop. You will notice
 4. Confirm you are happy with the description and press the Send Pull Request button
 5. When that is done make sure to press the Sync button to also push the changes to your fork on Github
 
-### That's it!
-Someone will come along and review the changes. If everything looks good then they will merge it with the main repo. If you need any help don't be afraid to ask in the discord channel: [https://discord.gg/tFcTpBp](https://discord.gg/tFcTpBp)
 
  ## If this guide doesn't suffice, you can go ahead and ask any question you have on the [Unitystation Discord server](https://discord.gg/TMRMfpS)
