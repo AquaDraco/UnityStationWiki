@@ -90,6 +90,6 @@
 * Auto updater
 * Editor Tools
     * Item Creation
-    * Tilemapper / Sectioning
+    * <del>Tilemapper / Sectioning</del>
     * GUI creation ?
 * To be continued
