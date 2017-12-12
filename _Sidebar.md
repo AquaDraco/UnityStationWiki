@@ -2,7 +2,7 @@
     * [[Current changelog]]
 
 * **Tools**
-    * [[GIT]]
+    * [[GIT basics]]
     * [[Prefab2Tile]]
     * [[Generate cloth Enum]]
     * [[Slice Sprites]]
