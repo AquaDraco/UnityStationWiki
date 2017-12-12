@@ -21,7 +21,7 @@
     * [[Testing Multiplayer]]
 
 * **Feature Guide**
-    * [[What is this ?]]
+    * [[What is this section?]]
     * [[Intents]]
     * [[Health]]
     * [[Electricity]]
