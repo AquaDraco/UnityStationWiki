@@ -24,7 +24,7 @@ As this project is in its early stages, this wiki will serve the purpose of prov
     * [[Roadmap]]
     * [[Directory Structure]]
     * [[Module Structure]]
-    * [[Development Basics]]
+    * [[Starting contribution]]
     * [[How to Map]]
     * [[Writing Scripts]]
     * [[Networking (Network Messages)]]
