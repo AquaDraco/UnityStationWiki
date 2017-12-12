@@ -27,7 +27,7 @@
           <li>basic electricity</li>
           <li>basic building</li>
           <li>menus, e.g. right click menu, machine interaction menu</li>
-          <li><del>space walk,</del> incl. death in space</li>
+          <li><del>space walk, incl. death in space</del></li>
           <li>independent local matrices, e.g. one for a station and another one for a spaceship</li>
           <li><del>basic auto updating functionality</del></li>
           <li><del>Basic roles & door rights</del></li>
