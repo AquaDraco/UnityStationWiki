@@ -30,7 +30,7 @@ As this project is in its early stages, this wiki will serve the purpose of prov
     * [[Networking (Network Messages)]]
 
 * **Feature Guide**
-    * [[What is this ?]]
+    * [[What is this section ?]]
     * [[Intents]]
     * [[Health]]
     * [[Electricity]]
