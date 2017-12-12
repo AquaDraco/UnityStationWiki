@@ -13,7 +13,7 @@ As this project is in its early stages, this wiki will serve the purpose of prov
     * [[Current changelog]]
 
 * **Tools**
-    * [[GIT]]
+    * [[GIT basics]]
     * [[Prefab2Tile]]
     * [[Generate cloth Enum]]
     * [[Slice Sprites]]
