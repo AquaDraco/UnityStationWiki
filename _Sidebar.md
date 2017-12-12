@@ -13,7 +13,7 @@
     * [[Roadmap]]
     * [[Directory Structure]]
     * [[Module Structure]]
-    * [[Development Basics]]
+    * [[Starting Contribution]]
     * [[How to Map]]
     * [[Writing Scripts]]
     * [[How to Use and Hate UniCloth]]
