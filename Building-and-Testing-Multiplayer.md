@@ -1,4 +1,4 @@
-Before reading, make sure you've read the basics article.
+Before reading this, make sure you've read the [Starting Contribution](https://github.com/unitystation/unitystation/wiki/Starting-contribution) article.
 
 To test network interactions, you should set up a realistic environment. 
 That means two instances: Client and Host (Server that's client, too).
