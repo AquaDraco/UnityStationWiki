@@ -82,6 +82,7 @@
 
 ### Long-term Goals
 
+* User change-able keybindings
 * Networking Overhaul
     * Own Networking Layer
     * <del>Headless Server shouldn't start as a Player</del>
