@@ -66,7 +66,7 @@
         <ul>
           <li>Advanced Health System, Hunger, Disease</li>
           <li><del>Roles, such as Cook, Botanist, Security, Engineer</del></li>
-          <li><del>Roles specific mechanics, such as botany, cooking etc.</del></li>
+          <li>Roles specific mechanics, such as botany, cooking etc.</li>
           <li>Role Management</li>
           <li>Piping of Atmospherics</li>
           <li>Disposals</li>
