@@ -9,6 +9,9 @@
     * [[Import Map]]
     * [[Export Map]]
 
+* **Components**
+    * [[Light2D]] 
+
 * **Development**
     * [[Roadmap]]
     * [[Directory Structure]]
