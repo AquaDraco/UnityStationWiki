@@ -23,7 +23,10 @@
     * [[Networking (Network Messages)]]
     * [[Building And Testing Multiplayer]]
 
-* **Feature Guide**
+* **Feature Design**
+    * [[Object interaction windows]
+
+* **SS13 Features**
     * [[What is this section ?]]
     * [[Intents]]
     * [[Health]]
