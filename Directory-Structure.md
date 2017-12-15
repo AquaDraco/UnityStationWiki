@@ -19,6 +19,7 @@ All Unity related files are contained in the /UnityProject folder.
 |/Assets/Interface   	|   	|
 |/Assets/Light2D   	| Contains the Light2D plugin  	|
 |/Assets/Materials   	|   	|
+|/Assets/_Plugin-Name_  | Contains all assets from a certain plugin |
 |/Assets/Prefabs   	| Contains prefabs for most things (except: Objects)  	|
 |/Assets/Resources  	| Contains a lot of files that need to be loaded during the game	|
 |/Assets/scenes  	| Contains the different scenes (every seen is a seperate map at the moment)  	|
@@ -38,7 +39,6 @@ The following things should be changed to get a more clear directory structure.
 
 |  Folder 		|  Description 	|
 |---			|---	|
-|/Assets/_Plugin-Name_  | Contains all assets from a certain plugin |
 |/Assets/Scripts/_Plugin-Name_ | Contains all Scripts from a certain plugin |
 |/Assets/Scripts/_Plugin-Name_/Editor | Contains all editor Scripts from a certain plugin |
 
