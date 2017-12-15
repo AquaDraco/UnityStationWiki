@@ -1,21 +1,51 @@
 All main project files are contained in the /Assets folder.
 The structure can be viewed below:
 
+# Current structure
+## General
+|  Folder 		|  Description 	|
+|---			|---	|
+|../Tools/  | All non-unity tools, such as codeingstyle presets|
+|../Docs/  | All Github-rendered documentation except the licence|
+|../Docs/  | All config files for our CI Travis |
+
+## Unity
+All Unity related files are contained in the /UnityProject folder.
+
 |  Folder 		|  Description 	|
 |---			|---	|
 |/Assets/Animations	| Contains most of the animations used ingame 	|   	
 |/Assets/Data   	|   	|
 |/Assets/Interface   	|   	|
-|/Assets/Light2D   	|   	|
+|/Assets/Light2D   	| Contains the Light2D plugin  	|
 |/Assets/Materials   	|   	|
 |/Assets/Prefabs   	| Contains prefabs for most things (except: Objects)  	|
 |/Assets/Resources  	| Contains a lot of files that need to be loaded during the game	|
 |/Assets/scenes  	| Contains the different scenes (every seen is a seperate map at the moment)  	|
-|/Assets/Scripts   	| Contains most of the scripts used ingame and during edit 	|
+|/Assets/Scripts   	| Contains most of the scripts used ingame 	|
+|/Assets/Scripts/Editor   | Contains most of the scripts used in the editor 	|
 |/Assets/shaders   	|   	|
 |/Assets/Sounds  	| Contains most of the ingame sounds 	|
 |/Assets/Textures   	| Contains a lot of sprites  	|
-|/Assets/UI     	|   	|
+|/Assets/UI     	| Contains UI related content  	|
 |/Assets/Tilemaps  	| Contains most things directly related to the TileMapSystem (TMS)  	|
+|*/Resources/           | This is a Resources folder, all contant is acted upon as if it was in /Asssets/Resources
 
+## Todo
+The following things should be changed to get a more clear directory structure.
+*plugins*
 
+|  Folder 		|  Description 	|
+|---			|---	|
+|/Assets/_Plugin-Name_  | Contains all assets from a certain plugin |
+|/Assets/Scripts/_Plugin-Name_ | Contains all Scripts from a certain plugin |
+|/Assets/Scripts/_Plugin-Name_/Editor | Contains all editor Scripts from a certain plugin |
+
+*Resources*
+We should create a script to recursively load all resources from /Assets/Resources/_Sub-Folder_
+for ex. RecursiveResourceLoad(Subfolder, Filename)
+
+This would enable us to put all resources in subfolder under /Assets/Resources <br>
+`One Folder To Find Them, And In Game Load them`
+
+Eventually even plugin related resources could be moved here, but that may require editing the scripts first, which may or may not be a good thing.
