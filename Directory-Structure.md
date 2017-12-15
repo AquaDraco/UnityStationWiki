@@ -33,7 +33,8 @@ All Unity related files are contained in the /UnityProject folder.
 
 ## Todo
 The following things should be changed to get a more clear directory structure.
-*plugins*
+
+**plugins**
 
 |  Folder 		|  Description 	|
 |---			|---	|
@@ -41,7 +42,7 @@ The following things should be changed to get a more clear directory structure.
 |/Assets/Scripts/_Plugin-Name_ | Contains all Scripts from a certain plugin |
 |/Assets/Scripts/_Plugin-Name_/Editor | Contains all editor Scripts from a certain plugin |
 
-*Resources*
+**Resources**
 We should create a script to recursively load all resources from /Assets/Resources/_Sub-Folder_
 for ex. RecursiveResourceLoad(Subfolder, Filename)
 
