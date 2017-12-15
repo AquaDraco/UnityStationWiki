@@ -7,7 +7,7 @@ The structure can be viewed below:
 |---			|---	|
 |../Tools/  | All non-unity tools, such as codeingstyle presets|
 |../Docs/  | All Github-rendered documentation except the licence|
-|../Docs/  | All config files for our CI Travis |
+|../Travis/  | All config files for our CI Travis |
 
 ## Unity
 All Unity related files are contained in the /UnityProject folder.
