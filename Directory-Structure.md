@@ -25,6 +25,7 @@ All Unity related files are contained in the /UnityProject folder.
 |/Assets/scenes  	| Contains the different scenes (every seen is a seperate map at the moment)  	|
 |/Assets/Scripts   	| Contains most of the scripts used ingame 	|
 |/Assets/Scripts/Editor   | Contains most of the scripts used in the editor 	|
+|/Assets/Scripts/Tilemaps | Contains all Scripts for TMS |
 |/Assets/shaders   	|   	|
 |/Assets/Sounds  	| Contains most of the ingame sounds 	|
 |/Assets/Textures   	| Contains a lot of sprites  	|
