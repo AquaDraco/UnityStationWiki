@@ -52,3 +52,6 @@ This would enable us to put all resources in subfolder under /Assets/Resources <
 `One Folder To Find Them, And In Game Load them`
 
 Eventually even plugin related resources could be moved here, but that may require editing the scripts first, which may or may not be a good thing.
+
+**Prefabs**<br>
+Almost all prefabs are networked and should/will require to be in a resource folder eventually. When a good standardised script is created to recursively load resources from a /Resources/Sub-Directory, we can move most, if not all, prefabs over to the resources directory
