@@ -14,7 +14,7 @@
 
 * **Development**
     * [[Roadmap]]
-    * [[Standard Test Procedures]]
+    * [[Building And Testing]]
     * [[Directory Structure]]
     * [[Module Structure]]
     * [[Starting Contribution]]
@@ -22,7 +22,7 @@
     * [[Writing Scripts]]
     * [[How to Use and Hate UniCloth]]
     * [[Networking (Network Messages)]]
-    * [[Building And Testing Multiplayer]]
+
 
 * **Feature Design**
     * [[Object interaction windows]]
