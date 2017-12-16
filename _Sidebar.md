@@ -14,6 +14,7 @@
 
 * **Development**
     * [[Roadmap]]
+    * [[Standard Test Procedures]]
     * [[Directory Structure]]
     * [[Module Structure]]
     * [[Starting Contribution]]
