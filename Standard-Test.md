@@ -1,4 +1,6 @@
-Before reading this, make sure you've read the [Starting Contribution](https://github.com/unitystation/unitystation/wiki/Starting-contribution) article.
+Before you PR for UnityStation, it would be helpfull if you fully test your PR, read the contritbution guidelines and read the [Starting Contribution](https://github.com/unitystation/unitystation/wiki/Starting-contribution) article on the wiki.
+
+Below you can read our standardised multiplayer test-setup.
 
 To test network interactions, you should set up a realistic environment. 
 That means two instances: Client and Host (Server that's client, too).
