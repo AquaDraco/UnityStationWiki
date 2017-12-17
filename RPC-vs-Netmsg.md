@@ -7,3 +7,5 @@ Be mindfull that NetMsg does create some garbage, so use it wisely!
 
 ## RPC
 RPC is a nice and clean solution to send non-secure data. An example for non-secure data is grafical-only information such as disabling a SpriteRenderer. RPC is however a clean and efficient protocol, that should be used where security is not an issue.
+
+Please note, that some insignificant graffical updates, may be important to send sparsely.
