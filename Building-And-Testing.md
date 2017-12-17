@@ -68,4 +68,16 @@ Doesn't matter much who should host and who should join, but keep in mind that B
 
 ![](https://image.prntscr.com/image/e_3gMpjMQz_cu801A8fHxg.png)
 
+# Advanced Pre-Release Test sequence
+With above testing methode you can find most issues related to your code, without spending too much time building. However, before a release or when a stricter test regime is warranted, for ex. when handeling sync vars and clients joining, we have an advanced test-sequence:
+
+1. Create 2 clients (one of which hosting) with a ping of 200.
+2. Play the game, chat a little, kill a little, drop things, open things and move things.
+3. (extra for release) Before a release, we should test all issues and PR's that are ready for quality assesment in the release project. Test the features and bugs in every one of them, with multiple clients.
+4. Join with a third 200Ping client
+5. Look if your view is the same as the other clients. if not, you have found a bug already!
+6. play for a while with all three
+6. (extra for release) Before a release, we should test all issues and PR's that are ready for quality assesment in the release project. Test the features and bugs in every one of them, with the third client.
+8. No errors or inconsistencies? great, your build just passed our Quality assesment.
+
 Happy spess testing!
