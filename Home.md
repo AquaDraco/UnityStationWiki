@@ -31,6 +31,7 @@ As this project is in its early stages, this wiki will serve the purpose of prov
 
 * **Feature Guide**
     * [[What is this section ?]]
+    * [[Construction]]
     * [[Intents]]
     * [[Health]]
     * [[Electricity]]
