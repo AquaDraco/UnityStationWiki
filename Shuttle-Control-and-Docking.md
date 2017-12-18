@@ -6,7 +6,7 @@ This means that those objects can move on their own, while keeping the relative 
 Controllable shuttles, can be controller by entering the pilots chair and using the navigational computer. They will be controllable by the controls that are usually used to move the player.
 
 ## Moving to another system
-Moving to another system, the emergency shuttle to centcom for example, happens by setting the destination in the navigational computer, moving far enough from the station, preparing jump (click) and clicking jump-now
+Moving to another system, a expedition shuttle for example, happens by setting the destination in the navigational computer, moving far enough from the station, preparing jump (click) and clicking jump-now
 
 Jump will seem like a bright flash on the outside and the inside matrix will be moved to a "In transit" scene and jump out to the destination scene with the same bright flash afterwards.
 
