@@ -28,6 +28,7 @@
 * **Feature Design**
     * [[Object interaction windows]]
     * [[FOV and Lighting Redesign]]
+    * [[Shuttle Control and Docking]]
 
 * **SS13 Features**
     * [[What is this section ?]]
