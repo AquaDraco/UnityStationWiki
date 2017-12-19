@@ -15,7 +15,7 @@ In the following cases any direct personal communication attempts will be ignore
 * Spam, including but not limited to "Can you promote my, product/service/server?"
 
 ### Code of Conduct complains
-All Code of Conduct related complaints about a contributor or moderator can be forwarded to the HoP. In case he or she is too involved, the Captain takes on the complaint. When a complaint has no satisfactory result, one can ask the captain for a second opinion. He/She can reject the second opinion without further reasoning.
+All Code of Conduct related complaints about a contributor or moderator can be forwarded to the HoP. In case he or she is too involved, the Captain takes on the complaint. When a complaint has no satisfactory result, one can ask the Captain for a second opinion. He/She can reject the second opinion without further reasoning.
 
 In case of CoC complaint against an Admin, the Captain takes on the complaint. No Second opinion is possible in that case. 
 
