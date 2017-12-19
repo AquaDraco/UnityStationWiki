@@ -16,6 +16,15 @@ In the following cases we **do not** want any direct personal communication atte
 * Asking to full-fill a empty spot on the administrative or moderation staff.
 * Spam, including but not limited to "Can you promote my, product/service/server?"
 
+### Code of Conduct complains
+All Code of Conduct related complaints about a contributor or moderator can be forwarded to the HoP. In case he or she is too involved, the Captain takes on the complaint. When a complaint has no satisfactory result, one can ask the captain for a second opinion. He/She can reject the second opinion without further reasoning.
+
+In case of CoC complaint agains an Admin, the Captain takes on the complaint. No Second opinion is possible in that case. 
+
+In case of a CoC complaint agains the captain, the HoP takes in your complaint and either rejects the complaint outright or proposes a sanction. The sanction then needs to be accepted by all administrative staff-members and moderators.
+
+_Note: CoC complaints can only be filed for cases involving the community directly, hearsay or issues out of the community will be rejected outright._
+
 ## Contact details
 Any staff-member is free to give or not make their personal contact details public, unless said postion is directly responsible for legal or press contact requests.
 
