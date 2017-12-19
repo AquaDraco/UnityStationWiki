@@ -3,6 +3,7 @@
 
 * **Tools**
     * [[GIT basics]]
+    * [[Rider IDE]]
     * [[Prefab2Tile]]
     * [[Generate cloth Enum]]
     * [[Slice Sprites]]
