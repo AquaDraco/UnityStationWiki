@@ -1,4 +1,5 @@
 * **[[Home]]**
+    * [[Community Structure]]
     * [[Current changelog]]
 
 * **Tools**
