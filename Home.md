@@ -10,26 +10,40 @@ As this project is in its early stages, this wiki will serve the purpose of prov
 
 ## Overview 
 * **[[Home]]**
+    * [[Community Structure]]
     * [[Current changelog]]
 
 * **Tools**
     * [[GIT basics]]
+    * [[Rider IDE]]
     * [[Prefab2Tile]]
     * [[Generate cloth Enum]]
     * [[Slice Sprites]]
     * [[Import Map]]
     * [[Export Map]]
 
+* **Plugins**
+    * [[Light2D]] 
+
 * **Development**
     * [[Roadmap]]
+    * [[Building And Testing]]
     * [[Directory Structure]]
     * [[Module Structure]]
-    * [[Starting contribution]]
+    * [[Starting Contribution]]
     * [[How to Map]]
     * [[Writing Scripts]]
+    * [[How to Use and Hate UniCloth]]
+    * [[RPC vs Netmsg]]
     * [[Networking (Network Messages)]]
 
-* **Feature Guide**
+
+* **Feature Design**
+    * [[Object interaction windows]]
+    * [[FOV and Lighting Redesign]]
+    * [[Shuttle Control and Docking]]
+
+* **SS13 Features**
     * [[What is this section ?]]
     * [[Construction]]
     * [[Intents]]
