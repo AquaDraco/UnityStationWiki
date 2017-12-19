@@ -11,7 +11,7 @@
     * [[Import Map]]
     * [[Export Map]]
 
-* **Components**
+* **Plugins**
     * [[Light2D]] 
 
 * **Development**
