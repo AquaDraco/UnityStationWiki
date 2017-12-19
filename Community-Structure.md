@@ -1,44 +1,42 @@
 ## Intro
-At Unitystation, we like to be as transparent as possible. Although while being transparent, we also have a limited number of contributors with administrative responsibilities to steer the ship in the right direction.
+For some questions or issues you may want to get in contact with one of the heads of staff directly. However please note that a lot of the administration staff have real life jobs/commitments as well and may not be able to respond in a timely manner (or at all). For that reason it is preferable to ask questions directly on the public discord channel, as most of the time other people there have the needed answers. 
 
-For some questions or issues you (or the organisation you represent) may want to get in contact with one of the administrative staff-members directly. We however are quite busy bees, as we try to actually contribute to the project and have a real life/job too. For that reason we prefer if ask questions directly on the public discord, as most of the time more people have the needed answers. 
-
-## When to contact us privately
+## When to contact the admin team privately
 For the following circumstances, direct contact may be preferred:
 
 * Complaints in regards to our Code of Conduct
-* Questions from the press.
-* Legal issues, including, but not limited to, TakeDown notices.
+* Questions from the press
+* Legal issues, including, but not limited to, TakeDown notices
 * Communication including personal information
 * Acquisition and sponsorship
 
-In the following cases we **do not** want any direct personal communication attempts, any attempts will be ignored and are considered ban-able:
+In the following cases any direct personal communication attempts will be ignored and may be considered ban-able:
 * Asking to full-fill a empty spot on the administrative or moderation staff.
 * Spam, including but not limited to "Can you promote my, product/service/server?"
 
 ### Code of Conduct complains
 All Code of Conduct related complaints about a contributor or moderator can be forwarded to the HoP. In case he or she is too involved, the Captain takes on the complaint. When a complaint has no satisfactory result, one can ask the captain for a second opinion. He/She can reject the second opinion without further reasoning.
 
-In case of CoC complaint agains an Admin, the Captain takes on the complaint. No Second opinion is possible in that case. 
+In case of CoC complaint against an Admin, the Captain takes on the complaint. No Second opinion is possible in that case. 
 
-In case of a CoC complaint agains the captain, the HoP takes in your complaint and either rejects the complaint outright or proposes a sanction. The sanction then needs to be accepted by all administrative staff-members and moderators.
+In case of a CoC complaint against the Captain, the HoP takes on the complaint and either rejects the complaint or proposes a sanction. The sanction then needs to be accepted by all administrative staff-members and moderators.
 
-_Note: CoC complaints can only be filed for cases involving the community directly, hearsay or issues out of the community will be rejected outright._
+_Note: CoC complaints can only be filed for cases involving the community directly, hearsay or issues out of the community will be rejected._
 
 ## Contact details
-Any staff-member is free to give or not make their personal contact details public, unless said postion is directly responsible for legal or press contact requests.
+Below is a list of administrative contacts along with their position and responsibilities.
 
 ### Administrators
 **Captain**<br>
 _Project Lead_<br>
-Contact for: Big (unsolicited) press questions, Serving (actual) lawsuits, Finances. <br>
+Contact for: Big (unsolicited) press questions, CoC violations by other heads of staff, Finances, Bounty disputes <br>
 Discord Handle: Doobly<br>
 Github Nick: DooblyNoobly<br>
 Email: _Redacted_<br>
 
 **Head of Personal**<br>
 _Staff Coordinator_<br>
-Contact for: Press releases, Legal issues (including DCMA), GITHUB/Roadmap, Community and moderation issues.<br>
+Contact for: Press releases, Legal issues (including DCMA), GITHUB/Roadmap, Community and moderation issues<br>
 Discord Handle: Ornias<br>
 Github Nick: Ornias1993<br>
 Email: Kjeld@Schouten-Lebbing.nl<br>
@@ -52,7 +50,7 @@ Email: _redacted_<br>
 
 **Head Mapper**<br>
 _Map Designer_<br>
-Contact for: sending private map designs for reference purposes.<br>
+Contact for: sending private map designs for reference purposes<br>
 Discord Handle: _Vacant_<br>
 Github Nick: _Vacant_<br>
 Email: _Vacant_<br>
