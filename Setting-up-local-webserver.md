@@ -1,5 +1,5 @@
 ## Intro
-UnityStation has a firm believe in OpenSource development, for that reason even our website is a community project. One thing should be noted however: The current host does not include any form of database server.
+UnityStation is a firm believe in OpenSource development, for that reason even our website is a community project. One thing should be noted however: The current host does not include any form of database server.
 
 The first step would be to setup a local webserver, this can be used to preview the current website.
 
