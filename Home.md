@@ -36,6 +36,10 @@ As this project is in its early stages, this wiki will serve the purpose of prov
     * [[How to Use and Hate UniCloth]]
     * [[RPC vs Netmsg]]
     * [[Networking (Network Messages)]]
+    * [[How to Make a PullRequest (PR)]]
+
+* **Website Development**
+    * [[Setting up local webserver]]
 
 
 * **Feature Design**
