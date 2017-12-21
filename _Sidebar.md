@@ -14,22 +14,24 @@
 * **Plugins**
     * [[Light2D]] 
 
+* **Contribution Guides**
+    * [[Starting Contribution]]
+    * [[Building And Testing]]
+    * [[How to Make a PullRequest (PR)]]
+
 * **Development**
     * [[Roadmap]]
-    * [[Building And Testing]]
     * [[Directory Structure]]
     * [[Module Structure]]
-    * [[Starting Contribution]]
     * [[How to Map]]
     * [[Writing Scripts]]
     * [[How to Use and Hate UniCloth]]
     * [[RPC vs Netmsg]]
     * [[Networking (Network Messages)]]
-    * [[How to Make a PullRequest (PR)]]
+
 
 * **Website Development**
     * [[Setting up local webserver]]
-
 
 * **Feature Design**
     * [[Object interaction windows]]
