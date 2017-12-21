@@ -32,6 +32,7 @@
 
 * **Website Development**
     * [[Setting up local webserver]]
+    * [[How to update the Website]]
 
 * **Feature Design**
     * [[Object interaction windows]]
