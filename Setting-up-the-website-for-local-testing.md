@@ -1,0 +1,3 @@
+The version of the website on the github, currently (22-12-2017), includes settings for our hosting provider which are not compatible with local testing.
+
+Most should be fixed by temporary removing the .htaccess. Please be mindfull this has not been tested and more fixes may be needed before it's testable locally. Also please note NOT to include deletion or modification of the .htaccess to the repo, unless you are reasonable sure it needs to be added to our host too.
