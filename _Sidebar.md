@@ -32,6 +32,7 @@
 
 * **Website Development**
     * [[Setting up local webserver]]
+    * [[Setting up the website for local testing]]
     * [[How to update the Website]]
 
 * **Feature Design**
