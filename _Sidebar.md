@@ -2,6 +2,13 @@
     * [[Community Structure]]
     * [[Current changelog]]
 
+* **Gameplay**
+    * [[Team Deathmatch Basics]]
+    * [[Weapons]]
+    * [[Magazines]]
+    * [[Healing]]
+    * [[Mobs]]
+
 * **Tools**
     * [[GIT basics]]
     * [[Rider IDE]]
