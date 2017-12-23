@@ -48,6 +48,8 @@ Discord Handle: Pulsey<br>
 Github Nick: Krille90<br>
 Email: _redacted_<br>
 
+### Moderators
+
 **Head Mapper**<br>
 _Map Designer_<br>
 Contact for: sending private map designs for reference purposes<br>
@@ -55,8 +57,21 @@ Discord Handle: _Vacant_<br>
 Github Nick: _Vacant_<br>
 Email: _Vacant_<br>
 
-### Moderators
+**Head of Webdesign**<br>
+_Web-development coordinator_<br>
+Contact for: Reviewing changes to the website<br>
+Discord Handle: _Vacant_<br>
+Github Nick: _Vacant_<br>
+Email: _Vacant_<br>
 
+**Head of Public Relations**<br>
+_Public Relations coordinator_<br>
+Contact for: Executing the PR strategy and reviewing promotion ideas<br>
+Discord Handle: _Vacant_<br>
+Github Nick: _Vacant_<br>
+Email: _Vacant_<br>
+
+**General Moderators**<br>
 **Foma**<br>
 Discord Handle: Foma<br>
 Github Nick: Fomalsd<br>
