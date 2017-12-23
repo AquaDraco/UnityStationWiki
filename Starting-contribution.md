@@ -43,7 +43,7 @@ Then you can press `Play` button on the `Game` tab to start the game in editor.
 Well, feeling confused after messing around with the scenes and all ? well, it's now time to actually learn unity !
 
   * **Learning unity** :
-There is a huge amount of ressources around for learning Unity, and for the more experienced in the code area, it'll be a peace of cake !
+There is a huge amount of ressources around for learning Unity, and for the more experienced in the code area, it'll be a piece of cake !
 
 
 [_Official Unity tutorials_](https://unity3d.com/learn/tutorials) All people new to unity start here, it'll teach you basics like the UI, the script and scene editors, and all sorts of things.
