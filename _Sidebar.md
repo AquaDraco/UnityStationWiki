@@ -1,6 +1,7 @@
 * **[[Home]]**
     * [[Community Structure]]
     * [[Current changelog]]
+    * [[Roadmap]]
 
 * **Gameplay**
     * [[Team Deathmatch Basics]]
@@ -27,7 +28,6 @@
     * [[How to Make a PullRequest (PR)]]
 
 * **Development**
-    * [[Roadmap]]
     * [[Directory Structure]]
     * [[Module Structure]]
     * [[How to Map]]
