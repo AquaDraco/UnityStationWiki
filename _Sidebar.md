@@ -10,7 +10,6 @@
     * [[Mobs]]
 
 * **Tools**
-    * [[GIT basics]]
     * [[Rider IDE]]
     * [[Prefab2Tile]]
     * [[Generate cloth Enum]]
@@ -23,6 +22,7 @@
 
 * **Contribution Guides**
     * [[Starting Contribution]]
+    * [[GIT basics]]
     * [[Building And Testing]]
     * [[How to Make a PullRequest (PR)]]
 
