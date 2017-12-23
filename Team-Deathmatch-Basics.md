@@ -1,4 +1,4 @@
-# This guide is meant for version 0.2.2 and not the current release
+## This guide is meant for version 0.2.2 and not the current release
 
 ## Intro
 The current gameplay mode is a Team Deathmatch in which the departments fight for who is boss.
