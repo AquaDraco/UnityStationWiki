@@ -12,9 +12,16 @@ As this project is in its early stages, this wiki will serve the purpose of prov
 * **[[Home]]**
     * [[Community Structure]]
     * [[Current changelog]]
+    * [[Roadmap]]
+
+* **Gameplay 0.2.2**
+    * [[Team Deathmatch Basics]]
+    * [[Weapons]]
+    * [[Magazines]]
+    * [[Healing]]
+    * [[Mobs]]
 
 * **Tools**
-    * [[GIT basics]]
     * [[Rider IDE]]
     * [[Prefab2Tile]]
     * [[Generate cloth Enum]]
@@ -25,22 +32,25 @@ As this project is in its early stages, this wiki will serve the purpose of prov
 * **Plugins**
     * [[Light2D]] 
 
-* **Development**
-    * [[Roadmap]]
+* **Contribution Guides**
+    * [[Starting Contribution]]
+    * [[GIT basics]]
     * [[Building And Testing]]
+    * [[How to Make a PullRequest (PR)]]
+
+* **Development**
     * [[Directory Structure]]
     * [[Module Structure]]
-    * [[Starting Contribution]]
     * [[How to Map]]
     * [[Writing Scripts]]
     * [[How to Use and Hate UniCloth]]
     * [[RPC vs Netmsg]]
     * [[Networking (Network Messages)]]
-    * [[How to Make a PullRequest (PR)]]
 
 * **Website Development**
     * [[Setting up local webserver]]
-
+    * [[Setting up the website for local testing]]
+    * [[How to update the Website]]
 
 * **Feature Design**
     * [[Object interaction windows]]
