@@ -3,7 +3,7 @@
     * [[Current changelog]]
     * [[Roadmap]]
 
-* **Gameplay 0.Z.2**
+* **Gameplay 0.2.2**
     * [[Team Deathmatch Basics]]
     * [[Weapons]]
     * [[Magazines]]
