@@ -71,6 +71,13 @@ Discord Handle: _Vacant_<br>
 Github Nick: _Vacant_<br>
 Email: _Vacant_<br>
 
+**Head Moderator**<br>
+_Public Relations coordinator_<br>
+Contact for: Keeping oversight on moderation decisions and aquisition of general moderators<br>
+Discord Handle: _Vacant_<br>
+Github Nick: _Vacant_<br>
+Email: _Vacant_<br>
+
 **General Moderators**<br>
 **Foma**<br>
 Discord Handle: Foma<br>
