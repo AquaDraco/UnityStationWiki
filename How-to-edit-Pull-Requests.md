@@ -10,6 +10,7 @@ Firstoff, this guide is based on a system where you added the Main repository (n
 
 Writeacces is only granted to moderators, administrators and people with special need to have it, like external contracts.
 
+### Setup Easy checkout of PR's
 Locate the section for your github remote in the `.git/config` file. It looks like this:
 
 ```
@@ -46,3 +47,11 @@ $ git checkout pr/999
 Branch pr/999 set up to track remote branch pr/999 from origin.
 Switched to a new branch 'pr/999'
 ```
+
+### Pushing your changes to the PR
+To push your changes directly into the PR, use the following command:
+git push https://github.com/_USER_/unitystation.git  pr/_PR-NR_:_REMOTE-BRANCH_
+
+Where _USER_ is the user who send in the PR.
+_PR-NR_ is the PR number of the PR
+and _REMOTE-BRANCH_ is the branch from the users fork the user send the PR from.
