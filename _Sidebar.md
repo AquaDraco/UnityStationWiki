@@ -26,6 +26,7 @@
     * [[GIT basics]]
     * [[Building And Testing]]
     * [[How to Make a PullRequest (PR)]]
+    * [[How to edit Pull Requests]]
 
 * **Development**
     * [[Directory Structure]]
