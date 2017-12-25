@@ -37,6 +37,7 @@ As this project is in its early stages, this wiki will serve the purpose of prov
     * [[GIT basics]]
     * [[Building And Testing]]
     * [[How to Make a PullRequest (PR)]]
+    * [[How to edit Pull Requests]]
 
 * **Development**
     * [[Directory Structure]]
