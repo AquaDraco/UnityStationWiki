@@ -15,16 +15,16 @@ Locate the section for your github remote in the `.git/config` file. It looks li
 ```
 [remote "Main"]
 	url = https://github.com/unitystation/unitystation.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
+	fetch = +refs/heads/*:refs/remotes/Main/*
 ```
 
 Now add the line `fetch = +refs/pull/*/head:refs/remotes/origin/pr/*` to this section. Obviously, change the github url to match your project's URL. It ends up looking like this:
 
 ```
-[remote "origin"]
+[remote "Main"]
 	url = https://github.com/unitystation/unitystation.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
-	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+	fetch = +refs/heads/*:refs/remotes/Main/*
+	fetch = +refs/pull/*/head:refs/remotes/Main/pr/*
 ```
 
 Now fetch all the pull requests:
