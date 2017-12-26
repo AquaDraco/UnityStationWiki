@@ -39,7 +39,7 @@ _Staff Coordinator_<br>
 Contact for: Press releases, Legal issues (including DCMA), GITHUB/Roadmap, Community and moderation issues<br>
 Discord Handle: Ornias<br>
 Github Nick: Ornias1993<br>
-Email: Kjeld@Schouten-Lebbing.nl<br>
+Email: info@unitystation.org<br>
 
 **Chief Engineer**<br>
 _Development Coordinator_<br>
@@ -55,7 +55,7 @@ _Map Designer_<br>
 Contact for: sending private map designs for reference purposes<br>
 Discord Handle: Mobiledove<br>
 Github Nick: Epicworlds<br>
-Email: _redacted_<br>
+Email: unitystation.mobiledove@gmail.com<br>
 _Note: Unitystation subreddit creator_
 
 **Head of Webdesign**<br>
