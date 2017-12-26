@@ -50,7 +50,7 @@ Email: _redacted_<br>
 
 ### Moderators
 
-**Head Mapper**<br>
+**Head of Mapping**<br>
 _Map Designer_<br>
 Contact for: sending private map designs for reference purposes<br>
 Discord Handle: Mobiledove<br>
