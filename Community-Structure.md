@@ -53,9 +53,10 @@ Email: _redacted_<br>
 **Head Mapper**<br>
 _Map Designer_<br>
 Contact for: sending private map designs for reference purposes<br>
-Discord Handle: _Vacant_<br>
-Github Nick: _Vacant_<br>
-Email: _Vacant_<br>
+Discord Handle: Mobiledove<br>
+Github Nick: Epicworlds<br>
+Email: _redacted_<br>
+_Note: Unitystation subreddit creator_
 
 **Head of Webdesign**<br>
 _Web-development coordinator_<br>
@@ -82,8 +83,3 @@ Email: _Vacant_<br>
 **Foma**<br>
 Discord Handle: Foma<br>
 Github Nick: Fomalsd<br>
-
-**Mobiledove**<br>
-Note: Unitystation subreddit creator
-Discord Handle: Mobiledove<br>
-Github Nick: Epicworlds<br>
