@@ -52,10 +52,10 @@ Email: _redacted_<br>
 
 **Head of Mapping**<br>
 _Map Designer_<br>
-Contact for: sending private map designs for reference purposes<br>
+Contact for: Sending private map designs for reference purposes.<br>
 Discord Handle: Mobiledove<br>
 Github Nick: Epicworlds<br>
-Email: unitystation.mobiledove@gmail.com<br>
+Email: HoM@unitystation.org<br>
 _Note: Unitystation subreddit creator_
 
 **Head of Webdesign**<br>
