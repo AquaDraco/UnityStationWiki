@@ -56,7 +56,7 @@ Contact for: Sending private map designs for reference purposes.<br>
 Discord Handle: Mobiledove<br>
 Github Nick: Epicworlds<br>
 Email: HoM@unitystation.org<br>
-_Note: [/r/unitystation](unitystation.reddit.com)_ creator
+_Note: unitystation.reddit.com creator
 
 **Head of Webdesign**<br>
 _Web-development coordinator_<br>
