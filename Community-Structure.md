@@ -26,7 +26,7 @@ _Note: CoC complaints can only be filed for cases involving the community direct
 ## Contact details
 Below is a list of administrative contacts along with their position and responsibilities.
 
-### Administrators
+### Heads of Staff
 **Captain**<br>
 _Project Lead_<br>
 Contact for: Big (unsolicited) press questions, CoC violations by other heads of staff, Finances, Bounty disputes <br>
@@ -48,9 +48,19 @@ Discord Handle: Pulsey<br>
 Github Nick: Krille90<br>
 Email: _redacted_<br>
 
-### Moderators
+**Head of Security**<br>
+_Public Relations coordinator_<br>
+Contact for: Keeping oversight on moderation decisions and aquisition of general moderators<br>
+Discord Handle: _Vacant_<br>
+Github Nick: _Vacant_<br>
+Email: _Vacant_<br>
 
-**Head of Mapping**<br>
+### Bridge officers
+
+## intro
+Bridge officers are special moderators that have relatively small administrative responsibilities. Their primary goal is not moderation but they require some more authority or access to execute their task. 
+
+**Chief of Mapping**<br>
 _Map Designer_<br>
 Contact for: Sending private map designs for reference purposes.<br>
 Discord Handle: Mobiledove<br>
@@ -58,28 +68,26 @@ Github Nick: Epicworlds<br>
 Email: HoM@unitystation.org<br>
 _Note: unitystation.reddit.com creator
 
-**Head of Webdesign**<br>
+**Chief of Webdesign**<br>
 _Web-development coordinator_<br>
 Contact for: Reviewing changes to the website<br>
 Discord Handle: _Vacant_<br>
 Github Nick: _Vacant_<br>
 Email: _Vacant_<br>
 
-**Head of Public Relations**<br>
+**Chief of Public Relations**<br>
 _Public Relations coordinator_<br>
 Contact for: Executing the PR strategy and reviewing promotion ideas<br>
 Discord Handle: _Vacant_<br>
 Github Nick: _Vacant_<br>
 Email: _Vacant_<br>
 
-**Head Moderator**<br>
-_Public Relations coordinator_<br>
-Contact for: Keeping oversight on moderation decisions and aquisition of general moderators<br>
-Discord Handle: _Vacant_<br>
-Github Nick: _Vacant_<br>
-Email: _Vacant_<br>
-
-**General Moderators**<br>
 **Foma**<br>
+_DNS-maintainer_<br>
+Contact for: All thing related to DNS settings for Unitystation.org
 Discord Handle: Foma<br>
 Github Nick: Fomalsd<br>
+
+## General Moderators<br>
+**Misayumi**<br>
+Discord Handle: Misayumi<br>
