@@ -63,7 +63,7 @@ Bridge officers are special moderators that have relatively small administrative
 **Chief of Mapping**<br>
 _Map Designer_<br>
 Contact for: Sending private map designs for reference purposes.<br>
-Discord Handle: Mobiledove<br>
+Discord Handle: Avalanche#6929 (Mobiledove)<br>
 Github Nick: Epicworlds<br>
 Email: HoM@unitystation.org<br>
 _Note: unitystation.reddit.com creator
