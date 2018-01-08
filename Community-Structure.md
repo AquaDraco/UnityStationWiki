@@ -32,28 +32,28 @@ _Project Lead_<br>
 Contact for: Big (unsolicited) press questions, CoC violations by other heads of staff, Finances, Bounty disputes <br>
 Discord Handle: Doobly<br>
 Github Nick: DooblyNoobly<br>
-Email: _Redacted_<br>
+Email: Captain@unitystation.org<br>
 
 **Head of Personal**<br>
 _Staff Coordinator_<br>
 Contact for: Press releases, Legal issues (including DCMA), GITHUB/Roadmap, Community and moderation issues<br>
 Discord Handle: Ornias<br>
 Github Nick: Ornias1993<br>
-Email: info@unitystation.org<br>
+Email: HoP@unitystation.org<br>
 
 **Chief Engineer**<br>
 _Development Coordinator_<br>
 Contact for: Security issues (responsible disclosure), high-complexity code related questions<br>
 Discord Handle: Pulsey<br>
 Github Nick: Krille90<br>
-Email: _redacted_<br>
+Email: CE@unitystation.org<br>
 
 **Head of Security**<br>
 _Public Relations coordinator_<br>
 Contact for: Keeping oversight on moderation decisions and aquisition of general moderators<br>
 Discord Handle: _Vacant_<br>
 Github Nick: _Vacant_<br>
-Email: _Vacant_<br>
+Email: HoS@unitystation.org<br>
 
 ### Bridge officers
 
@@ -65,7 +65,7 @@ _Map Designer_<br>
 Contact for: Sending private map designs for reference purposes.<br>
 Discord Handle: Avalanche#6929 (Mobiledove)<br>
 Github Nick: Epicworlds<br>
-Email: HoM@unitystation.org<br>
+Email: Mapping@unitystation.org<br>
 Note: unitystation.reddit.com creator
 
 **Chief of Webdesign**<br>
@@ -73,22 +73,24 @@ _Web-development coordinator_<br>
 Contact for: Reviewing changes to the website<br>
 Discord Handle: _Vacant_<br>
 Github Nick: _Vacant_<br>
-Email: _Vacant_<br>
+Email: Webdesign@unitystation.org<br>
 
 **Chief of Public Relations**<br>
 _Public Relations coordinator_<br>
 Contact for: Executing the PR strategy and reviewing promotion ideas<br>
 Discord Handle: _Vacant_<br>
 Github Nick: _Vacant_<br>
-Email: _Vacant_<br>
+Email: PR@unitystation.org<br>
 
 **Foma**<br>
 _DNS-maintainer_<br>
 Contact for: All thing related to DNS settings for Unitystation.org
 Discord Handle: Foma<br>
 Github Nick: Fomalsd<br>
+Email: DNS@unitystation.org<br>
 
 ## General Moderators<br>
 **Misayumi**<br>
 Discord Handle: Misayumi<br>
 Github Nick: Misayumi<br>
+Email: Misayumi@unitystation.org<br>
