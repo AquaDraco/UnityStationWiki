@@ -1,5 +1,5 @@
 ## Intro
-For some questions or issues you may want to get in contact with one of the heads of staff directly. However please note that a lot of the administration staff have real life jobs/commitments as well and may not be able to respond in a timely manner (or at all). For that reason it is preferable to ask questions directly on the public discord channel, as most of the time other people there have the needed answers. 
+For some questions or issues you may want to get in contact with one of the heads of staff directly. However please note that a lot of the Heads of Staff, Bridge officers and Security officers have real life jobs/commitments as well and may not be able to respond in a timely manner (or at all). For that reason it is preferable to ask questions directly on the public discord channel, as most of the time other people there have the needed answers. 
 
 ## When to contact the admin team privately
 For the following circumstances, direct contact may be preferred:
@@ -11,17 +11,17 @@ For the following circumstances, direct contact may be preferred:
 * Acquisition and sponsorship
 
 In the following cases any direct personal communication attempts will be ignored and may be considered ban-able:
-* Asking to full-fill a empty spot on the administrative or moderation staff.
+* Asking to full-fill a empty spot on the Heads of Staff, Bridge Officers or becoming a Security Officer.
 * Spam, including but not limited to "Can you promote my, product/service/server?"
 
 ### Code of Conduct complaints
-All Code of Conduct related complaints about a contributor or moderator can be forwarded to the HoP. In case he or she is too involved, the Captain takes on the complaint. When a complaint has no satisfactory result, one can ask the Captain for a second opinion. He/She can reject the second opinion without further reasoning.
+All Code of Conduct related complaints about a normal party or security officer can be forwarded to the HoS. In case he or she is too involved, the HoP takes on the complaint. When a complaint has no satisfactory result, one can ask the HoP for a second opinion. He/She can reject the second opinion without further reasoning.
 
-In case of CoC complaint against an Admin, the Captain takes on the complaint. No Second opinion is possible in that case. 
+In case of CoC complaint against a Head of Staff, the Captain takes on the complaint. No Second opinion is possible in that case. 
 
-In case of a CoC complaint against the Captain, the HoP takes on the complaint and either rejects the complaint or proposes a sanction. The sanction then needs to be accepted by all administrative staff-members and moderators.
+In case of a CoC complaint against the Captain, the HoP takes on the complaint and either rejects the complaint or proposes a sanction. The sanction then needs to be accepted by all Heads of staff and Bridge Officers.
 
-_Note: CoC complaints can only be filed for cases involving the community directly, hearsay or issues out of the community will be rejected._
+_Note: CoC complaints can only be filed for cases involving the community directly, hearsay or issues out of the community will be rejected. These complaints always need to involve a ground from the CoC_
 
 ## Contact details
 Below is a list of administrative contacts along with their position and responsibilities.
