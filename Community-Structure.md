@@ -66,7 +66,7 @@ Contact for: Sending private map designs for reference purposes.<br>
 Discord Handle: Avalanche#6929 (Mobiledove)<br>
 Github Nick: Epicworlds<br>
 Email: HoM@unitystation.org<br>
-_Note: unitystation.reddit.com creator
+Note: unitystation.reddit.com creator
 
 **Chief of Webdesign**<br>
 _Web-development coordinator_<br>
