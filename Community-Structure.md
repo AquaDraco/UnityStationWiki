@@ -57,7 +57,7 @@ Email: _Vacant_<br>
 
 ### Bridge officers
 
-## intro
+**intro** <br>
 Bridge officers are special moderators that have relatively small administrative responsibilities. Their primary goal is not moderation but they require some more authority or access to execute their task. 
 
 **Chief of Mapping**<br>
