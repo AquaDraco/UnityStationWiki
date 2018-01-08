@@ -84,7 +84,7 @@ Email: PR@unitystation.org<br>
 
 **Foma**<br>
 _DNS-maintainer_<br>
-Contact for: All thing related to DNS settings for Unitystation.org
+Contact for: All thing related to DNS settings for Unitystation.org<br>
 Discord Handle: foma#3499 (Foma)<br>
 Github Nick: Fomalsd<br>
 Email: DNS@unitystation.org<br>
