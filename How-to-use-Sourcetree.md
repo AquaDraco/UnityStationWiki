@@ -66,7 +66,7 @@ Locate the section for your github remote in the `.git/config` file. It looks li
 Now add the line `fetch = +refs/pull/*/head:refs/remotes/Upstream/pr/*` to this section. It ends up looking like this:
 
 ```
-[remote "Main"]
+[remote "Upstream"]
 	url = https://github.com/unitystation/unitystation.git
 	fetch = +refs/heads/*:refs/remotes/Upstream/*
 	fetch = +refs/pull/*/head:refs/remotes/Upstream/pr/*
