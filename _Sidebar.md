@@ -18,6 +18,9 @@
     * [[Import Map]]
     * [[Export Map]]
 
+* **GIT**
+    * [[How to use Sourcetree]] 
+
 * **Plugins**
     * [[Light2D]] 
 
