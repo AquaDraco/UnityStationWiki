@@ -40,3 +40,13 @@ Then in sourcetree, right click "Remotes" and select "new remote":
 
 In the window that pops up, enter the name for the new remote (I prefer Upstream) and paste the link you copied earlier under URL:
 ![](https://cdn.discordapp.com/attachments/290339969879375881/400566160564944918/Screen_Shot_2018-01-10_at_09.23.35.png)
+
+When you "okey"-ed both pop-up window away, you'll see your new remote on the left side of the screen, beneat origin:
+![](https://cdn.discordapp.com/attachments/290339969879375881/400568093895819264/Screen_Shot_2018-01-10_at_09.34.25.png)
+
+lets make sure sourcetree knows all branches on the up upstream repo and click-fat "Fetch" button on the top left. Click "Ok" in the screen that pops up:
+![](https://cdn.discordapp.com/attachments/290339969879375881/400568094369775658/Screen_Shot_2018-01-10_at_09.32.02.png)
+
+Now you are ready to use Sourcetree for normal issues.
+
+## Setting up Sourcetree to checkout PR's
