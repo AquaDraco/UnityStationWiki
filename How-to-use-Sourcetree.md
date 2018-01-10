@@ -81,8 +81,10 @@ Under "PR" you can find a lot of PR branches, using "fetch" will also make sure 
 With this done, you have everything setup to start using sourcetree like a boss, congratz!
 
 ## TODO
+ - Reset and Discard
  - Committing
  - Squashing
  - Merging
  - Rebase
  - Conflicts
+ - Pushing to other contributors PR's
