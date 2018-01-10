@@ -50,3 +50,28 @@ lets make sure sourcetree knows all branches on the up upstream repo and click-f
 Now you are ready to use Sourcetree for normal issues.
 
 ## Setting up Sourcetree to checkout PR's
+Sometimes a you want to test changes in a PR yourself, for example when reviewing. This guide explains how you can PR's to sourcetree so you can quick and easy check them out without using the commandline.
+
+Firstoff, this guide is based on a system where you added the Upstream repository (named "Upstream") as an extra remote in GIT beside your fork. If you named it differently, please change the name accordingly. if you didn't add the remote, don't continue as it wont work anyway. Also worth to note: You cant directly push to the PR, even if you have write access to the repository.
+
+*Git config*
+Locate the section for your github remote in the `.git/config` file. It looks like this:
+
+```
+[remote "Upstream"]
+	url = https://github.com/unitystation/unitystation.git
+	fetch = +refs/heads/*:refs/remotes/Upstream/*
+```
+
+Now add the line `fetch = +refs/pull/*/head:refs/remotes/Upstream/pr/*` to this section. It ends up looking like this:
+
+```
+[remote "Main"]
+	url = https://github.com/unitystation/unitystation.git
+	fetch = +refs/heads/*:refs/remotes/Upstream/*
+	fetch = +refs/pull/*/head:refs/remotes/Upstream/pr/*
+```
+
+Now fetch go to Sourcetree and use fetch to get PR branches filled:
+
+
