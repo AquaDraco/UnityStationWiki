@@ -17,20 +17,26 @@ When you click "Clone" it clones the repo into said folder, this may take a whil
 
 *Post Install*
 When the clone is done, the following window opens:
+![](https://cdn.discordapp.com/attachments/290339969879375881/400566166013214722/Screen_Shot_2018-01-10_at_09.21.47.png)
 
 First you should check if everything is setup right. Go to preferences (in OSX, Sourcetree->Preferences.) and check under general if (atleast) your email adres is the same as in github. Change if it's not:
+![](https://media.discordapp.net/attachments/290339969879375881/400562879700402187/Screen_Shot_2018-01-10_at_09.04.47.png?width=1030&height=958)
 
 Under "Accounts" make sure your Github accounts is added:
+![](https://media.discordapp.net/attachments/290339969879375881/400562881264877568/Screen_Shot_2018-01-10_at_09.04.39.png)
 
 last, but not least, under "advanced" make sure "allow force push" is checked:
+![](https://cdn.discordapp.com/attachments/290339969879375881/400566158178123816/Screen_Shot_2018-01-10_at_09.25.49.png)
 
-In the middle you'll see the branches sourcetree know about them and their relations to eachother.
+Lets go back to the previous screen, shall we? In the middle you'll see the branches sourcetree know about them and their relations to eachother.
 To the left under "branches" you'll see you local branches.
 Under "remotes" you will find all branches on github itself, currently thats only "Origin" aka your own fork. To be able to checkout the upstream repo unitystation/unitystation, it need to be added to the remotes.
 
 First go to the unitystation main-repo and copy the URL under "Clone or download":
+![](https://cdn.discordapp.com/attachments/290339969879375881/400566164293419009/Screen_Shot_2018-01-10_at_09.23.27.png)
 
-Then in sourcetree, right click "Remotes" and select "add new remote".
+Then in sourcetree, right click "Remotes" and select "new remote":
+![](https://cdn.discordapp.com/attachments/290339969879375881/400566171105230861/Screen_Shot_2018-01-10_at_09.21.36.png)
 
 In the window that pops up, enter the name for the new remote (I prefer Upstream) and paste the link you copied earlier under URL:
-
+![](https://cdn.discordapp.com/attachments/290339969879375881/400566160564944918/Screen_Shot_2018-01-10_at_09.23.35.png)
