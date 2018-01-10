@@ -41,7 +41,7 @@ Then in sourcetree, right click "Remotes" and select "new remote":
 In the window that pops up, enter the name for the new remote (I prefer Upstream) and paste the link you copied earlier under URL:
 ![](https://cdn.discordapp.com/attachments/290339969879375881/400566160564944918/Screen_Shot_2018-01-10_at_09.23.35.png)
 
-When you "okey"-ed both pop-up window away, you'll see your new remote on the left side of the screen, beneat origin:
+When you "okey"-ed both pop-up window away, you'll see your new remote on the left side of the screen, beneat origin (if it isn't beneat, just drag it down a little):
 ![](https://cdn.discordapp.com/attachments/290339969879375881/400568093895819264/Screen_Shot_2018-01-10_at_09.34.25.png)
 
 lets make sure sourcetree knows all branches on the up upstream repo and click-fat "Fetch" button on the top left. Click "Ok" in the screen that pops up:
@@ -72,6 +72,17 @@ Now add the line `fetch = +refs/pull/*/head:refs/remotes/Upstream/pr/*` to this 
 	fetch = +refs/pull/*/head:refs/remotes/Upstream/pr/*
 ```
 
-Now fetch go to Sourcetree and use fetch to get PR branches filled:
+Now fetch go to Sourcetree and use fetch to get PR branches filled, this may take a long time as it are many, many branches. When output is shown in the window that pops up (rows of black text) it's finished, it won't show the finish text, which is a known bug.
 
+In the end you'll end up with this view:
 
+Under "PR" you can find a lot of PR branches, using "fetch" will also make sure the latest PR branches get added to this folder.
+
+With this done, you have everything setup to start using sourcetree like a boss, congratz!
+
+## TODO
+ - Committing
+ - Squashing
+ - Merging
+ - Rebase
+ - Conflicts
