@@ -55,7 +55,7 @@ Sometimes a you want to test changes in a PR yourself, for example when reviewin
 Firstoff, this guide is based on a system where you added the Upstream repository (named "Upstream") as an extra remote in GIT beside your fork. If you named it differently, please change the name accordingly. if you didn't add the remote, don't continue as it wont work anyway. Also worth to note: You cant directly push to the PR, even if you have write access to the repository.
 
 *Git config*
-Locate the section for your github remote in the `.git/config` file. It looks like this:
+Locate the section for your github remote in the `_Projectfolder_/.git/config` file. It looks like this:
 
 ```
 [remote "Upstream"]
