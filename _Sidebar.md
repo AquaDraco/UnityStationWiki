@@ -5,8 +5,7 @@
 
 * **Gameplay 0.2.2**
     * [[Team Deathmatch Basics]]
-    * [[Weapons]]
-    * [[Magazines]]
+    * [[Weapons & Ammo]]
     * [[Healing]]
     * [[Mobs]]
 
