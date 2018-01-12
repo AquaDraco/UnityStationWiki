@@ -1,14 +1,14 @@
 ## This guide is meant for version 0.2.2 and not the current release
 
 ## Intro
-** add another bullshit intro**
+These are all the mobs! They're dumb, and are basically only useful for one thing, [STEAKS](https://github.com/unitystation/unitystation/wiki/Healing).
 
 ## Mobs
 ### Pete
-**add story about pete and the fact you can butcher him**
+The chef's mortal enemy, you'll be doing him a favour by killing this goat.
 ### Runtime
-**add story about Runtime and the fact you can butcher him/her**
+I hope you like cat meat, because medical won't be happy about this..
 ### Ian
-**add story about Ian and the fact you can butcher him**
+You're a monster if you even think about killing Ian!
 ### Punpun
-**add story about Punpun and the fact you can butcher him**
+The barman's sidekick, these two have formed an unbreakable bond over the years, but you can always kill one of them.. Or both for all we care!
