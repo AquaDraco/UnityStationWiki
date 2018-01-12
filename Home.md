@@ -16,8 +16,7 @@ As this project is in its early stages, this wiki will serve the purpose of prov
 
 * **Gameplay 0.2.2**
     * [[Team Deathmatch Basics]]
-    * [[Weapons]]
-    * [[Magazines]]
+    * [Weapons & Ammo](https://github.com/unitystation/unitystation/wiki/Weapons-&-Ammo)
     * [[Healing]]
     * [[Mobs]]
 
