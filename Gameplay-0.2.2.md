@@ -8,6 +8,8 @@ Most interactions are done with your mouse, and sometimes depends on your **acti
 
 * Attacking is done by **left-clicking** on the general direction of someone if you have a ranged weapon, but directly at them if you have a melee weapon.
 
+* Switching hands is done by pressing **X**, or by clicking the inactive handslot.
+
 * Reloading is done by pressing **R**, and it depends on your active hand, so if you have a magazine in your active hand, and a gun in your inactive one, pressing **R** will reload said gun, but the opposite will eject your current magazine and shooting an empty gun will auto-eject the magazine for you.
 
 * Speaking is done by pressing **T**, you can choose where to speak by clicking any or multiple option/s in the pop-up window.
