@@ -50,7 +50,7 @@
     * [[FOV and Lighting Redesign]]
     * [[Shuttle Control and Docking]]
 
-* **SS13 Features**
+* **[[SS13 Features]]**
     * [[What is this section ?]]
     * [[Construction]]
     * [[Intents]]
