@@ -32,7 +32,7 @@ To interact with doors, window doors and crates, you have to **left-click **on t
 ![](https://cdn.discordapp.com/attachments/396639864214257676/402175481216237570/unknown.png)
 
 The slot with the outline is the **active hand**, and the other is the **inactive hand**, and it dictactes if you're using the hand or not, 
-So if you have an item in your **active hand**, you'll be using that item, by either attacking with it, or putting on a table/crate, but if it's empty, you'll be able to pick up items on the ground and in your other inventory slots.
+So if you have an item in your **active hand**, you'll be using that item, by either attacking with it, putting on a table/crate, or in an inventory slot, but if it's empty, you'll be able to pick up items on the ground and in your other inventory slots.
 
 ***
 
