@@ -105,6 +105,7 @@ The best Submachine gun ingame right now, this is a priority weapon!
 
 ![](https://tgstation13.org/wiki//images/9/92/Screwdriver_tool.png)![](https://tgstation13.org/wiki//images/5/58/Knife.png) **Screwdriver/Kitchen knife**
 
-You can stab with these ! and you can also use them for butchering dead things ! see more in [https://github.com/unitystation/unitystation/wiki/Healing](Healing)
+You can stab with these ! and you can also use them for butchering dead things ! see more in 
+[Healing](https://github.com/unitystation/unitystation/wiki/Healing)
 
 
