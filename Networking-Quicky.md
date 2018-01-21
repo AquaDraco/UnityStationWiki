@@ -21,6 +21,17 @@ https://unitystation.org/wp-content/uploads/PlaceholderMessage.cs
 5. Call the client message like this:
 ![](https://unitystation.org/wp-content/uploads/Screenshotcallmessage.png)
 
+## Client Interact Message
+If you just want your interact to be networked, there is a simple solution.
+You can just call the client message Interact from any InputTrigger script:
+
+`
+UI_ItemSlot slot = UIManager.Hands.CurrentSlot;
+InteractMessage.Send(gameObject, position, slot.eventName);
+`
+
+This runs your whole interaction script as server.
+
 ## Server message to all
 
 
