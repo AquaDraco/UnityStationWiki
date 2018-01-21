@@ -31,6 +31,7 @@ You can just call the client message Interact from any InputTrigger script:
 
 
 This runs your whole interaction script as server.
+Be mindfull you should use if(IsServer) for all server-only code in your interact
 
 ## Server message to all
 
