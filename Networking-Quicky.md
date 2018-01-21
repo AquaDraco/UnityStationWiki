@@ -3,8 +3,8 @@ There you go:
 
 ## Syncvar
 
-## Client message
-This is a message the client sends that get executed by the server.
+## Custom Client message
+This is a custom message the client sends that get executed by the server.
 
 1. Create a client message script:
 /Assets/Script/messages/Client/PlaceholderMessage.cs
