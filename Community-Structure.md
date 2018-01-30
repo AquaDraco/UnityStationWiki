@@ -34,26 +34,12 @@ Discord Handle: Doobly#5156 (Doobly)<br>
 Github Nick: DooblyNoobly<br>
 Email: Captain@unitystation.org<br>
 
-**Head of Personal**<br>
-_Assistant Projectlead_<br>
-Contact for: Press releases, Legal issues (including DCMA), GITHUB/Roadmap, Community and moderation issues<br>
-Discord Handle: Ornias#9313 (Ornias)<br>
-Github Nick: Ornias1993<br>
-Email: HoP@unitystation.org<br>
-
 **Chief Engineer**<br>
 _Development Coordinator_<br>
 Contact for: Security issues (responsible disclosure), high-complexity code related questions<br>
 Discord Handle: pulseyy#0933 (Pulsey)<br>
 Github Nick: Krille90<br>
 Email: CE@unitystation.org<br>
-
-**Head of Security**<br>
-_Public Relations coordinator_<br>
-Contact for: Keeping oversight on moderation decisions and aquisition of general moderators<br>
-Discord Handle: _Vacant_<br>
-Github Nick: _Vacant_<br>
-Email: HoS@unitystation.org<br>
 
 ### Bridge officers
 
