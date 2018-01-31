@@ -2,7 +2,6 @@
     * [[Roadmap]]
 
 * **[[Gameplay 0.2.2]]**
-    * [[Team Deathmatch Basics]]
     * [Weapons & Ammo](https://github.com/unitystation/unitystation/wiki/Weapons-&-Ammo)
     * [[Healing]]
     * [[Mobs]]
