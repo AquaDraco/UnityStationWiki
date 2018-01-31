@@ -1,6 +1,4 @@
 * **[[Home]]**
-    * [[Community Structure]]
-    * [[Current changelog]]
     * [[Roadmap]]
 
 * **[[Gameplay 0.2.2]]**
