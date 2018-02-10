@@ -90,9 +90,8 @@
     * <del>Headless Server shouldn't start as a Player</del>
 * Separation of Responsibility
     * i.e. Refactoring Project structure
-* Auto updater
+* <del>Auto updater</del>
 * Editor Tools
     * Item Creation
     * <del>Tilemapper / Sectioning</del>
-    * GUI creation ?
 * To be continued
