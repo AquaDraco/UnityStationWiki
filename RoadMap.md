@@ -57,7 +57,7 @@
           <li>Basic Admin controls</li>
           <li>Easy server deployment, maybe even automatic</li>
           <li>24 / 7 Server</li>
-          <li>...</li>
+          <li>HUD overhaul, incl. chat repositioning</li>
         </ul>
       </td>
     </tr>
