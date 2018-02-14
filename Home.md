@@ -10,8 +10,6 @@ As this project is in its early stages, this wiki will serve the purpose of prov
 
 ## Overview 
 * **[[Home]]**
-    * [[Community Structure]]
-    * [[Current changelog]]
     * [[Roadmap]]
 
 * **[[Gameplay 0.2.2]]**
