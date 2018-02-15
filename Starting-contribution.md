@@ -8,7 +8,7 @@
 * [Unity personal edition](https://store.unity.com/download?ref=personal),
 Just check the little box and download the installer, it's a , at some point, you'll have to make an account, but that doesn't need any explaining.
 
-**Note that you should use Unity 2017.2 or later.**
+**Note that you should use Unity 2017.3 or later.**
 
   *  **Keeping unity updated**:
       Since unity is updated from time to time, there is a need to update the client, but worry not, theres a nice little button in the _Help_ tab of the client.
