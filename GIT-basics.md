@@ -45,12 +45,10 @@ After you have saved your changes in unity, open Github Desktop. You will notice
 ![](https://cdn.discordapp.com/attachments/304941207883087872/305291127546970112/unknown.png)
 
 2. Press the Commit to develop button
-3. At the top right of Github Desktop, press the Pull Request button:
-
-![](https://cdn.discordapp.com/attachments/304941207883087872/305291398767443968/unknown.png)
-
-4. Confirm you are happy with the description and press the Send Pull Request button
-5. When that is done make sure to press the Sync button to also push the changes to your fork on Github
+3. At the top of Github Desktop, press the Push button. This will push all the commits to your fork
+4. When that is done, go to your github fork page: github.com/{yourusername}/unitystation
+5. Find the button that says Create a pull request with origin and fill out the questions and submit
+6. If you are asked to make any changes to your PR you can simply push changes to your fork and it will automatically update the PR
 
 
  ## If this guide doesn't suffice, you can go ahead and ask any question you have on the [Unitystation Discord server](https://discord.gg/TMRMfpS)
