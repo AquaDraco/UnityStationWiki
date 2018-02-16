@@ -22,7 +22,7 @@ You need to derive your script from NetworkBehaviour and also have a NetworkIden
   
 
 2. SyncVars and SyncVars with hooks: https://docs.unity3d.com/ScriptReference/Networking.SyncVarAttribute.html
-    - [SyncVar] can be used to update a variable serverside and if it update on all of the clients. Also new clients who join half way through the game will get the updated value
+    - [SyncVar] can be used to update a variable serverside and have it update on all of the clients. Also new clients who join half way through the game will get the updated value
     - [SyncVar(Hook="MethodNameHere")] SyncVar hooks can be used to call a method whenever the SyncVar variable is updated. Useful for creating an action on the client whenever a server updates it
     - These are good for general purpose communications as all clients will get the update. Do not use if you need to shield data for a specific client from other clients
     - Not good for variables that are updated rapidly (like movement etc)
