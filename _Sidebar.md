@@ -1,14 +1,14 @@
 * **[[Home]]**
     * [[Roadmap]]
 
+* **The CodeBase**
+    * [[The Basic Structure]]
+
 * **GIT**
     * [[GIT basics]]
     * [[How to Make a PullRequest (PR)]]
     * [[How to edit Pull Requests]]
     * [[How to use Sourcetree]] 
-
-* **Beginners guide to the codebase**
-    * [[The Basic Structure]]
 
 * **Tools**
     * [[Rider IDE]]
