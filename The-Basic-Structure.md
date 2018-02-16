@@ -32,7 +32,7 @@ You need to derive your script from NetworkBehaviour and also have a NetworkIden
     - Derive your netmsg from ClientMessage if you want to create a message to send from Client to the Server
     - Derive your netmsg from ServerMessage if you want to create a message to send from Server to the Client
     - Net Messages allow you to send data to specific clients so that others do not get the data and is good for secure communications
-    - NetMessage create a small about of garbage for the GarbageCollector so keep that in mind
+    - NetMessages create a small about of garbage for the GarbageCollector so keep that in mind
 
 ## The Matrix
 
