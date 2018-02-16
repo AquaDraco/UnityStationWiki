@@ -1,9 +1,9 @@
-###  The ECS Architecture
+##  The ECS Architecture
 Unitystation is following ECS patterns: [https://en.wikipedia.org/wiki/Entity%E2%80%93component%E2%80%93system](https://en.wikipedia.org/wiki/Entity%E2%80%93component%E2%80%93system) 
 
 So that means every behavior should be broken up into a component. I.E. PickUpTrigger.cs is a component that you can add to your item and it will allow players to pick it up and put it in their inventories. 
 
-### Networking (Unet)
+## Networking (Unet)
 
 The networking code is all done in Unet: https://docs.unity3d.com/Manual/UNet.html
 
@@ -13,7 +13,7 @@ You need to derive your script from NetworkBehaviour and also have a NetworkIden
 
 **Warning:** Sometimes if you press play without the object being in a resources folder you will screw the internal Unet cache up as it routes all of the networked members and you will need to remove the prefab and start again
 
-There are three methods to creating a networking communication:
+### There are three methods to creating a networking communication:
 1. Command and ClientRpc, these are called Remote Actions: https://docs.unity3d.com/Manual/UNetActions.html
     - [Command]'s are methods that are called on the server remotely by a client
     - [ClientRpc]'s are methods that are called on all clients remotely by the server
@@ -26,3 +26,12 @@ There are three methods to creating a networking communication:
     - [SyncVar(Hook="MethodNameHere")] SyncVar hooks can be used to call a method whenever the SyncVar variable is updated. Useful for creating an action on the client whenever a server updates it
     - These are good for general purpose communications as all clients will get the update. Do not use if you need to shield data for a specific client from other clients
     - Not good for variables that are updated rapidly (like movement etc)
+
+3. NetMessages: https://docs.unity3d.com/Manual/UNetMessages.html
+    - NetMessages are the preferred way to perform more targetted and secure ways of communication between the client and server
+    - NetMessages are objects that can carry any serialize data and targetted to specific components on the receiving end
+    - Derive your netmsg from ClientMessage if you want to create a message to send from Client to the Server
+    - Derive your netmsg from ServerMessage if you want to create a message to send from Server to the Client
+    - Net Messages all you to send data to specific clients so that others do not get the data and is good for secure communications
+    - NetMessage create a small about of garbage for the GarbageCollector so keep that in mind
+
