@@ -9,12 +9,20 @@ The networking code is all done in Unet: https://docs.unity3d.com/Manual/UNet.ht
 
 Basically all of the networking code is written into the same component for both the serverside logic and the clientside logic. This can get quite confusing for people who have never done any netcode before but after debugging or creating new networked features it becomes really easy to understand.
 
+You need to derive your script from NetworkBehaviour and also have a NetworkIdentity on your object. Also make sure when you are done with your object to turn it into a prefab and place it inside a resources folder so that the NetworkManager can find it and cache it for use in multiplayer. 
+
+**Warning:** Sometimes if you press play without the object being in a resources folder you will screw the internal Unet cache up as it routes all of the networked members and you will need to remove the prefab and start again
+
 There are three methods to creating a networking communication:
-1. Command and ClientRpc, these are call Remote Actions: https://docs.unity3d.com/Manual/UNetActions.html
+1. Command and ClientRpc, these are called Remote Actions: https://docs.unity3d.com/Manual/UNetActions.html
     - [Command]'s are methods that are called on the server remotely by a client
     - [ClientRpc]'s are methods that are called on all clients remotely by the server
     - Remember that you need to name your methods beginning with Cmd or Rpc respectively (i.e. RpcUpdateFire())
     - These are good for general purpose communications that all clients need to know about and are generally used for actions that do not need a high level of security
   
 
-2. 
+2. SyncVars and SyncVars with hooks: https://docs.unity3d.com/ScriptReference/Networking.SyncVarAttribute.html
+    - [SyncVar] can be used to update a variable serverside and if it update on all of the clients. Also new clients who join half way through the game will get the updated value
+    - [SyncVar(Hook="MethodNameHere")] SyncVar hooks can be used to call a method whenever the SyncVar variable is updated. Useful for creating an action on the client whenever a server updates it
+    - These are good for general purpose communications as all clients will get the update. Do not use if you need to shield data for a specific client from other clients
+    - Not good for variables that are updated rapidly (like movement etc)
