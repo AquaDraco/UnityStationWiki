@@ -6,6 +6,9 @@
     * [[Prefab2Tile]]
 
 * **GIT**
+    * [[GIT basics]]
+    * [[How to Make a PullRequest (PR)]]
+    * [[How to edit Pull Requests]]
     * [[How to use Sourcetree]] 
 
 * **Plugins**
@@ -16,10 +19,7 @@
 
 * **Contribution Guides**
     * [[Starting Contribution]]
-    * [[GIT basics]]
     * [[Building And Testing]]
-    * [[How to Make a PullRequest (PR)]]
-    * [[How to edit Pull Requests]]
 
 * **Development**
     * [[Directory Structure]]
