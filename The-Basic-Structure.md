@@ -28,10 +28,17 @@ You need to derive your script from NetworkBehaviour and also have a NetworkIden
     - Not good for variables that are updated rapidly (like movement etc)
 
 3. NetMessages: https://docs.unity3d.com/Manual/UNetMessages.html
-    - NetMessages are the preferred way to perform more targetted and secure ways of communication between the client and server
-    - NetMessages are objects that can carry any serialize data and targetted to specific components on the receiving end
+    - NetMessages are objects that can carry any serializable data and are targetted to specific components on the receiving end
     - Derive your netmsg from ClientMessage if you want to create a message to send from Client to the Server
     - Derive your netmsg from ServerMessage if you want to create a message to send from Server to the Client
-    - Net Messages all you to send data to specific clients so that others do not get the data and is good for secure communications
+    - Net Messages allow you to send data to specific clients so that others do not get the data and is good for secure communications
     - NetMessage create a small about of garbage for the GarbageCollector so keep that in mind
+
+### The Matrix
+
+The matrix keeps track of every item in the game and its grid position. You can query the matrix to find out what objects are at a specific co-ordinate. Its also used to detect collisions when players are moving and is currently being updated to hold all of the atmos data that is simulated on the server. The matrix sits on top of the Tilemap system.
+
+### The Tilemap System
+
+The Tilemap System (https://docs.unity3d.com/Manual/Tilemap.html) is a unity tile management feature which allows us to create maps really quickly. You can experiment with the mapping by clicking on Window--> Tile Palette
 
