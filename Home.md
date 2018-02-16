@@ -11,13 +11,6 @@ As this project is in its early stages, this wiki will serve the purpose of prov
 ## Overview 
 * **[[Home]]**
     * [[Roadmap]]
-
-* **[[Gameplay 0.2.2]]**
-    * [[Team Deathmatch Basics]]
-    * [Weapons & Ammo](https://github.com/unitystation/unitystation/wiki/Weapons-&-Ammo)
-    * [[Healing]]
-    * [[Mobs]]
-
 * **Tools**
     * [[Rider IDE]]
     * [[Prefab2Tile]]
@@ -27,6 +20,9 @@ As this project is in its early stages, this wiki will serve the purpose of prov
     * [[Export Map]]
 
 * **GIT**
+    * [[GIT basics]]
+    * [[How to Make a PullRequest (PR)]]
+    * [[How to edit Pull Requests]]
     * [[How to use Sourcetree]] 
 
 * **Plugins**
@@ -34,10 +30,7 @@ As this project is in its early stages, this wiki will serve the purpose of prov
 
 * **Contribution Guides**
     * [[Starting Contribution]]
-    * [[GIT basics]]
     * [[Building And Testing]]
-    * [[How to Make a PullRequest (PR)]]
-    * [[How to edit Pull Requests]]
 
 * **Development**
     * [[Directory Structure]]
