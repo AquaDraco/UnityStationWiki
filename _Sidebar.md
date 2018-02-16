@@ -1,18 +1,9 @@
 * **[[Home]]**
     * [[Roadmap]]
 
-* **[[Gameplay 0.2.2]]**
-    * [Weapons & Ammo](https://github.com/unitystation/unitystation/wiki/Weapons-&-Ammo)
-    * [[Healing]]
-    * [[Mobs]]
-
 * **Tools**
     * [[Rider IDE]]
     * [[Prefab2Tile]]
-    * [[Generate cloth Enum]]
-    * [[Slice Sprites]]
-    * [[Import Map]]
-    * [[Export Map]]
 
 * **GIT**
     * [[How to use Sourcetree]] 
