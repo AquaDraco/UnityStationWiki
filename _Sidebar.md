@@ -8,7 +8,7 @@
     * [[How to use Sourcetree]] 
 
 * **Beginners guide to the codebase**
-    * [[The basic structure]]
+    * [[The Basic Structure]]
 
 * **Tools**
     * [[Rider IDE]]
