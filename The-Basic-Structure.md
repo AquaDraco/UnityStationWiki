@@ -34,11 +34,11 @@ You need to derive your script from NetworkBehaviour and also have a NetworkIden
     - Net Messages allow you to send data to specific clients so that others do not get the data and is good for secure communications
     - NetMessage create a small about of garbage for the GarbageCollector so keep that in mind
 
-### The Matrix
+## The Matrix
 
 The matrix keeps track of every item in the game and its grid position. You can query the matrix to find out what objects are at a specific co-ordinate. Its also used to detect collisions when players are moving and is currently being updated to hold all of the atmos data that is simulated on the server. The matrix sits on top of the Tilemap system.
 
-### The Tilemap System
+## The Tilemap System
 
 The Tilemap System (https://docs.unity3d.com/Manual/Tilemap.html) is a unity tile management feature which allows us to create maps really quickly. You can experiment with the mapping by clicking on Window--> Tile Palette
 
