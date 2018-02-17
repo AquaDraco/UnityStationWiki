@@ -1,7 +1,7 @@
 * **[[Home]]**
     * [[Roadmap]]
 
-* **The CodeBase**
+* **The Codebase**
     * [[The Basic Structure]]
 
 * **GIT**
