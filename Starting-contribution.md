@@ -6,14 +6,10 @@
 
 ## Downloading unity :
 * [Unity personal edition](https://store.unity.com/download?ref=personal),
-Just check the little box and download the installer, it's a , at some point, you'll have to make an account, but that doesn't need any explaining.
+Just check the little box and download the installer. 
+At some point you'll have to make an account, but can use disposable mail for that.
 
-**Note that you should use Unity 2017.3.1p4 as of 30.03.2018.**
-
-  *  **Keeping unity updated**:
-      Since unity is updated from time to time, there is a need to update the client, but worry not, theres a nice little button in the _Help_ tab of the client.
-
-![Screenshot](https://image.prntscr.com/image/Hk8CzXbsTWWaVvSktcZkgw.png)
+**Note that you should use [Unity 2017.3.1p4](https://unity3d.com/unity/qa/patch-releases) as of 30.03.2018.**
 
 ## Downloading the repository :
 * [Here is a helpful guide on how to GIT ](https://github.com/unitystation/unitystation/wiki/GIT-basics), But if you wouldn't touch GIT desktop with a 10 foot stick, and you just want to mess around with the current state of the project, just go ahead and download a [.ZIP of the repository](https://codeload.github.com/unitystation/unitystation/zip/develop)
@@ -28,11 +24,14 @@ So now that you have downloaded unity and the repo, press _open_ and just browse
 
 First import will take some time.
 
-After import is finished, you can open scenes: Select `File > Open Scene`, navigate to `Scenes` folder and open a scene (map) of your liking.
+After import is finished, you can open scenes: Select `File > Open Scene`, navigate to `Scenes` folder and open a scene (map) of your liking. 
+
+**However!** If you just want to play the game (and not do mapping), open the **Lobby** scene. Lobby will load the default map for you automatically after entering the game and its behaviour will match up with the standalone builds.
 
 ![](https://image.prntscr.com/image/T7s9wVR7RhyXwwTxf4jEFg.png)
 
-At the moment of writing the preferred map is OutpostDeathmatch. _12/8/17_
+
+At the moment of writing the default map to load is OutpostDeathmatch. _30.03.2018_
 
 Then you can press `Play` button on the `Game` tab to start the game in editor.
 
@@ -40,11 +39,13 @@ Then you can press `Play` button on the `Game` tab to start the game in editor.
 
 # But now what ?
 ***
-Well, feeling confused after messing around with the scenes and all ? well, it's now time to actually learn unity !
+Well, feeling confused after messing around with the scenes and all? well, it's now time to actually learn unity!
 
-  * **Learning unity** :
-There is a huge amount of ressources around for learning Unity, and for the more experienced in the code area, it'll be a piece of cake !
+* **Reading other unitystation wikis** :
+Take a look at [other wiki pages we have](https://github.com/unitystation/unitystation/wiki)
 
+* **Learning unity** :
+There is a huge amount of resources around for learning Unity, and for the more experienced in the code area, it'll be a piece of cake !
 
 [_Official Unity tutorials_](https://unity3d.com/learn/tutorials) All people new to unity start here, it'll teach you basics like the UI, the script and scene editors, and all sorts of things.
 
@@ -53,9 +54,4 @@ There is a huge amount of ressources around for learning Unity, and for the more
 * **Getting help** :
 There is no shame in asking questions.
 
-
-[_Unitystation discord_](https://discord.gg/TMRMfpS) Anyone would be glad to answer your questions, just ask !
-
-[_Official Unity forum_](https://discord.gg/TMRMfpS) Second option if you have trouble.
-
-[_Official Unity manual_](https://docs.unity3d.com/Manual/index.html) ALWAYS, keep this around.
+[_Unitystation discord_](https://discord.gg/TMRMfpS) Anyone would be glad to answer your questions, just ask!
