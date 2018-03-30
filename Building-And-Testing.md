@@ -1,4 +1,4 @@
-Before you PR for UnityStation, it would be helpfull if you fully test your PR, read the contritbution guidelines and read the [Starting Contribution](https://github.com/unitystation/unitystation/wiki/Starting-contribution) article on the wiki.
+Before you PR for UnityStation, it would be helpful if you fully test your PR, read the contribution guidelines and read the [Starting Contribution](https://github.com/unitystation/unitystation/wiki/Starting-contribution) article on the wiki.
 
 Below you can read our standardised multiplayer test-setup.
 
@@ -8,6 +8,8 @@ That means two instances: Client and Host (Server that's client, too).
 You can run one instance from editor by pressing play button, 
 but for another one you'll have to make a **standalone build**.
 
+**Open the Lobby scene first, as it's the correct way to start the game.**
+
 ## Initial setup: Build settings
 To make a proper standalone build, you should set up build settings (only once).
 
@@ -15,9 +17,9 @@ To make a proper standalone build, you should set up build settings (only once).
 
 ![](https://image.prntscr.com/image/RUTrofZFQzyxMhQ9jMxGyA.png)
 
-* Make sure that **current scene is the only one ticked**:
+* Make sure that **both scenes are ticked**:
 
-![](https://image.prntscr.com/image/cm3rlu2ySwuSH6iXWZ_yYA.png)
+![](https://image.prntscr.com/image/1mJopAV6RGmRL_P4RZK7Og.png)
 
 (If you don't see your current scene in the list, press `Add Open Scenes` button)
 
@@ -44,8 +46,7 @@ Notice how Build's logs appear in Editor's console:
 Next time you'll just have to press `Ctrl+B`/`Cmd+B` to Build And Run.
 
 Important note:
-> When you change stuff/recompile you'll need to **rebuild** to make Editor compatible with the Build (unless you changed client-ONLY stuff, then you can try, but it's not guaranteed).
-
+> When you change stuff/recompile you'll need to **rebuild** to make Editor compatible with the Build.
 
 ## Set up ping simulation
 To simulate network latency you need to select `Network Manager` in Hierarchy tab:
@@ -69,15 +70,15 @@ Doesn't matter much who should host and who should join, but keep in mind that B
 ![](https://image.prntscr.com/image/e_3gMpjMQz_cu801A8fHxg.png)
 
 # Advanced Pre-Release Test sequence
-With above testing methode you can find most issues related to your code, without spending too much time building. However, before a release or when a stricter test regime is warranted, for ex. when handeling sync vars and clients joining, we have an advanced test-sequence:
+With above testing method you can find most issues related to your code, without spending too much time building. However, before a release or when a stricter test regime is warranted, for ex. when handling sync vars and clients joining, we have an advanced test-sequence:
 
 1. Create 2 clients (one of which hosting) with a ping of 200.
 2. Play the game, chat a little, kill a little, drop things, open things and move things.
-3. (extra for release) Before a release, we should test all issues and PR's that are ready for quality assesment in the release project. Test the features and bugs in every one of them, with multiple clients.
+3. (extra for release) Before a release, we should test all issues and PR's that are ready for quality assessment in the release project. Test the features and bugs in every one of them, with multiple clients.
 4. Join with a third 200Ping client
 5. Look if your view is the same as the other clients. if not, you have found a bug already!
 6. play for a while with all three
-6. (extra for release) Before a release, we should test all issues and PR's that are ready for quality assesment in the release project. Test the features and bugs in every one of them, with the third client.
-8. No errors or inconsistencies? great, your build just passed our Quality assesment.
+6. (extra for release) Before a release, we should test all issues and PR's that are ready for quality assessment in the release project. Test the features and bugs in every one of them, with the third client.
+8. No errors or inconsistencies? great, your build just passed our Quality assessment.
 
 Happy spess testing!
