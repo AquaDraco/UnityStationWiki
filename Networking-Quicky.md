@@ -1,4 +1,5 @@
-Disclaimer: this is a half-assed and outdated page. Ask the guys on Discord for up-to-date networking techniques
+### Disclaimer: this is a half-assed and outdated page. Ask the guys on Discord for up-to-date networking techniques.
+
 So you want to get something networked and want it fast?
 There you go:
 
