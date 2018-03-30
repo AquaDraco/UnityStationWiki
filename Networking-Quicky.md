@@ -1,7 +1,8 @@
+Disclaimer: this is a half-assed and outdated page. Ask the guys on Discord for up-to-date networking techniques
 So you want to get something networked and want it fast?
 There you go:
 
-## Syncvar
+## SyncVar
 
 ## Custom Client message
 This is a custom message the client sends that get executed by the server.
@@ -10,7 +11,7 @@ This is a custom message the client sends that get executed by the server.
 /Assets/Script/messages/Client/PlaceholderMessage.cs
 
 2. Add this base content:
-https://unitystation.org/wp-content/uploads/PlaceholderMessage.cs
+[SimpleInteractMessage](https://github.com/unitystation/unitystation/blob/acbc90d217cf0aa9c8a914f17a838555399396b7/UnityProject/Assets/Scripts/Messages/Client/SimpleInteractMessage.cs)
 
 3. add the code you want the server to execute under process()
 
