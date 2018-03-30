@@ -13,6 +13,7 @@ At some point you'll have to make an account, but can use disposable mail for th
 
 ## Downloading the repository :
 * [Here is a helpful guide on how to GIT ](https://github.com/unitystation/unitystation/wiki/GIT-basics), But if you wouldn't touch GIT desktop with a 10 foot stick, and you just want to mess around with the current state of the project, just go ahead and download a [.ZIP of the repository](https://codeload.github.com/unitystation/unitystation/zip/develop)
+
 ![](https://image.prntscr.com/image/YUvWfH_uSwmqJnIQCEnDug.png)
 
 For contribution however, using GIT is a requirement and not an option!
