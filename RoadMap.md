@@ -43,7 +43,7 @@
           <li>players intentions</li>
           <li>Blood, e.g. foot prints, gibbing explosion</li>
           <li><del>Complete chat system</del> dependent on telecomms</li>
-          <li>Redesign FOV</li>
+          <li><del>Redesign FOV</del></li>
           <li>Redesign lighting based on FOV code</li>
         </ul>
       </td>
