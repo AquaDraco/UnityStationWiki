@@ -11,6 +11,13 @@ As this project is in its early stages, this wiki will serve the purpose of prov
 ## Overview 
 * **[[Home]]**
     * [[Roadmap]]
+
+* **GIT**
+    * [[GIT basics]]
+    * [[How To Create a Pull Request (PR) from a Fork]]
+    * [[How to edit Pull Requests]]
+    * [[How to use Sourcetree]] 
+
 * **Tools**
     * [[Rider IDE]]
     * [[Prefab2Tile]]
@@ -18,12 +25,6 @@ As this project is in its early stages, this wiki will serve the purpose of prov
     * [[Slice Sprites]]
     * [[Import Map]]
     * [[Export Map]]
-
-* **GIT**
-    * [[GIT basics]]
-    * [[How To Create a Pull Request (PR) from a Fork]]
-    * [[How to edit Pull Requests]]
-    * [[How to use Sourcetree]] 
 
 * **Plugins**
     * [[Light2D]] 
