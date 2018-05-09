@@ -6,7 +6,7 @@
 
 * **GIT**
     * [[GIT basics]]
-    * [[How to Make a PullRequest (PR)]]
+    * [[How To Create a Pull Request (PR) from a Fork]]
     * [[How to edit Pull Requests]]
     * [[How to use Sourcetree]] 
 
