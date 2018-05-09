@@ -39,7 +39,7 @@ Step 10: Be very sure to look over these questions and answer them truthfully an
 
 ![](https://i.imgur.com/8vWVgB9.png)
 
-Step 11: Once you've submitted your Pull Request, the final result should look like this! Congratulations, you're now a part of history. Side note: If you muss up and need to alter your Pull Request, you can Edit it and Close it on the same page.
+Step 11: Once you've submitted your Pull Request, the final result should look like this! Congratulations, you're now a part of history. Side note: If you mess up and need to alter your Pull Request, you can Edit it and Close it on the same page.
 
 ![](https://i.imgur.com/DLx7cXp.png)
 
