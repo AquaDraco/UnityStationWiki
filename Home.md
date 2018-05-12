@@ -19,7 +19,6 @@ As this project is in its early stages, this wiki will serve the purpose of prov
     * [[How to use Sourcetree]] 
 
 * **Tools**
-    * [[Rider IDE]]
     * [[Prefab2Tile]]
     * [[Generate cloth Enum]]
     * [[Slice Sprites]]
@@ -32,6 +31,7 @@ As this project is in its early stages, this wiki will serve the purpose of prov
 * **Contribution Guides**
     * [[Starting Contribution]]
     * [[Building And Testing]]
+    * [Developing on Linux Systems Setup Guide](https://github.com/unitystation/unitystation/wiki/Developing-for-UnityStation-on-Unix-Systems-with-the-Unity-Editor-and-JetBrains-Rider)
 
 * **Development**
     * [[Directory Structure]]
