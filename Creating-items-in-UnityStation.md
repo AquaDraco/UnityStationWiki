@@ -66,7 +66,7 @@ The component exposes the following public fields:
 * Item Description: A string describing the item.
 * Item Name: The name of the item.
 * Size: The size of the item.
-* Sprite Type: An enum describing what type of sprite the item uses. Possible values are Items, Clothing, and Guns. (?)
+* Sprite Type: An enum describing what type of sprite the item uses. Possible values are **Items**, **Clothing**, and **Guns**. (?)
 * Type: An enum describing what type of item it is.
 * Network channel: QoS channel to use for updates for this script, derived from Network Behaviour.
 * Network send interval: Attribute which is derived from NetworkBehaviour. Determines maximum update rate in seconds.
