@@ -41,7 +41,7 @@ As this project is in its early stages, this wiki will serve the purpose of prov
     * [[How to Use and Hate UniCloth]]
     * [[RPC vs Netmsg]]
     * [[Networking (Network Messages)]]
-
+    * [[Creating items in UnityStation]]
 
 * **Website Development**
     * [[Setting up local webserver]]
