@@ -1,5 +1,3 @@
-### This guide is under construction and might contain unreliable information. Anything appearing with a (?) mark is to be considered as conjecture on part of the author.
-
 # Introduction
 In this guide we'll explore the fundamental concepts and components you'll need in order to create items in the UnityStation project.
 
@@ -62,13 +60,13 @@ Items in unity station are composed of three primary components, the **ItemAttri
 The **Item Attributes** component defines the basic characteristics of an item.
 
 The component exposes the following public fields:
-* Cloth: See UniCloth (?)
-* Clothing reference: (?)
-* In hand reference Left & Right: (?)
+* Cloth: See UniCloth.
+* Clothing reference: Sprite position on the clothing sprite sheet.
+* In hand reference Left & Right: Sprite positions from the Inhand sprite sheet.
 * Item Description: A string describing the item.
 * Item Name: The name of the item.
 * Size: The size of the item.
-* Sprite Type: An enum describing what type of sprite the item uses. Possible values are **Items**, **Clothing**, and **Guns**. (?)
+* Sprite Type: An enum describing what type of sprite the item uses, and more importantly from which sprite-sheet the sprite comes. Possible values are **Items**, **Clothing**, and **Guns**.
 * Type: An enum describing what type of item it is.
 * Network channel: QoS channel to use for updates for this script, derived from Network Behaviour.
 * Network send interval: Attribute which is derived from NetworkBehaviour. Determines maximum update rate in seconds.
@@ -85,8 +83,8 @@ The Managed Network Transform component also provides the `OnEnable()` and `OnDi
 
 The component exposes the following fields:
 * Speed multiplier: Factor for flying/lerp'ing speed. Higher numbers mean objects travel faster.
-* Is Pushing: Enables the item to push other objects (?)
-* Predictive Pushing: Tells the server to try to predict where the item will be pushed (?)
+* Is Pushing: Enables the item to push other objects.
+* Predictive Pushing: Tells the server to try to predict where the item will be pushed.
 
 It also exposes the Network Channel and Network Send Interval variables from NetworkBehaviour.
 
@@ -97,7 +95,7 @@ References:
 * https://docs.unity3d.com/ScriptReference/Networking.NetworkBehaviour.html
 
 # Pick Up Trigger
-The **Pick Up Trigger** component allows an item to be picked up. Contains some additional server-side functionality for predicting the success or failure of an attempt to grab the item (?).
+The **Pick Up Trigger** component allows an item to be picked up. Contains some additional server-side functionality for predicting the success or failure of an attempt to grab the item.
 
 # The Custom Network Manager and caching
 The **custom network manager** component is a singleton component that manages the network.
