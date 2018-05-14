@@ -115,3 +115,7 @@ Use the following asset workflow:
 2. Add the **Network Identity**, **Custom Net Transform**, **Item Attributes** and **Pick Up Trigger** components to it. You may add other components your item needs as necessary.
 3. Edit the fields to suit your needs.
 4. Add your prefab to suitable directory under `../Prefabs/Items/[ Item Type ]/Resources`.
+
+## OR
+
+Clone existing prefab matching the item you wish to create and edit that.
