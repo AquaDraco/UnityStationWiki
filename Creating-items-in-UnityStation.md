@@ -55,6 +55,8 @@ References:
 # Items
 Items in unity station are composed of three primary components, the **ItemAttributes**, the **CustomNetTransform** and the **Pick Up Trigger** component.
 
+Other components you might wish to attach are **Food Behaviour** for food items or components derived **Health Behaviour** for items that can be damaged.
+
 ## The Item Attributes component
 
 The **Item Attributes** component defines the basic characteristics of an item.
@@ -106,6 +108,13 @@ It does this by calling the `SetSpawnableList()` method and loading all prefabs 
 
 References:
 * https://docs.unity3d.com/ScriptReference/Networking.NetworkManager.html
+
+# Adding your item to the scene
+In order to place your item in the game, you will need to add it to the tile palette.
+To do that, 
+1. Drag your prefab into the scene.
+2. find it in the hierarchy and drag it inside the Matrix objects layer. In the current development version that would be in the `OutpostDeathmatch` scene, `OutpostStation->Level 0->Objects`.
+3. Lastly, use the **Transpose** tool in order to align the prefab to the grid.
 
 # TL;DR
 This is for the people that just want to add a new item.
