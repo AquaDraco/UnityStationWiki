@@ -3,7 +3,9 @@
 # Introduction
 In this guide we'll explore the fundamental concepts and components you'll need in order to create items in the UnityStation project.
 
-# Prefabs and you.
+If you want to go straight to the nitty-gritty, check out the TL;DR section.
+
+# Prefabs and you
 
 **Prefabs** are the Unity way of creating templates of objects that will be re-used several times in a scene or across several scenes, such as scenery, items or NPC's.
 
@@ -15,7 +17,7 @@ A prefab asset will be created in the asset viewer and the name of the object in
 
 You can now either drag your prefab into the scene in order to instantiate more copies of it, or you can use the method `Instantiate(original, ...)` from a script, where original is a reference to the prefab you just created.
 
-## A note about changing a prefab.
+## A note about changing a prefab
 Instanced prefabs will be independent. This means that if you make any changes to a prefab, no other prefab will be changed.
 
 However, you might want to apply a change to all prefabs in your scene. 
@@ -32,7 +34,7 @@ References:
 * https://docs.unity3d.com/Manual/InstantiatingPrefabs.html
 * https://unity3d.com/learn/tutorials/topics/interface-essentials/prefabs-concept-usage
 
-# The Network Identity Component.
+# The Network Identity Component
 The **Network Identity component** is an essential component for working with Unity Networking ([UNet](https://docs.unity3d.com/Manual/UNet.html)).
 
 It ensures that the GameObject has a unique identity (called the Network Instance Id) and is synced across clients and servers, and as such most GameObject used in UnityStation will need a Network Identity component.
@@ -52,10 +54,10 @@ References:
 * https://docs.unity3d.com/Manual/UNetAuthority.html
 * https://docs.unity3d.com/Manual/UNetUsingHLAPI.html
 
-# Items.
+# Items
 Items in unity station are composed of three primary components, the **ItemAttributes**, the **CustomNetTransform** and the **Pick Up Trigger** component.
 
-## The Item Attributes component.
+## The Item Attributes component
 
 The **Item Attributes** component defines the basic characteristics of an item.
 
@@ -73,7 +75,7 @@ The component exposes the following public fields:
 
 ![Item attributes](https://i.imgur.com/4LseziQ.png)
 
-## The Custom Net Transform Component.
+## The Custom Net Transform Component
 The **Custom Net Transform** component is a component that allows items to be moved in various ways, such as being pushed, appear and disappear.
 
 The Custom Net Transform component derives from `ManagedNetworkBehaviour` which in turn derives from `NetworkBehaviour`.
@@ -94,10 +96,10 @@ References:
 * https://docs.unity3d.com/Manual/class-NetworkBehaviour.html
 * https://docs.unity3d.com/ScriptReference/Networking.NetworkBehaviour.html
 
-# Pick Up Trigger.
+# Pick Up Trigger
 The **Pick Up Trigger** component allows an item to be picked up. Contains some additional server-side functionality for predicting the success or failure of an attempt to grab the item (?).
 
-# The Custom Network Manager and caching.
+# The Custom Network Manager and caching
 The **custom network manager** component is a singleton component that manages the network.
 
 This means that it handles connections, syncing player data and more importantly (with regards to items) it caches all prefabs that have attached Network Identity components at startup so that each item has the same Network Instance number across all clients.
