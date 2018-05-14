@@ -53,7 +53,7 @@ References:
 * https://docs.unity3d.com/Manual/UNetUsingHLAPI.html
 
 # Items
-Items in unity station are composed of three primary components, the **ItemAttributes**, the **CustomNetTransform** and the **Pick Up Trigger** component.
+Items in unity station are composed of four primary components, **Item Attributes**, **Custom Net Transform**, **Network Identity** and the **Pick Up Trigger** component. Of these, Custom Net Transform, Network Identity and Pick Up Trigger can just be attached to an object without any further changes to the fields provided by these components.
 
 Other components you might wish to attach are **Food Behaviour** for food items or components derived **Health Behaviour** for items that can be damaged.
 
@@ -62,8 +62,9 @@ Other components you might wish to attach are **Food Behaviour** for food items 
 The **Item Attributes** component defines the basic characteristics of an item.
 
 The component exposes the following public fields:
-* Cloth: See UniCloth.
+* Cloth: **(NOT CURRENTLY IN USE)**
 * Clothing reference: Sprite position on the clothing sprite sheet.
+* Hierarchy: This one is special, we will return to it in another section.
 * In hand reference Left & Right: Sprite positions from the Inhand sprite sheet.
 * Item Description: A string describing the item.
 * Item Name: The name of the item.
@@ -72,6 +73,11 @@ The component exposes the following public fields:
 * Type: An enum describing what type of item it is.
 * Network channel: QoS channel to use for updates for this script, derived from Network Behaviour.
 * Network send interval: Attribute which is derived from NetworkBehaviour. Determines maximum update rate in seconds.
+
+## The Hierarchy attribute.
+The hierarchy attribute in Item Attributes can be used to parse SS13 metadata from the hier.txt file.
+An example of a hier string would be, for optical meson scanners, `/obj/item/clothing/glasses/meson`.
+After you fill this in, it would grab sprites, inhand references, description, other attributes from the metadata automatically.
 
 ![Item attributes](https://i.imgur.com/4LseziQ.png)
 
