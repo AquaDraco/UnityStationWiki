@@ -29,6 +29,7 @@
           <li>menus, e.g. right click menu, machine interaction menu</li>
           <li><del>space walk, incl. death in space</del></li>
           <li><del>independent local matrices, e.g. one for a station and another one for a spaceship</del></li>
+          <li>freely pilotable spaceships</li>
           <li><del>basic auto updating functionality</del></li>
           <li><del>Basic roles & door rights</del></li>
         </ul>
@@ -42,7 +43,7 @@
           <li>basic Modding</li>
           <li>players intentions</li>
           <li>Blood, e.g. foot prints, gibbing explosion</li>
-          <li><del>Complete chat system</del> dependent on telecomms</li>
+          <li>Complete chat system dependent on telecomms</li>
           <li><del>Redesign FOV</del></li>
           <li>Redesign lighting based on FOV code</li>
         </ul>
@@ -57,7 +58,7 @@
           <li>Basic Admin controls</li>
           <li>Easy server deployment, maybe even automatic</li>
           <li>24 / 7 Server</li>
-          <li>HUD overhaul, incl. chat repositioning</li>
+          <li>HUD overhaul, Flexible UI with Docking Tabs system that would supersede right panel</li>
         </ul>
       </td>
     </tr>
