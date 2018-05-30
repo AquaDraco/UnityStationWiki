@@ -1,10 +1,22 @@
-This guide will focus on adding prefabs to tile palettes and using the LevelBrush to modify/create a tilemap.
+This guide will focus on creating and adding tile assets to tile palettes and using the LevelBrush to modify/create a tilemap.
 
-## Adding Prefabs to Tile Palette
-In order to use the LevelBrush with new tiles it is essential to add the tile's prefab to the appropriate tile palette.
+## Creating a Tile Asset with Prefab
+To create a new tile asset that can be used within a tile palette we must first copy/create a tile asset. It is okay to copy a pre-existing one as all tile assets are tied to the same script. For this guide we will create a duplicate of the `AirLock` tile asset.
+* To start, copy one of the tile assets in the `Unity station\unitystation-develop\UnityProject\Assets\Tilemaps\Tiles\Doors` folder:
+
+![](https://i.imgur.com/LNkY0ca.gif)
+
+* Next we go into Unity and select the proper prefab on the new tile asset:
+
+![](https://i.imgur.com/icmjVer.gif)
+
+The tile asset has now been fully created and is usable with tile palettes. As long as this method is used a preview sprite is automatically created.
+
+## Adding Tile Assets to Tile Palette
+In order to use the LevelBrush with new tiles it is essential to add the tile to the appropriate tile palette.
 * Go to `Window > Tile Palette`:
 
-![](https://i.imgur.com/BjyN70n.png)
+![](https://i.imgur.com/Xbrf7dU.png)
 
 You should see a window similar to this one:
 
@@ -24,7 +36,7 @@ Remember to deselect `Edit` once the tile has been added to ensure the palette i
 Painting tiles using a palette is relatively easy due to the LevelBrush.
 * Go to `Window > Tile Palette`:
 
-![](https://i.imgur.com/BjyN70n.png)
+![](https://i.imgur.com/Xbrf7dU.png)
 
 You should see a window similar to this one:
 
