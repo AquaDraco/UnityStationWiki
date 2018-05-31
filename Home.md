@@ -42,6 +42,7 @@ As this project is in its early stages, this wiki will serve the purpose of prov
     * [[RPC vs Netmsg]]
     * [[Networking (Network Messages)]]
     * [[Creating items in UnityStation]]
+    * [[Creating and Using Tile Palettes]]
 
 * **Website Development**
     * [[Setting up local webserver]]
