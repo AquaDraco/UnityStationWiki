@@ -43,6 +43,7 @@ As this project is in its early stages, this wiki will serve the purpose of prov
     * [[Networking (Network Messages)]]
     * [[Creating items in UnityStation]]
     * [[Creating and Using Tile Palettes]]
+    * [[Electricity-Development]]
 
 * **Website Development**
     * [[Setting up local webserver]]
