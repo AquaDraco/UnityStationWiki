@@ -12,6 +12,10 @@ The StructureWired prefab and the IOElectricity interface accounts for a directi
 
 The IOElectricity Interface can be added to any object that needs to be wired into a circuit. The wires (in [WireConnect.cs](https://github.com/unitystation/unitystation/blob/electricity/dev/UnityProject/Assets/Scripts/Electricity/Wire/WireConnect.cs)) search for all IOElectricity interfaces in the matrix on neighboring tiles and also on their tile position. The two connection points are then extracted and compared against the connection points of the wire doing the searching and if two connection points match up then the adjacent tile is added to a connected list on that wire, thus completing a connection.
 
+The method that does the searching can be seen [here](https://github.com/unitystation/unitystation/blob/adfab36e750121377570d8b110c384d7472e827d/UnityProject/Assets/Scripts/Electricity/Wire/WireConnect.cs#L38).
+
+And you can see how a connection is validated in the [ConnectionMap.cs](https://github.com/unitystation/unitystation/blob/electricity/dev/UnityProject/Assets/Scripts/Electricity/ConnectionMap.cs) helper.
+
 To pass electricity call the ElectricityInput method with the current tick number (tick rate has not been set up yet and flow is just manually triggered by a context menu. More on that soon)
 
 #### IOElectricity.cs:
