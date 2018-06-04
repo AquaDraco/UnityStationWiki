@@ -2,13 +2,13 @@
 
 #### The Idea:
 
-To simulate a simple version of real world circuits. We are assuming that 1 wire actually equals a 2 pair wire and everything attached to the circuit is always wired in parallel. Also we need to avoid keeping lists of equipment, just like in the real world a circuit should calculate its own resistance and apply this load on any power sources on the point of connection. 
+To simulate a simple version of real world circuits. We are assuming that 1 wire actually equals a 2 pair wire and everything attached to the circuit is always wired in parallel. Also we need to avoid keeping lists of equipment, just like in the real world, the accumulative resistance of a circuit should apply its load on any power source at the point of connection. 
 
 #### Direction of flow:
  
-The StructureWired prefab and the IOElectricity interface accounts for a direction start and end indicator but electricity flow in circuits on unitystation run in all directions (because we assume everything is wired in parallel). This will simplify the circuits.
+The StructureWired prefab and the IOElectricity interface accounts for a direction start and end indicator but electricity flows in both directions on unitystation(because we assume everything is wired in parallel). This will simplify the circuits.
 
-### The IOElectricty Interface:
+### The IOElectricity Interface:
 
 The IOElectricity Interface can be added to any object that needs to be wired into a circuit. The wires (in [WireConnect.cs](https://github.com/unitystation/unitystation/blob/electricity/dev/UnityProject/Assets/Scripts/Electricity/Wire/WireConnect.cs)) search for all IOElectricity interfaces in the matrix on neighboring tiles and also on their tile position. The two connection points are then extracted and compared against the connection points of the wire doing the searching and if two connection points match up then the adjacent tile is added to a connected list on that wire, thus completing a connection.
 
