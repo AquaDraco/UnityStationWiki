@@ -60,11 +60,25 @@ public interface IElectricityIO
 
 ![](https://i.imgur.com/3zovOjo.png)
 
-- Find a StructuredWire in the hierarchy (anyone will do as electricity will flow in both directions):
+ - Find a StructuredWire in the hierarchy (anyone will do as electricity will flow in both directions):
 
 ![](https://i.imgur.com/oBdnFhw.png)
 
+ - With one of the StructuredWire's selected go to the Inspector and find the WireConnect component and right click it then select GenerateTestCurrent option
 
+![](https://i.imgur.com/DKp1lT6.png)
+
+ - Now you should see all of the Yellow Sphere Gizmos show up which means that electricity has passed through that wire successfully:
+
+ ![](https://i.imgur.com/1Di2EWJ.png)
+
+
+## TODOS:
+ 
+ - Connect the test machines to the circuit (SMES, APC and Field Gen)
+ - Calculate the total resistance of the circuit along with voltage and current
+ - Generate the electricity from the SMES
+ - Monitor the properties of the circuit
 
 
 
