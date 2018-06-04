@@ -75,7 +75,7 @@ public interface IElectricityIO
 
 ## TODOS:
  
- - Connect the test machines to the circuit (SMES, APC and Field Gen)
+ - Connect the test machines to the circuit (SMES, APC and Field Gen) using the IOElectricity Interface
  - Calculate the total resistance of the circuit along with voltage and current
  - Generate the electricity from the SMES
  - Monitor the properties of the circuit
