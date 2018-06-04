@@ -51,6 +51,12 @@ public interface IElectricityIO
 	GameObject GameObject();
 }
 ```
+### To see it in action:
+
+ - Checkout the electricity/dev branch
+ - Open the electricty_dev scene n Assets/Scenes/
+ - Press play and spawn as any role
+ - In the Scene Window find the test area and zoom in to focus on the circuit:
 
 
 
