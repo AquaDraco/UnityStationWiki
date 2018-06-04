@@ -2,7 +2,7 @@
 
 #### The Idea:
 
-To simulate a simple version of real world circuits. We are assuming that 1 wire actually equals a 2 pair wire and everything attached to the circuit is always wired in parallel. Also we need to avoid keeping lists of equipment, just like in the real world, the accumulative resistance of a circuit should apply its load on any power source at the point of connection. 
+To simulate a simple version of real world circuits. We are assuming that 1 wire actually equals a 2 core wire and everything attached to the circuit is always wired in parallel. Also we need to avoid keeping lists of equipment, just like in the real world, the accumulative resistance of a circuit should apply its load on any power source at the point of connection. 
 
 #### Direction of flow:
  
