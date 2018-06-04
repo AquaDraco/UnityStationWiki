@@ -6,7 +6,7 @@ To simulate a simple version of real world circuits. We are assuming that 1 wire
 
 #### Direction of flow:
  
-The StructureWired prefab and the IOElectricity interface accounts for a direction start and end indicator but electricity flows in both directions on unitystation(because we assume everything is wired in parallel). This will simplify the circuits.
+The StructuredWired prefab and the IOElectricity interface accounts for a direction start and end indicator but electricity flows in both directions on unitystation(because we assume everything is wired in parallel). This will simplify the circuits.
 
 ### The IOElectricity Interface:
 
