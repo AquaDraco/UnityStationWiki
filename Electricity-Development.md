@@ -58,6 +58,11 @@ public interface IElectricityIO
  - Press play and spawn as any role
  - In the Scene Window find the test area and zoom in to focus on the circuit:
 
+![](https://i.imgur.com/3zovOjo.png)
+
+- Find a StructuredWire in the hierarchy (anyone will do as electricity will flow in both directions):
+
+![](https://i.imgur.com/oBdnFhw.png)
 
 
 
