@@ -16,7 +16,7 @@
 * **Plugins**
     * [[Light2D]] 
 
-* ** Quick Guides **
+* **Quick Guides**
     * [[Networking Quicky]]
 
 * **Contribution Guides**
@@ -53,3 +53,5 @@
     * [[Intents]]
     * [[Health]]
     * [[Electricity]]
+
+* **[[Frequently-Asked-Questions]]**
