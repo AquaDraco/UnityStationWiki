@@ -9,7 +9,7 @@
 Just check the little box and download the installer. 
 At some point you'll have to make an account, but can use disposable mail for that.
 
-**Note that you should use [Unity 2017.3.1p4](https://unity3d.com/unity/qa/patch-releases) as of 30.03.2018.**
+**Note that you should use Unity 2018.2 and above as of 01.08.2018.**
 
 ## Downloading the repository :
 * [Here is a helpful guide on how to GIT ](https://github.com/unitystation/unitystation/wiki/GIT-basics), But if you wouldn't touch GIT desktop with a 10 foot stick, and you just want to mess around with the current state of the project, just go ahead and download a [.ZIP of the repository](https://codeload.github.com/unitystation/unitystation/zip/develop)
