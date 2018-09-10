@@ -32,6 +32,13 @@ You should see a window similar to this one:
 
 Remember to deselect `Edit` once the tile has been added to ensure the palette is finalized.
 
+#### Note: If you get this error: `Unsupported texture format - needs to be ARGB32, RGBA32, RGB24, Alpha8 or one of float formats` then follow these steps:
+
+ - Delete the asset
+ - Find the sprite sheets that your prefab uses in the Project Files and select them to access the Import Settings
+ - Make sure Read / Write is enabled and scroll to the bottom and turn off compression (usually it is set to normal so set it to none)
+ - Apply and then retry the process
+
 ## Painting Using a Tile Palette
 Painting tiles using a palette is relatively easy due to the LevelBrush.
 * Go to `Window > Tile Palette`:
