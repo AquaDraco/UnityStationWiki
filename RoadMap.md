@@ -1,5 +1,7 @@
 # Feature Goals
 
+note: goals that are crossed out are goals that have been completed
+
 <table>
   <tbody>
     <tr>
@@ -24,12 +26,12 @@
       <td>0.2</td>
       <td>
         <ul>
-          <li>basic electricity</li>
+          <li><del>basic electricity</del></li>
           <li>basic building</li>
           <li>menus, e.g. right click menu, machine interaction menu</li>
           <li><del>space walk, incl. death in space</del></li>
           <li><del>independent local matrices, e.g. one for a station and another one for a spaceship</del></li>
-          <li>freely pilotable spaceships</li>
+          <li><del>freely pilotable spaceships</del></li>
           <li><del>basic auto updating functionality</del></li>
           <li><del>Basic roles & door rights</del></li>
         </ul>
@@ -40,8 +42,8 @@
       <td>
         <ul>
           <li>Basic Atmospherics, no pipes needed</li>
-          <li>basic Modding</li>
-          <li>players intentions</li>
+          <li>Account System, e.g. character design, stats, ...</li>
+          <li><del>players intentions</del></li>
           <li>Blood, e.g. foot prints, gibbing explosion</li>
           <li>Complete chat system dependent on telecomms</li>
           <li><del>Redesign FOV</del></li>
@@ -53,11 +55,11 @@
       <td>0.4</td>
       <td>
         <ul>
-          <li>Account System, e.g. character design, stats, ...</li>
+          <li>basic Modding</li>
           <li>Advanced Round Management, e.g. map rotating, messages</li>
-          <li>Basic Admin controls</li>
+          <li><del>Basic Admin portal</del></li>
           <li>Easy server deployment, maybe even automatic</li>
-          <li>24 / 7 Server</li>
+          <li><del>24 / 7 Server</del></li>
           <li>HUD overhaul, Flexible UI with Docking Tabs system that would supersede right panel</li>
         </ul>
       </td>
