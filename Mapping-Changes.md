@@ -1,7 +1,7 @@
 ## Required changes to Outpost Station:
 
 * A Captains office will need to be mapped somewhere near the bridge. The nuke disk will need to be created and placed in the office
-* A Captain console will need to be developed so that the Captain can call the shuttle and also make Announcements
+* A Captains console will need to be developed so that the Captain can call the shuttle and also make Announcements
 * A HOP office will also need to be mapped somewhere near the bridge and a counter installed that can be accessed by the public (facing a main hallway).
 * A HOP console will need to be created and placed near the counter
 * Cargo will need a counter mapped somewhere on the cargo wall and facing a public hallway. This is so that cargo can accept orders from the station crew.
