@@ -12,7 +12,7 @@ At the start of each round a piece of paper will spawn on top of each command co
 
 On the sheet these points of information will be found:
 
-* A list of suspected (last scene) asteroid locations
+* A list of suspected (last seen) asteroid locations
 * CENTCOMM official order request for plasma (how much the crew needs to send back to centcomm via cargo)
 
 Next Page: [[Start of Round]]..
