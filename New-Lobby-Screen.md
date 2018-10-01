@@ -5,3 +5,5 @@
 * Otherwise show the server list: A scroll view with active servers and stats, like pop count. This information will be delivered via the api in json format each time the client refreshes it
 * Once a player clicks connect on a server, then command the NetworkManager to attempt a connection to that server using the ip and port data from the server entry
 * If the server is in lobby mode then the player will load a new lobby scene (called ServerLobby.unity) where they will be presented with a full screen chat window and a list of connected players who are waiting for the server start on the right. A count down time will also be visible up the top right. Once the timer has counted down the server will load the Outpost map scene and begin the round
+
+Return to: [[0.3---Overview-Scope---(Non-Technical)-Index]]
