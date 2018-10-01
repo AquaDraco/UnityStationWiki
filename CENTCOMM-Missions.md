@@ -6,7 +6,7 @@ The crew will also receive green text for each objective they complete by round 
 
 ## Communication to the crew:
 
-At the start of each round a piece of paper will spawn on top of each command console. A station wide announcement will be received to inform the staff that the objectives have been printed.
+At the start of each round a piece of paper will spawn on top of each command console. A station wide announcement will be received to inform the staff that the objectives have been received.
 
 ## CENTCOMM Mission Statement sheet:
 
