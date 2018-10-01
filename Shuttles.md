@@ -11,5 +11,3 @@ At the start of the round all shuttles will already have a full canister attache
 Solid plasma is also used in the engineering power generators. The SMES on arrival will have enough power for about 40 minutes of station use. If there are no active power generators secured to the power network by then, then the crew will experience blackouts. 
 
 Next Page: [[Antagonist Roles]]..
-
-Next Page: 
