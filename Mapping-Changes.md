@@ -1,0 +1,17 @@
+## Required changes to Outpost Station:
+
+* A Captains office will need to be mapped somewhere near the bridge. The nuke disk will need to be created and placed in the office
+* A HOP office will also need to be mapped somewhere near the bridge and a counter installed that can be accessed by the public (facing a main hallway).
+* Cargo will need a counter mapped somewhere on the cargo wall and facing a public hallway. This is so that cargo can accept orders from the station crew.
+* Cargo's shuttle will need to be mapped onto a new matrix so that it can be used with matrix move. A shuttle console will not be mapped to this shuttle. Instead it will operate off a way point system. 
+* A Cargo ordering console will need to be developed and placed next to the counter
+* Plasma generator machines will need to be developed and placed in engineering
+* Solid plasma items will need to be placed in cargo
+* Pipes and plasma canisters will need to be mapped into any shuttles that are docked at the station
+* a Heads of staff only shuttle needs to be mapped onto a new matrix and placed near the bridge
+* 4 or 5 asteriods will need to be mapped onto their own matrices. These asteriods will be positioned randomly by GameManager at round start
+* Find a place to map a Janitor's closet on the station and place a bucket, mop and trash bags inside.
+* Create a Cloner machine and place it in the medical department
+* Develop and map bruise packs and burn cream and place in medical department
+
+Next Page: [[Additional Role Developments]]..
