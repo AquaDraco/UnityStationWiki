@@ -2,6 +2,7 @@
 
 * A Captains office will need to be mapped somewhere near the bridge. The nuke disk will need to be created and placed in the office
 * A HOP office will also need to be mapped somewhere near the bridge and a counter installed that can be accessed by the public (facing a main hallway).
+* A HOP console will need to be created and placed near the counter
 * Cargo will need a counter mapped somewhere on the cargo wall and facing a public hallway. This is so that cargo can accept orders from the station crew.
 * Cargo's shuttle will need to be mapped onto a new matrix so that it can be used with matrix move. A shuttle console will not be mapped to this shuttle. Instead it will operate off a way point system. 
 * A Cargo ordering console will need to be developed and placed next to the counter
