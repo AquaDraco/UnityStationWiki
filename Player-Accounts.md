@@ -7,7 +7,7 @@ Changes to the Player Login GUI will need to be made to accept a password with a
 Selecting a server while it is waiting to start will take the player to a Server Lobby screen with the ability to chat to people while they wait for the server to start. Servers automatically start when there is more then 1 player in the lobby and a 2 minute timer has finished counting down. If the lobby player count goes back to 0 before the timer has finished counting down then the timer is reset back to the full 2 minute wait time. More on the new lobby screen later.
 
 ## Backend API:
-While in development mode the server urls will point to our dev.unitystation.org api which will be separated from the release api. The url and pass key fields will be prepopulated with this data in our source code. At release time a new url and pass keys will be loaded via a config file on the build server to make sure db access is secure. All api requests should be hashed to prevent from sniffing. The development database will also have its own tables and db user credentials to ensure that the two states are sufficiently separated.
+While in development mode the server urls will point to our dev.unitystation.org api which will be separated from the release api. The url and pass key fields will be prepopulated with this data in our source code. At release time a new url and pass keys will be loaded via a config file on the build server to make sure db access is secure. All api requests should be hashed to prevent from sniffing. The development database will also have its own tables and db user credentials to ensure that the two services are sufficiently separated.
 
 ## Benefits for players:
 
