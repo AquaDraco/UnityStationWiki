@@ -15,5 +15,7 @@
 * Find a place to map a Janitor's closet on the station and place a bucket, mop and trash bags inside.
 * Create a Cloner machine and place it in the medical department
 * Develop and map bruise packs and burn cream and place in medical department
+* Map out the rest of the powernet circuit and place APC's in each room. Doors will automatically assign themselves to an APC, along with light bulbs
+* Red emergency lights will need to be mapped to rooms and hallways and also automatically assigned to APC's (so they know when to go into emergency mode)
 
 Next Page: [[Additional Job Role Developments]]..
