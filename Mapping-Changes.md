@@ -17,5 +17,6 @@
 * Develop and map bruise packs and burn cream and place in medical department
 * Map out the rest of the powernet circuit and place APC's in each room. Doors will automatically assign themselves to an APC, along with light bulbs
 * Red emergency lights will need to be mapped to rooms and hallways and also automatically assigned to APC's (so they know when to go into emergency mode)
+* Remove all the weapons from the NukeOps deathmatch preview and only allow weapons to be stored in security or on the bridge. Cargo can also order weapons
 
 Next Page: [[Additional Job Role Developments]]..
