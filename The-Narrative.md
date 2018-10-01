@@ -9,4 +9,4 @@ The NanoTrasen Outpost Station lies dormant in the solar system until the Statio
 
 The station crew will receive a CENTCOMM main directives list printed via each command console on round start. The directives will outline the intended goals for the Outpost Expedition team to complete.
 
-See [[CENTCOMM Missions]] for more..
+Next page: [[CENTCOMM Missions]]..
