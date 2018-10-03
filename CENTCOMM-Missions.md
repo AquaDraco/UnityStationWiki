@@ -2,7 +2,7 @@
 
 The Centcomm missions provide the basic global objectives for the station crew to work towards. 
 These goals will include exploring the solar system and mining plasma deposits.
-The crew will also receive green text for each objective they complete by round end.
+The crew will also receive a commendation (AKA green text) for each objective they complete by round end.
 
 ## Communication to the crew:
 
