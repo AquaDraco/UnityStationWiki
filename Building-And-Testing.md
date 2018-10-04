@@ -82,3 +82,15 @@ With above testing method you can find most issues related to your code, without
 8. No errors or inconsistencies? great, your build just passed our Quality assessment.
 
 Happy spess testing!
+
+## Testing custom maps in Multiplayer
+1. Make sure you are on Lobby scene
+2. Set Online scene in NetworkManager (under Managers prefab):
+
+![](https://cdn.discordapp.com/attachments/312454684021620736/497339963071791104/unknown.png)
+
+3. Don't forget to include the scene you are testing in build preferences as well:
+
+![](https://cdn.discordapp.com/attachments/312454684021620736/497340690423087104/unknown.png)
+
+And then Build and Run + fire up game in editor
