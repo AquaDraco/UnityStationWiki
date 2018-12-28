@@ -39,7 +39,6 @@ Server:
 You can use structs here.
 
 **Process()** method is executed on client upon arrival.
-You should WaitFor _Recipient_ first.
 Just tell client what to do here, like updating UI/printing chat message/anything clientside to visualise received message.
 
 To send a message just do YourServerMessage.Send(recipient, parameters) or YourServerMessage.SendToAll(parameters) anywhere. It's advisable to send them from [Server]-annotated methods so that client wouldn't attempt to send a server message by accident.
