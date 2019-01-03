@@ -38,6 +38,13 @@ These are hard rules that we will almost always make sure are followed in a PR.
 ## Soft Limits
 These guidelines are more up to judgement but are encouraged.
 
-1. 
+1. Any TODO comments in the code under review must be accompanied by a corresponding issue in the issue tracker. TODO comments represent tech debt and should be taken seriously.
+1. Avoid many levels of nested indentation, almost certainly no more than 7, preferable no more than 3. You can very easily solve this by encapsulating logic inside a block by putting it into its own method.
+1. Try to keep individual class files small. This decreases the amount of context necessary to understand a portion of code. Shoot for less than 500 actual lines of code (ignoring comments / blank lines). Use refactoring, design patterns, and other techniques to try to keep them small.
+1. When deciding what type to use, strings should be used only as a last resort. Prefer other types, such as enums, numeric types, custom classes, etc...if they are more appropriate.
+1. Avoid using getters and setters. Follow the philosophy "tell, don't ask". Instead of getting and setting values within an object, tell the object to do something with its own data. Treat a class as a folder for organizing data and the logic that operates on that data.
+1. Most string or numeric literals should be constants.
+1. Don't define constants that have the same value in multiple places. There should only ever be one place you need to change if you ever need to change a constant's value.
+1. Local variables should be declared near where they are used, not at the beginning of their containing block.
 
         
