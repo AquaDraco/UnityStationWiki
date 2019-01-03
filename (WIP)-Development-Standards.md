@@ -41,6 +41,7 @@ These guidelines are more up to the reviewer's judgement but are encouraged.
 
 1. Any TODO comments in the code under review must be accompanied by a corresponding issue in the issue tracker. TODO comments represent tech debt and should be taken seriously.
 1. Fields should not be public. Use properties (or automatic properties) instead or add logic inside the class rather than exposing its state.
+1. Fields should not be protected unless they are needed by the child class.
 1. Avoid many levels of nested indentation, almost certainly no more than 7, preferable no more than 3. You can very easily solve this by encapsulating logic inside a block by putting it into its own method.
 1. Try to keep individual class files small. This decreases the amount of context necessary to understand a portion of code. Shoot for less than 500 actual lines of code (ignoring comments / blank lines). Use refactoring, design patterns, and other techniques to try to keep them small.
 1. When deciding what type to use, strings should be used only as a last resort. Prefer other types, such as enums, numeric types, custom classes, etc...if they are more appropriate.
