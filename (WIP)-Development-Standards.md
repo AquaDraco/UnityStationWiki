@@ -7,7 +7,8 @@ These only apply to C# code, but we encourage following the spirit of these rule
 ## Hard Limits
 These are hard rules that we will almost always make sure are followed in a PR.
 
-1. All public classes and methods must be documented using /// comments. Parameters and return values must be documented and must actually be descriptive. Class documentation should describe the purpose of the class.
+1. All public classes, structs, properties, and methods must be documented using /// comments. Parameters and return values must be documented and must actually be descriptive. Class documentation should describe the purpose of the class.
+1. Each script file must have at most one publicly-exported class or struct. Do not define multiple public classes / structs in one script file.
 1. All code must be formatted according to the style in the top-level .editorconfig. For reference (or in case .editorconfig is not yet updated with these), here's the style conventions:
     1. Indent using tabs.
     1. Line endings must always be checked into git as Unix-style (LF). If you are on Windows, ensure that you have configured git to check out windows style but commit unix-style line endings (git config --global core.autocrlf true)
@@ -24,7 +25,7 @@ These are hard rules that we will almost always make sure are followed in a PR.
     }
     ````
 1. Variable naming conventions. These help to identify the scope of a variable without needing to look up its definition (i.e. to be able to tell if it's a class member or a parameter).
-    1. Member variables must follow the convention "mVariableName"
+    1. Fields must follow the convention "mVariableName"
     1. Method parameters must follow the convention "pParameterName"
     1. Static, non-constant members must follow the convention "sStaticName"
     1. Local variables must follow the convention "variableName"
@@ -35,9 +36,10 @@ These are hard rules that we will almost always make sure are followed in a PR.
 1. When accessing static members, you must use the class name and not an instance of the class - "ClassName.staticMethod" and not "someObject.staticMethod".
 
 ## Soft Limits
-These guidelines are more up to judgement but are encouraged.
+These guidelines are more up to the reviewer's judgement but are encouraged.
 
 1. Any TODO comments in the code under review must be accompanied by a corresponding issue in the issue tracker. TODO comments represent tech debt and should be taken seriously.
+1. Fields should not be public. Use properties (or automatic properties) instead or add logic inside the class rather than exposing its state.
 1. Avoid many levels of nested indentation, almost certainly no more than 7, preferable no more than 3. You can very easily solve this by encapsulating logic inside a block by putting it into its own method.
 1. Try to keep individual class files small. This decreases the amount of context necessary to understand a portion of code. Shoot for less than 500 actual lines of code (ignoring comments / blank lines). Use refactoring, design patterns, and other techniques to try to keep them small.
 1. When deciding what type to use, strings should be used only as a last resort. Prefer other types, such as enums, numeric types, custom classes, etc...if they are more appropriate.
