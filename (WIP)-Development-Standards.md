@@ -25,12 +25,12 @@ These are hard rules that we will almost always make sure are followed in a PR.
     }
     ````
 1. Variable naming conventions. These help to identify the scope of a variable without needing to look up its definition (i.e. to be able to tell if it's a class member or a parameter).
-    1. Fields must follow the convention "mVariableName"
-    1. Method parameters must follow the convention "pParameterName"
-    1. Static, non-constant members must follow the convention "sStaticName"
-    1. Local variables must follow the convention "variableName"
-    1. All constants or constant-like variables must follow the convention "CONSTANT_NAME"
-1. Properties, classes, structs, and methods should follow the convention "PropertyClasStructOrMethodName"
+    1. Fields must follow the convention "mVariableName" (camel case starting with an m)
+    1. Method parameters must follow the convention "pParameterName" (camel case starting with a p)
+    1. Static, non-constant members must follow the convention "sStaticName" (camel case starting with an s)
+    1. Local variables must follow the convention "variableName" (camel case)
+    1. All constants or constant-like variables must follow the convention "CONSTANT_NAME" (uppercase snake case)
+1. Properties, classes, structs, and methods should follow the convention "PropertyClasStructOrMethodName" (camel case with first letter capitalized)
 1. Script folders should have no more than 10 scripts in a given folder. Reorganize, refactor, or add subfolders to meet this criteria.
 1. Braces must always be used even when they are optional
 1. Empty catch blocks are not allowed without a comment explaining why the catch is empty.
