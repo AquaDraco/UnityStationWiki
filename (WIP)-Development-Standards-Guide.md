@@ -34,6 +34,7 @@ TODO: Code example
 TODO: Code example
 1. Properties, classes, structs, and methods should use camel case with the first letter capitalized - "SomeName".
 TODO: Code example
+1. Any TODO comments added in a PR should be accompanied by a corresponding issue in the issue tracker. A TODO comment means that there's something we need to remember to do, so we need to put it in the issue tracker to make sure we remember.
 1. Script folders should have no more than 10 scripts in a given folder. Reorganize, refactor, or add subfolders as needed to avoid folders getting too large.
 1. Braces should always be used even when they are optional
 TODO: Code example
@@ -41,19 +42,13 @@ TODO: Code example
 TODO: Code example of the correct way with the bad way commented out
 
 # Code Design
+1. Follow the philosophy "tell, don't ask". TELL a class to do something rather than ASKING it for some data and operating on that data. Treat a class as a folder for grouping together data and the logic that operates on that data.
+TODO: Code example of tell, don't ask.
 1. Empty catch blocks should be rare, because it means something exceptional happened and we aren't doing anything about it. At the very least, a catch block should probably log an error or warning. If it REALLY needs to be empty should have a comment explaining why the catch is empty.
 TODO: Code example of catch block logging an error message and catch block with a comment
-1. When accessing static members, you should use the class name and not an instance of the class - "ClassName.staticMethod" and not "someObject.staticMethod".
-TODO: Code example
-1. Follow the "Minimum Exposure Principle"
-1. Avoid many levels of nested indentation, almost certainly no more than 7, preferable no more than 3. You can very easily solve this by encapsulating logic inside a block by putting it into its own method.
-1. Try to keep individual .cs files small. Shoot for less than 500 actual lines of code (ignoring comments / blank lines). Use refactoring, design patterns, and other techniques to try to keep them small.
+1. Avoid many levels of nested indentation, almost certainly no more than 7, preferably no more than 3. You can solve this by taking deeply-nested logic and putting it into a descriptively-named private method.
+1. Try to keep individual .cs files small. Shoot for less than 500 actual lines of code (ignoring comments / blank lines). You can use refactoring, design patterns, and other techniques to try to make them small by splitting logic up into other .cs files / classes.
 1. When deciding what type to use, strings should be used only as a last resort. Prefer other types, such as enums, numeric types, custom classes, etc...if they are more appropriate.
-1. Avoid using getters and setters. Follow the philosophy "tell, don't ask". Instead of getting and setting values within an object, tell the object to do something with its own data. Treat a class as a folder for organizing data and the logic that operates on that data.
 1. Most string or numeric literals should be constants.
 1. Don't define constants that have the same value in multiple places. There should only ever be one place you need to change if you ever need to change a constant's value.
-
-
-# Miscellaneous
-1. Any TODO comments added in a PR should be accompanied by a corresponding issue in the issue tracker. A TODO comment means that there's something we need to remember to do, so we need to put it in the issue tracker to make sure we remember.
         
