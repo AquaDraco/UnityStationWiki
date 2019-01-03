@@ -1,4 +1,3 @@
-# Development Standards
 As a developer, use this as a checklist before submitting a PR. As a reviewer, use this as a reference when doing a review. 
 
 Some of these standards are arbitrary. However, by having all developers comply with these arbitrary standards, we increase our overall code readability. Other standards are based on best practices and our own experience of what seems to work.
