@@ -2,6 +2,8 @@ As a developer, use this as a checklist before submitting a PR. As a reviewer, u
 
 Some of these standards are arbitrary. However, by having all developers comply with these arbitrary standards, we increase our overall code readability. Other standards are based on best practices and our own experience of what seems to work.
 
+You should try to follow these standards for new code, but feel free to modify the existing files that you touch to conform to these standards.
+
 These only apply to C# code, but we encourage following the spirit of these rules for shaders.
 
 ## Hard Limits
