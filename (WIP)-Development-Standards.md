@@ -30,6 +30,7 @@ These are hard rules that we will almost always make sure are followed in a PR.
     1. Static, non-constant members must follow the convention "sStaticName"
     1. Local variables must follow the convention "variableName"
     1. All constants or constant-like variables must follow the convention "CONSTANT_NAME"
+1. Properties, classes, structs, and methods should follow the convention "PropertyClasStructOrMethodName"
 1. Script folders should have no more than 10 scripts in a given folder. Reorganize, refactor, or add subfolders to meet this criteria.
 1. Braces must always be used even when they are optional
 1. Empty catch blocks are not allowed without a comment explaining why the catch is empty.
