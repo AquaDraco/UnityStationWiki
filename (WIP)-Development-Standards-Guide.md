@@ -106,15 +106,15 @@ Here's good examples of how to document each of these:
 1. Script folders should have no more than 10 scripts in a given folder. Reorganize, refactor, or add subfolders as needed to avoid folders getting too large.
 1. Braces should always be used even when they are optional
     ```csharp
-    //Preferable
+    //don't do this
+    if (somecondition)
+      doSomething();
+
+    //do this instead
     if (somecondition)
     {
       doSomething();
     }
-
-    //less preferable
-    if (somecondition)
-      doSomething();
     ```
 1. Local variables should be declared near where they are used, not at the beginning of their containing block.
     ```csharp
@@ -133,10 +133,63 @@ Here's good examples of how to document each of these:
 
 # Code Design
 1. Follow the philosophy "tell, don't ask". TELL a class to do something rather than ASKING it for some data and operating on that data. Treat a class as a folder for grouping together data and the logic that operates on that data.
-TODO: Code example of tell, don't ask.
+    ```csharp   
+    //bad - ASKing for health, modifying the health outside of the Player class
+    var health = player.Health;    
+    health = player.Invincible ? health : health - weapon.damage;
+    Player.Health = health;
+
+    //good - TELL the Player to handle an attack made against them
+    player.Attack(weapon);
+    ```
 1. Empty catch blocks should be rare, because it means something exceptional happened and we aren't doing anything about it. At the very least, a catch block should probably log an error or warning. If it REALLY needs to be empty should have a comment explaining why the catch is empty.
-TODO: Code example of catch block logging an error message and catch block with a comment
+    ```csharp
+    try
+    {
+      ThisMightBreak();
+    }
+    catch
+    {
+      Logger.LogWarning("The thing broke".);
+    }
+    ```
 1. Avoid many levels of nested indentation, almost certainly no more than 7, preferably no more than 3. You can solve this by taking deeply-nested logic and putting it into a descriptively-named private method.
+    ```csharp
+    //bad
+    if (test1)
+    {
+        if (test2)
+        {
+            if (test3)
+            {
+                if (test4)
+                {
+                ...
+                }
+            }
+        }
+    }
+
+    //better
+    if (test1)
+    {
+        if (test2)
+        {
+            AdditionalLogic();
+        }
+    }
+    
+    private void AdditionalLogic()
+    {
+        if (test3)
+        {
+            if (test4)
+            {
+            ...
+            }
+        }
+    }
+    ```
 1. Try to keep individual .cs files small. Shoot for less than 500 actual lines of code (ignoring comments / blank lines). You can use refactoring, design patterns, and other techniques to try to make them small by splitting logic up into other .cs files / classes.
 1. When deciding what type to use, strings should be used only as a last resort. Prefer other types, such as enums, numeric types, custom classes, etc...if they are more appropriate.
 1. Most string or numeric literals should be constants.
