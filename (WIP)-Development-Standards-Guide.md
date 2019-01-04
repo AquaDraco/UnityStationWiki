@@ -10,61 +10,86 @@ TODO: Split into subsections so it's not one huge list
 # Code Style
 1. Document public stuff using /// comments. This includes public classes, structs, properties, fields, and methods. Parameters and return values should be descriptive. Class documentation should describe the purpose of the class.
 Here's good examples of how to document each of these:
-```csharp
-/// <summary>
-/// Trigger an interaction with the position set to this transform's position, with the specified originator and hand.
-/// </summary>
-/// <param name="originator">GameObject of the player initiating the interaction</param>
-/// <param name="hand">hand being used by the originator</param>
-/// <returns>true if further interactions should be prevented for the current update</returns>
-public bool Interact(GameObject originator, string hand) {
-
-/// <summary>
-/// Material used for calcualting the final occlusion mask, including floor and wall occlusion
-/// </summary>
-public Material fovMaterial;
-
-/// <summary>
-/// Health behavior specific to fuel tank. Explodes when it dies.
-/// </summary>
-public class FuelTankHealthBehaviour : HealthBehaviour
-
-/// <summary>
-/// Holds player state information used for interpolation, such as player position, flight direction etc.
-/// Gives client enough information to be able to smoothly interpolate the player position.
-/// </summary>
-public struct PlayerState
-```
+    ```csharp
+    /// <summary>
+    /// Trigger an interaction with the position set to this transform's position, with the specified originator and hand.
+    /// </summary>
+    /// <param name="originator">GameObject of the player initiating the interaction</param>
+    /// <param name="hand">hand being used by the originator</param>
+    /// <returns>true if further interactions should be prevented for the current update</returns>
+    public bool Interact(GameObject originator, string hand) {
+    
+    /// <summary>
+    /// Material used for calcualting the final occlusion mask, including floor and wall occlusion
+    /// </summary>
+    public Material fovMaterial;
+    
+    /// <summary>
+    /// Health behavior specific to fuel tank. Explodes when it dies.
+    /// </summary>
+    public class FuelTankHealthBehaviour : HealthBehaviour
+    
+    /// <summary>
+    /// Holds player state information used for interpolation, such as player position, flight direction etc.
+    /// Gives client enough information to be able to smoothly interpolate the player position.
+    /// </summary>
+    public struct PlayerState
+    ```
 1. Use a separate .cs file for each public class or struct. Avoid defining multiple public classes / structs in one script file.
 1. Format code according to our standard style. Your IDE will be able to apply some of these automatically by reading this from our .editorconfig file. For reference (or in case .editorconfig can't support these), here's the style conventions:
     1. Indent using tabs rather than spaces.
     1. When checking in code, try to ensure it uses Unix-style (LF) line endings. If you're on OSX or Linux, you don't need to do anything. If you are on Windows, ensure that you have configured git to check out Windows style but commit Unix-style line endings using the command `git config --global core.autocrlf true` or configuring this using your git GUI of choice.
     1. Avoid long lines. Break up lines of code that are longer than 120 characters. Alternatively, try to refactor the statement so it doesn't need to be so long!
-    ```csharp
-    //too long!
-    float distance = Vector3.Distance(Weapon.Owner.transform, PlayerManager.LocalPlayer.gameObject.transform) + blah blah blah.
-    //better!
-    float distance = Vector3.Distance(Weapon.Owner.transform, 
-        PlayerManager.LocalPlayer.gameObject.transform) + blah blah blah.
-    // best! Refactor into a private method
-    float distance = DistanceToLocalPlayer(Weapon) + blah blah blah
-    ```
+        ```csharp
+        //too long!
+        float distance = Vector3.Distance(Weapon.Owner.transform, PlayerManager.LocalPlayer.gameObject.transform) + blah blah blah.
+        //better!
+        float distance = Vector3.Distance(Weapon.Owner.transform, 
+            PlayerManager.LocalPlayer.gameObject.transform) + blah blah blah.
+        // best! Refactor into a private method
+        float distance = DistanceToLocalPlayer(Weapon) + blah blah blah
+        ```
 
     1. Curly braces should always be on a line by themselves:
-    ````
-    if (condition)
-    {
-        ....
-    }
-    else
-    {
-        ....
-    }
-    ````
+        ````
+        if (condition)
+        {
+            ....
+        }
+        else
+        {
+            ....
+        }
+        ````
 1. All variables except for constants / constant-like ones should use camelCase (with no prefix letter).
-TODO: Code example
+    ```csharp
+    public class Greytider
+    {
+      public float griefPoints;
+      private float rage;
+      
+      public bool Grief(Player griefingVictim)
+      {
+        float desireToGrief = griefingVictim.griefability - griefPoints / 100
+      }
+    }
+    ```
 1. All constants or constant-like variables should use uppercase snake case - "CONSTANT_NAME"
-TODO: Code example
+    ```csharp
+    public class ExplodeWhenShot
+    {
+      private const string EXPLOSION_SOUND = "Explode01.wav";
+    
+      //this is not an actual constant, but is initialized in Start() and never modified
+      //afterwards so it should still be named using this convention
+      private int DAMAGEABLE_MASK;
+    
+      private void Start()
+      {
+        DAMAGEABLE_MASK = LayerMask.GetMask("Players", "Machines", "Default");
+      }
+    }
+    ```
 1. Properties, classes, structs, and methods should use camel case with the first letter capitalized - "SomeName".
 TODO: Code example
 1. Any TODO comments added in a PR should be accompanied by a corresponding issue in the issue tracker. A TODO comment means that there's something we need to remember to do, so we need to put it in the issue tracker to make sure we remember.
