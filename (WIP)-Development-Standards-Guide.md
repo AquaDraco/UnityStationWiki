@@ -95,6 +95,7 @@ Here's good examples of how to document each of these:
 1. Properties, classes, structs, and methods should use camel case with the first letter capitalized - "SomeName".
     ```csharp
     public struct PlayerState
+
     public class PlayerSync
     {
         public bool IsAlive { get; set; }
