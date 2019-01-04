@@ -91,13 +91,45 @@ Here's good examples of how to document each of these:
     }
     ```
 1. Properties, classes, structs, and methods should use camel case with the first letter capitalized - "SomeName".
-TODO: Code example
+    ```csharp
+    public struct PlayerState
+    public class PlayerSync
+    {
+        public bool IsAlive { get; set; }
+        public void Attack(GameObject attacker)
+        {
+        ...
+        }
+    }        
+    ```
 1. Any TODO comments added in a PR should be accompanied by a corresponding issue in the issue tracker. A TODO comment means that there's something we need to remember to do, so we need to put it in the issue tracker to make sure we remember.
 1. Script folders should have no more than 10 scripts in a given folder. Reorganize, refactor, or add subfolders as needed to avoid folders getting too large.
 1. Braces should always be used even when they are optional
-TODO: Code example
+    ```csharp
+    //Preferable
+    if (somecondition)
+    {
+      doSomething();
+    }
+
+    //less preferable
+    if (somecondition)
+      doSomething();
+    ```
 1. Local variables should be declared near where they are used, not at the beginning of their containing block.
-TODO: Code example of the correct way with the bad way commented out
+    ```csharp
+    public float LongMethod()
+    {
+      //Don't declare it here, it's not used until later!
+      //float distance;
+      ...do a bunch of stuff...
+      ...do a bunch of stuff...
+      ...do a bunch of stuff...
+      //declare it here instead!
+      float distance = CalculateDistance();
+      bool isInRange = distance > MAX_RANGE;
+    }
+    ```
 
 # Code Design
 1. Follow the philosophy "tell, don't ask". TELL a class to do something rather than ASKING it for some data and operating on that data. Treat a class as a folder for grouping together data and the logic that operates on that data.
