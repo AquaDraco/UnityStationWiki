@@ -43,9 +43,11 @@ Here's good examples of how to document each of these:
         ```csharp
         //too long!
         float distance = Vector3.Distance(Weapon.Owner.transform, PlayerManager.LocalPlayer.gameObject.transform) + blah blah blah.
+
         //better!
         float distance = Vector3.Distance(Weapon.Owner.transform, 
             PlayerManager.LocalPlayer.gameObject.transform) + blah blah blah.
+
         // best! Refactor into a private method
         float distance = DistanceToLocalPlayer(Weapon) + blah blah blah
         ```
