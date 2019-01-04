@@ -40,7 +40,15 @@ public struct PlayerState
     1. Indent using tabs rather than spaces.
     1. When checking in code, try to ensure it uses Unix-style (LF) line endings. If you're on OSX or Linux, you don't need to do anything. If you are on Windows, ensure that you have configured git to check out Windows style but commit Unix-style line endings using the command `git config --global core.autocrlf true` or configuring this using your git GUI of choice.
     1. Avoid long lines. Break up lines of code that are longer than 120 characters. Alternatively, try to refactor the statement so it doesn't need to be so long!
-TODO: give two Code examples of breaking up and refactoring
+    ```csharp
+    //too long!
+    float distance = Vector3.Distance(Weapon.Owner.transform, PlayerManager.LocalPlayer.gameObject.transform) + blah blah blah.
+    //better!
+    float distance = Vector3.Distance(Weapon.Owner.transform, 
+        PlayerManager.LocalPlayer.gameObject.transform) + blah blah blah.
+    // best! Refactor into a private method
+    float distance = DistanceToLocalPlayer(Weapon) + blah blah blah
+    ```
 
     1. Curly braces should always be on a line by themselves:
     ````
