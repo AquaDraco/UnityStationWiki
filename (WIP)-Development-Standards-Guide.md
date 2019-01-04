@@ -9,7 +9,32 @@ TODO: Split into subsections so it's not one huge list
 
 # Code Style
 1. Document public stuff using /// comments. This includes public classes, structs, properties, fields, and methods. Parameters and return values should be descriptive. Class documentation should describe the purpose of the class.
-Here's good examples of how to document each of these: TODO 
+Here's good examples of how to document each of these:
+```csharp
+/// <summary>
+/// Trigger an interaction with the position set to this transform's position, with the specified originator and hand.
+/// </summary>
+/// <param name="originator">GameObject of the player initiating the interaction</param>
+/// <param name="hand">hand being used by the originator</param>
+/// <returns>true if further interactions should be prevented for the current update</returns>
+public bool Interact(GameObject originator, string hand) {
+
+/// <summary>
+/// Material used for calcualting the final occlusion mask, including floor and wall occlusion
+/// </summary>
+public Material fovMaterial;
+
+/// <summary>
+/// Health behavior specific to fuel tank. Explodes when it dies.
+/// </summary>
+public class FuelTankHealthBehaviour : HealthBehaviour
+
+/// <summary>
+/// Holds player state information used for interpolation, such as player position, flight direction etc.
+/// Gives client enough information to be able to smoothly interpolate the player position.
+/// </summary>
+public struct PlayerState
+```
 1. Use a separate .cs file for each public class or struct. Avoid defining multiple public classes / structs in one script file.
 1. Format code according to our standard style. Your IDE will be able to apply some of these automatically by reading this from our .editorconfig file. For reference (or in case .editorconfig can't support these), here's the style conventions:
     1. Indent using tabs rather than spaces.
