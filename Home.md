@@ -11,7 +11,7 @@ As this project is in its early stages, this wiki will serve the purpose of prov
 ## Overview 
 * **[[Home]]**
     * [[Roadmap]]
-    * [[0.4---Overview-Scope---(Non-Technical)-Index]]
+    * [Current Goal Scope - Push to 0.4 and Steam Beta Release](https://github.com/unitystation/unitystation/wiki/0.4---Overview-Scope---(Non-Technical)-Index)
 
 * **Contribution Guides**
     * [[Development Standards Guide]]
