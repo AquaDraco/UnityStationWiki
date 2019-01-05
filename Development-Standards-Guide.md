@@ -89,7 +89,7 @@ Here's good examples of how to document each of these:
       }
     }
     ```
-1. Properties, classes, structs, and methods should use camel case with the first letter capitalized - "SomeName".
+1. Properties, classes, structs, and methods should use PascalCase - "SomeName".
     ```csharp
     public struct PlayerState
 
