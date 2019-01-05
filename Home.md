@@ -11,23 +11,13 @@ As this project is in its early stages, this wiki will serve the purpose of prov
 ## Overview 
 * **[[Home]]**
     * [[Roadmap]]
+    * [[0.4 Overview Scope (Non Technical) Index]]
 
 * **Contribution Guides**
     * [[Development Standards Guide]]
     * [[Starting Contribution]]
     * [[Building And Testing]]
     * [Developing on Linux Systems Setup Guide](https://github.com/unitystation/unitystation/wiki/Developing-for-UnityStation-on-Unix-Systems-with-the-Unity-Editor-and-JetBrains-Rider)
-
-* **GIT**
-    * [[GIT basics]]
-    * [[How To Create a Pull Request (PR) from a Fork]]
-    * [[How to edit Pull Requests]]
-    * [[How to use Sourcetree]] 
-
-* **Tools**
-    * [[Prefab2Tile]]
-    * [[Generate cloth Enum]]
-    * [[Slice Sprites]]
 
 * **Development**
     * [[Directory Structure]]
@@ -41,19 +31,13 @@ As this project is in its early stages, this wiki will serve the purpose of prov
     * [[Creating and Using Tile Palettes]]
     * [[Electricity-Development]]
 
-* **Website Development**
-    * [[Setting up local webserver]]
-    * [[Setting up the website for local testing]]
-    * [[How to update the Website]]
+* **GIT**
+    * [[GIT basics]]
+    * [[How To Create a Pull Request (PR) from a Fork]]
+    * [[How to edit Pull Requests]]
+    * [[How to use Sourcetree]] 
 
-* **Feature Design**
-    * [[Object interaction windows]]
-    * [[FOV and Lighting Redesign]]
-    * [[Shuttle Control and Docking]]
-
-* **[[SS13 Features]]**
-    * [[What is this section ?]]
-    * [[Construction]]
-    * [[Intents]]
-    * [[Health]]
-    * [[Electricity]]
+* **Tools**
+    * [[Prefab2Tile]]
+    * [[Generate cloth Enum]]
+    * [[Slice Sprites]]
