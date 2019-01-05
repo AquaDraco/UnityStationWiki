@@ -12,6 +12,12 @@ As this project is in its early stages, this wiki will serve the purpose of prov
 * **[[Home]]**
     * [[Roadmap]]
 
+* **Contribution Guides**
+    * [[Development Standards Guide]]
+    * [[Starting Contribution]]
+    * [[Building And Testing]]
+    * [Developing on Linux Systems Setup Guide](https://github.com/unitystation/unitystation/wiki/Developing-for-UnityStation-on-Unix-Systems-with-the-Unity-Editor-and-JetBrains-Rider)
+
 * **GIT**
     * [[GIT basics]]
     * [[How To Create a Pull Request (PR) from a Fork]]
@@ -22,16 +28,6 @@ As this project is in its early stages, this wiki will serve the purpose of prov
     * [[Prefab2Tile]]
     * [[Generate cloth Enum]]
     * [[Slice Sprites]]
-    * [[Import Map]]
-    * [[Export Map]]
-
-* **Plugins**
-    * [[Light2D]] 
-
-* **Contribution Guides**
-    * [[Starting Contribution]]
-    * [[Building And Testing]]
-    * [Developing on Linux Systems Setup Guide](https://github.com/unitystation/unitystation/wiki/Developing-for-UnityStation-on-Unix-Systems-with-the-Unity-Editor-and-JetBrains-Rider)
 
 * **Development**
     * [[Directory Structure]]
