@@ -32,7 +32,7 @@ Here's good examples of how to document each of these:
     /// </summary>
     public struct PlayerState
     ```
-1. Use a separate .cs file for each public class or struct. Avoid defining multiple public classes / structs in one script file.
+1. Usually, use a separate .cs file for each public class or struct. It is sometimes preferable to have more than one in the same file, but if uncertain err on the side of using a separate file.
 1. Format code according to our standard style. Your IDE will be able to apply some of these automatically by reading this from our .editorconfig file. For reference (or in case .editorconfig can't support these), here's the style conventions:
     1. Indent using tabs rather than spaces.
     1. When checking in code, try to ensure it uses Unix-style (LF) line endings. If you're on OSX or Linux, you don't need to do anything. If you are on Windows, ensure that you have configured git to check out Windows style but commit Unix-style line endings using the command `git config --global core.autocrlf true` or configuring this using your git GUI of choice.
@@ -60,7 +60,7 @@ Here's good examples of how to document each of these:
             ....
         }
         ````
-1. All variables except for constants / constant-like ones should use camelCase (with no prefix letter).
+1. All variables and non-public fields except for constants / constant-like ones should use camelCase (with no prefix letter).
     ```csharp
     public class Greytider
     {
@@ -89,7 +89,7 @@ Here's good examples of how to document each of these:
       }
     }
     ```
-1. Properties, classes, structs, and methods should use PascalCase - "SomeName".
+1. Properties, public fields, classes, structs, enum constants, and methods should use PascalCase - "SomeName".
     ```csharp
     public struct PlayerState
 
@@ -100,7 +100,14 @@ Here's good examples of how to document each of these:
         {
         ...
         }
-    }        
+    }    
+    
+    public enum DamageType
+    {
+        Poison,
+        Fire,
+        Brute
+    }  
     ```
 1. Any TODO comments added in a PR should be accompanied by a corresponding issue in the issue tracker. A TODO comment means that there's something we need to remember to do, so we need to put it in the issue tracker to make sure we remember.
 1. Script folders should have no more than 10 scripts in a given folder. Reorganize, refactor, or add subfolders as needed to avoid folders getting too large.
