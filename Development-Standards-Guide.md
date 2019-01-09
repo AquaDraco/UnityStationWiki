@@ -5,7 +5,7 @@ This page provides some suggestions you can use to help us achieve that - to kee
 These are NOT rules, and reviewers don't expect developers to be able to follow all of these suggestions. When a reviewer looks at your PR, part of their review will involve thinking about code cleanliness. They will work with you to figure out if / what changes can be made to the PR to help with code cleanliness. They might suggest some items from this list or something from their own experience. As you submit more and more PRs, the reviewers you collaborate with should help you develop a better sense of how to write clean code until it becomes second nature.
 
 # Code Style
-1. Document public stuff using /// comments (XML comments). This includes public classes, structs, properties, fields, and methods. Parameters and return values should be descriptive. Class documentation should describe the purpose of the class. You can read more about how to write XML comments here: https://docs.microsoft.com/en-us/dotnet/csharp/codedoc
+1. Document public stuff using /// comments (XML comments). This includes public classes, structs, properties, fields, and methods. Parameters and return values should be descriptive. Class documentation should describe the purpose of the class.
 Here's good examples of how to document each of these:
     ```csharp
     /// <summary>
@@ -31,7 +31,8 @@ Here's good examples of how to document each of these:
     /// Gives client enough information to be able to smoothly interpolate the player position.
     /// </summary>
     public struct PlayerState
-    ```
+    ``` 
+    You can read more about how to write XML comments here: https://docs.microsoft.com/en-us/dotnet/csharp/codedoc
 1. Usually, use a separate .cs file for each public class or struct. It is sometimes preferable to have more than one in the same file, but if uncertain err on the side of using a separate file.
 1. Format code according to our standard style. Your IDE will be able to apply some of these automatically by reading this from our .editorconfig file. For reference (or in case .editorconfig can't support these), here's the style conventions:
     1. Indent using tabs rather than spaces.
