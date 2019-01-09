@@ -64,7 +64,6 @@ Here's good examples of how to document each of these:
     ```csharp
     public class Greytider
     {
-      public float griefPoints;
       private float rage;
       
       public bool Grief(Player griefingVictim)
@@ -95,6 +94,7 @@ Here's good examples of how to document each of these:
 
     public class PlayerSync
     {
+        public bool IsGhost;
         public bool IsAlive { get; set; }
         public void Attack(GameObject attacker)
         {
