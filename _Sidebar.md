@@ -20,6 +20,7 @@
     * [[Networking Quicky]]
 
 * **Contribution Guides**
+    * [[Development Standards Guide]]
     * [[Starting Contribution]]
     * [[Building And Testing]]
     * [Contributing on Linux Systems Setup Guide](https://github.com/unitystation/unitystation/wiki/Developing-for-UnityStation-on-Unix-Systems-with-the-Unity-Editor-and-JetBrains-Rider)
