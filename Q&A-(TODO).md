@@ -10,3 +10,6 @@
 
  #### Help! I can't move after updating
 > Press escape, go to settings, reset keybinds to default and save
+
+ #### Can't connect from build to editor with latency simulation on
+> Enable `Development Build` tick in Build Settings (Ctrl+Shift+B)
