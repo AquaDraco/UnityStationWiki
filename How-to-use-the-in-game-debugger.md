@@ -17,10 +17,31 @@ If the function has arguments, then they are space delimited. For instance, `dam
 `damage-self Head 50 30`
 
 
+# Adding new debug commands
 
+Debug functions make it much easier for you and other people to test your code. As you add new systems to the game, you can be a good citizen by writing good debug commands.
 
+## Declaring function
 
+To add a new debug command, write a new static function and place it in UnityProject/Assets/IngameDebugConsole/Scripts/DebugLogUnitystationCommands.cs. Then add a decorator that looks like this. 
 
+`[ConsoleMethod(<cmd name>, <help message>)]`
+
+For example:
+
+```
+[ConsoleMethod("suicide", "kill yo' self")]
+public static void RunSuicide(){
+```
+
+Functions can take arguments, but they only support the following types: 
+Primitive types, string, Vector2, Vector3, Vector4, GameObject
+You can get more details at https://github.com/yasirkula/UnityIngameDebugConsole.
+
+## Displaying output
+
+To output content to the debug console, use the Logger. Make sure you use the Category DebugConsole in your debug statement like this.
+`Logger.Debug("Executing command", Category.DebugConsole);`
 
 
 
