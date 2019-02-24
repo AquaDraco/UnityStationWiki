@@ -26,6 +26,7 @@ As this project is in its early stages, this wiki will serve the purpose of prov
     * [[Creating items in UnityStation]]
     * [[Creating and Using Tile Palettes]]
     * [[Electricity-Development]]
+    * [[How to use the in game debugger]]
 
 * **GIT**
     * [[GIT basics]]
