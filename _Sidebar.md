@@ -36,6 +36,7 @@
     * [[Creating items in UnityStation]]
     * [[Creating and Using Tile Palettes]]
     * [[Electricity-Development]]
+    * [[How to use the in game debugger]]
 
 
 * **Website Development**
