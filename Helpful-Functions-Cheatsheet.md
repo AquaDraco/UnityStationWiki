@@ -55,5 +55,10 @@ Check if this is the server
 CustomNetworkManager.Instance._isServer == false
 ```
 
+# Matrix
+Get the room number of a tile (only enclosed spaces will be defined as a room. RoomNumber will = -1 if it is not a room)
+```
+MatrixManager.GetMetaDataAt(Vector3Int.RoundToInt(world_position)).RoomNumber
+```
 
 
