@@ -6,7 +6,7 @@
 
 
  #### I get black fonts in game window after making a build, what do I do?
-> Press Ctrl+S, that will fix it. Don't start game in editor before that.
+> Press Ctrl+S, that will fix it. Don't start game in editor before that as it will mess up item placement.
 
  #### Help! I can't move after updating
 > Press escape, go to settings, reset keybinds to default and save
