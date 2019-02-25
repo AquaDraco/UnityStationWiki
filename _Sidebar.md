@@ -56,4 +56,4 @@
 
 * **[[Frequently-Asked-Questions]]**
     * [[Helpful Functions Cheatsheet]]
-    * [[Q&A]]
+    * [[Troubleshooting]]
