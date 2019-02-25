@@ -14,7 +14,7 @@
     * [[Prefab2Tile]]
 
 * **Plugins**
-    * [[Light2D]] 
+    * [[SunVox]] 
 
 * **Quick Guides**
     * [[Networking Quicky]]
