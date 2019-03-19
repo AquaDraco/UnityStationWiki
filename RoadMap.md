@@ -28,7 +28,7 @@ note: goals that are crossed out are goals that have been completed
         <ul>
           <li><del>basic electricity</del></li>
           <li>basic building</li>
-          <li>menus, e.g. right click menu, machine interaction menu</li>
+          <li><del>menus, e.g. right click menu, machine interaction menu</del></li>
           <li><del>space walk, incl. death in space</del></li>
           <li><del>independent local matrices, e.g. one for a station and another one for a spaceship</del></li>
           <li><del>freely pilotable spaceships</del></li>
@@ -41,13 +41,13 @@ note: goals that are crossed out are goals that have been completed
       <td>0.3</td>
       <td>
         <ul>
-          <li>Basic Atmospherics, no pipes needed</li>
-          <li>Account System, e.g. character design, stats, ...</li>
+          <li><del>Basic Atmospherics, no pipes needed</del></li>
+          <li><del>Account System, e.g. character design, stats, ...</del></li>
           <li><del>players intentions</del></li>
-          <li>Blood, e.g. foot prints, gibbing explosion</li>
-          <li>Complete chat system dependent on telecomms</li>
+          <li><del>Blood, e.g. foot prints, gibbing explosion</del></li>
+          <li><del>Complete chat system</del> dependent on telecomms</li>
           <li><del>Redesign FOV</del></li>
-          <li>Redesign lighting based on FOV code</li>
+          <li><del>Redesign lighting based on FOV code</del></li>
         </ul>
       </td>
     </tr>
@@ -60,7 +60,7 @@ note: goals that are crossed out are goals that have been completed
           <li><del>Basic Admin portal</del></li>
           <li>Easy server deployment, maybe even automatic</li>
           <li><del>24 / 7 Server</del></li>
-          <li>HUD overhaul, Flexible UI with Docking Tabs system that would supersede right panel</li>
+          <li><del>HUD overhaul, Flexible UI with Docking Tabs system that would supersede right panel</del></li>
         </ul>
       </td>
     </tr>
@@ -87,7 +87,7 @@ note: goals that are crossed out are goals that have been completed
 
 ### Long-term Goals
 
-* User change-able keybindings
+* <del>User change-able keybindings</del>
 * Networking Overhaul
     * Own Networking Layer
     * <del>Headless Server shouldn't start as a Player</del>
