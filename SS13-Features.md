@@ -1,4 +1,4 @@
-This section has been made to extensively describe exisiting Space station 13 features and mechanics for promising developpers that are new or unfamiliar to space station 13.
+This section has been made to extensively describe existing Space station 13 features and mechanics for promising developers that are new or unfamiliar to space station 13.
 ***
 # Subsections:
 ***
