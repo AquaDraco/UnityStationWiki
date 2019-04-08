@@ -25,6 +25,9 @@ The sprite will still appear upright, but in game you should see that it disappe
 
 The sprite rotation inside of the wallmount will have no effect in game even if it makes the wallmount appear rotated in the editor - it is always set based on script logic. 
 
+## Chairs
+Chairs must be rotated by setting their sprite manually to one of their 4 chair sprites. Make sure the sprite set in the sprite renderer shows up in the Chair component's list of sprites. Do not try to rotate chairs by adjusting their transform rotation. Just change their sprite.
+
 ## Pull Requests for Tile Palette Changes
 
 Almost never would you need to actually PR a palette change, if you do please make sure NOT to include anything other than the palette file and its .meta file.
