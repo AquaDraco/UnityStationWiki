@@ -29,7 +29,8 @@ public class BuckleInteract : CoordinatedInteraction<MouseDrop>
             IsDroppedObjectAtTargetPosition.IS,
             DoesDroppedObjectHaveComponent<PlayerMove>.DOES,
             CanApply.EVEN_IF_SOFT_CRIT,
-            ComponentAtTargetMatrixPosition<PlayerMove>.NoneMatchingCriteria(pm => pm.IsRestrained),
+            ComponentAtTargetMatrixPosition<PlayerMove>
+                .NoneMatchingCriteria(pm => pm.IsRestrained),
             new FunctionValidator<MouseDrop>(AdditionalValidation)
         };
     }
@@ -68,8 +69,10 @@ We have defined CoordinatedInteraction to support from 1-5 generic type argument
 
 ## 2. Delegate to InteractionCoordinator - More Control but More Verbose
 ```csharp
-//we don't extend now - we only implement the interactable and interactionprocessor interfaces,
-//and we delegate the implementation of the interface methods to the InteractionCoordinator
+// we don't extend now - we only implement the interactable and 
+// interactionprocessor interfaces,
+// and we delegate the implementation of the interface 
+// methods to the InteractionCoordinator
 public class Chair: IInteractable<MouseDrop>, IInteractionProcessor<MouseDrop>
 {
     //...
@@ -80,7 +83,8 @@ public class Chair: IInteractable<MouseDrop>, IInteractionProcessor<MouseDrop>
 
     private void Start()
     {
-        coordinator = new InteractionCoordinator<MouseDrop>(this, Validators(), ServerPerformInteraction);
+        coordinator = new InteractionCoordinator<MouseDrop>(this, 
+            Validators(), ServerPerformInteraction);
     }
 
     private IList<IInteractionValidator<MouseDrop>> Validators()
@@ -90,15 +94,18 @@ public class Chair: IInteractable<MouseDrop>, IInteractionProcessor<MouseDrop>
             IsDroppedObjectAtTargetPosition.IS,
             DoesDroppedObjectHaveComponent<PlayerMove>.DOES,
             CanApply.EVEN_IF_SOFT_CRIT,
-            ComponentAtTargetMatrixPosition<PlayerMove>.NoneMatchingCriteria(pm => pm.IsRestrained),
+            ComponentAtTargetMatrixPosition<PlayerMove>
+                .NoneMatchingCriteria(pm => pm.IsRestrained),
             new FunctionValidator<MouseDrop>(AdditionalValidation)
         };
     }
 
     private ValidationResult AdditionalValidation(MouseDrop drop, NetworkSide side)
     {
-        //if the player to buckle is currently downed, we cannot buckle if there is another player on the tile
-        //(because buckling a player causes the tile to become unpassable, thus a player could end up
+        //if the player to buckle is currently downed, we cannot 
+        //buckle if there is another player on the tile
+        //(because buckling a player causes the tile to become unpassable,
+        //thus a player could end up
         //occupying another player's space)
         var playerMove = drop.UsedObject.GetComponent<PlayerMove>();
         var registerPlayer = playerMove.GetComponent<RegisterPlayer>();
