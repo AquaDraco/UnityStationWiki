@@ -207,13 +207,11 @@ Migration will be done in a piecemeal fashion. Any time we discover usability, c
 
 IF2 is designed such that it lives alongside the old interaction system. Once the old interaction system is complete, we should remove the last vestiges of the old code.
 
-# Shooting
-Shooting doesn't really fit into IF2 since it doesn't really work like anything else in the game and shooting overrides all other possible interactions (except for melee if you are close range). The current shooting logic in IF1 is a bit of a mess anyways due to trying to fit the odd gun interactions into the system. This will be migrated out of IF1 and handled as a special case in MouseInteract and should be less of a mess once it's migrated.
-
 # Interaction Types
 Currently only HandApply and MouseDrop interactions are implemented. Others will be implemented as needed. Here are the planned types of interactions:
 * MouseDrop - Click and drag a MouseDraggable object in the game world and release it to drop.
 * HandApply - click something in the game world. The item in the active hand (or empty hand) is applied to the thing that was clicked.
+* HoldHandApply - like hand apply, but occurs at some interval while the mouse is being held down after being clicked in the game world. For things like shooting an automatic weapon, spraying fire extinguisher, etc...
 * Activate - clicking an item in the active hand or pressing Z
 * Combine - dragging and dropping an item from on UI slot to another, which may or may not be occupied
 * DragApply - dragging and dropping an item from a UI slot to the game world, which I think always just drops it on the ground but I'm making it separate for now just in case not.
