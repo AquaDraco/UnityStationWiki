@@ -175,13 +175,12 @@ public class BuckleInteractDIY : IInteractable<MouseDrop>, IInteractionProcessor
         //then inform all clients.
     }
 }
-
+```
 With this approach, we implement IInteractable so that IF2 will invoke this component if the object it's on is involved in that type of interaction. However, it's up to us to handle all the rest of this interaction. If this was something that should only be client-side, for example, we could just implement the client-side logic here. But if there is any communication needed with the server we would have to implement that logic as well. 
 
 We can re-use validators here as well as RequestInteractMessage / IInteractionProcessor as shown.
 
 As with the previous approach, we can also implement this on any existing component if we want.
-```
 # Which Approach Is Best?
 Each approach is a tradeoff between convenience and control. In general I would suggest approach 1. If approach 1 isn't meeting your needs, you can consider adding logic to IF2 to try to capture your specific use case, and follow approach 1's example for how to make it convenient to use. If you do decide to go with approach 2 or 3 be careful of code duplication - try to avoid duplication by building your logic into helper classes or adding functionality directly to IF2 to support your use case.
 
