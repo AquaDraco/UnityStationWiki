@@ -20,12 +20,12 @@ When a player drags and drops their character on a chair, they should become buc
 // Extend CoordinatedInteraction and specify the type of interaction as the generic type argument
 public class BuckleInteract : CoordinatedInteraction<MouseDrop>
 {
-        //Define the validations that must be done on client / server side for this interaction.
+    //Define the validations that must be done on client / server side for this interaction.
     protected override IList<IInteractionValidator<MouseDrop>> Validators()
     {
         return new List<IInteractionValidator<MouseDrop>>
         {
-                        //use existing validators so we can re-use common validation logic
+            //use existing validators so we can re-use common validation logic
             IsDroppedObjectAtTargetPosition.IS,
             DoesDroppedObjectHaveComponent<PlayerMove>.DOES,
             CanApply.EVEN_IF_SOFT_CRIT,
@@ -39,11 +39,11 @@ public class BuckleInteract : CoordinatedInteraction<MouseDrop>
         //additional custom validation logic which is only needed for this class
     }
 
-        // Define what the server should do once the interaction is validated server side
+    // Define what the server should do once the interaction is validated server side
     protected override InteractionResult ServerPerformInteraction(MouseDrop drop)
     {
         // perform the interaction on the server side and update each
-                // client by setting a syncvar that indicates the player is restrained
+        // client by setting a syncvar that indicates the player is restrained
 
         return InteractionResult.SOMETHING_HAPPENED;
     }
@@ -72,9 +72,9 @@ We have defined CoordinatedInteraction to support from 1-5 generic type argument
 //and we delegate the implementation of the interface methods to the InteractionCoordinator
 public class Chair: IInteractable<MouseDrop>, IInteractionProcessor<MouseDrop>
 {
-        //...
-        //...(Other logic that already existed on our chair component)
-        //...
+    //...
+    //...(Other logic that already existed on our chair component)
+    //...
 
     private InteractionCoordinator<MouseDrop> coordinator;
 
@@ -116,13 +116,14 @@ public class Chair: IInteractable<MouseDrop>, IInteractionProcessor<MouseDrop>
         return InteractionResult.SOMETHING_HAPPENED;
     }
 
-       //from IInteractable
-       //delegate the interface method implementations to coordinator
+   //from IInteractable
+   //delegate the interface method implementations to coordinator
     public InteractionResult Interact(MouseDrop interaction)
     {
         return coordinator.ClientValidateAndRequest(interaction);
     }
-       //from IInteractionProcessor
+
+    //from IInteractionProcessor
     public InteractionResult ServerProcessInteraction(MouseDrop interaction)
     {
         return coordinator.ServerValidateAndPerform(interaction);
@@ -143,7 +144,7 @@ With this approach, we can also modify the implementation of ServerProcessIneter
 ```csharp
 public class BuckleInteractDIY : IInteractable<MouseDrop>, IInteractionProcessor<MouseDrop>
 {
-        //from IInteractable
+    //from IInteractable
     public InteractionResult Interact(MouseDrop interaction)
     {
         // We can still re-use validators if we want:
@@ -156,7 +157,7 @@ public class BuckleInteractDIY : IInteractable<MouseDrop>, IInteractionProcessor
         
         //if desired, we can send a RequestInteractMessage like so,
         //indicating this component will process the interaction on the server side
-                // in ServerProcessInteraction:
+        // in ServerProcessInteraction:
         RequestInteractMessage.Send(interaction, this);
     }
 
@@ -164,7 +165,7 @@ public class BuckleInteractDIY : IInteractable<MouseDrop>, IInteractionProcessor
     public InteractionResult ServerProcessInteraction(MouseDrop interaction)
     {
         //validate and perform the update server side after it gets the RequestInteractMessage,
-                //then inform all clients.
+        //then inform all clients.
     }
 }
 
