@@ -21,32 +21,32 @@ When a player drags and drops their character on a chair, they should become buc
 public class BuckleInteract : CoordinatedInteraction<MouseDrop>
 {
         //Define the validations that must be done on client / server side for this interaction.
-	protected override IList<IInteractionValidator<MouseDrop>> Validators()
-	{
-		return new List<IInteractionValidator<MouseDrop>>
-		{
+    protected override IList<IInteractionValidator<MouseDrop>> Validators()
+    {
+        return new List<IInteractionValidator<MouseDrop>>
+        {
                         //use existing validators so we can re-use common validation logic
-			IsDroppedObjectAtTargetPosition.IS,
-			DoesDroppedObjectHaveComponent<PlayerMove>.DOES,
-			CanApply.EVEN_IF_SOFT_CRIT,
-			ComponentAtTargetMatrixPosition<PlayerMove>.NoneMatchingCriteria(pm => pm.IsRestrained),
-			new FunctionValidator<MouseDrop>(AdditionalValidation)
-		};
-	}
+            IsDroppedObjectAtTargetPosition.IS,
+            DoesDroppedObjectHaveComponent<PlayerMove>.DOES,
+            CanApply.EVEN_IF_SOFT_CRIT,
+            ComponentAtTargetMatrixPosition<PlayerMove>.NoneMatchingCriteria(pm => pm.IsRestrained),
+            new FunctionValidator<MouseDrop>(AdditionalValidation)
+        };
+    }
 
-	private ValidationResult AdditionalValidation(MouseDrop drop, NetworkSide side)
-	{
-		//additional custom validation logic which is only needed for this class
-	}
+    private ValidationResult AdditionalValidation(MouseDrop drop, NetworkSide side)
+    {
+        //additional custom validation logic which is only needed for this class
+    }
 
         // Define what the server should do once the interaction is validated server side
-	protected override InteractionResult ServerPerformInteraction(MouseDrop drop)
-	{
-		// perform the interaction on the server side and update each
+    protected override InteractionResult ServerPerformInteraction(MouseDrop drop)
+    {
+        // perform the interaction on the server side and update each
                 // client by setting a syncvar that indicates the player is restrained
 
-		return InteractionResult.SOMETHING_HAPPENED;
-	}
+        return InteractionResult.SOMETHING_HAPPENED;
+    }
 }
 ```
 
@@ -76,57 +76,57 @@ public class Chair: IInteractable<MouseDrop>, IInteractionProcessor<MouseDrop>
         //...(Other logic that already existed on our chair component)
         //...
 
-	private InteractionCoordinator<MouseDrop> coordinator;
+    private InteractionCoordinator<MouseDrop> coordinator;
 
-	private void Start()
-	{
-		coordinator = new InteractionCoordinator<MouseDrop>(this, Validators(), ServerPerformInteraction);
-	}
+    private void Start()
+    {
+        coordinator = new InteractionCoordinator<MouseDrop>(this, Validators(), ServerPerformInteraction);
+    }
 
-	private IList<IInteractionValidator<MouseDrop>> Validators()
-	{
-		return new List<IInteractionValidator<MouseDrop>>
-		{
-			IsDroppedObjectAtTargetPosition.IS,
-			DoesDroppedObjectHaveComponent<PlayerMove>.DOES,
-			CanApply.EVEN_IF_SOFT_CRIT,
-			ComponentAtTargetMatrixPosition<PlayerMove>.NoneMatchingCriteria(pm => pm.IsRestrained),
-			new FunctionValidator<MouseDrop>(AdditionalValidation)
-		};
-	}
+    private IList<IInteractionValidator<MouseDrop>> Validators()
+    {
+        return new List<IInteractionValidator<MouseDrop>>
+        {
+            IsDroppedObjectAtTargetPosition.IS,
+            DoesDroppedObjectHaveComponent<PlayerMove>.DOES,
+            CanApply.EVEN_IF_SOFT_CRIT,
+            ComponentAtTargetMatrixPosition<PlayerMove>.NoneMatchingCriteria(pm => pm.IsRestrained),
+            new FunctionValidator<MouseDrop>(AdditionalValidation)
+        };
+    }
 
-	private ValidationResult AdditionalValidation(MouseDrop drop, NetworkSide side)
-	{
-		//if the player to buckle is currently downed, we cannot buckle if there is another player on the tile
-		//(because buckling a player causes the tile to become unpassable, thus a player could end up
-		//occupying another player's space)
-		var playerMove = drop.UsedObject.GetComponent<PlayerMove>();
-		var registerPlayer = playerMove.GetComponent<RegisterPlayer>();
-		if (!registerPlayer.IsDown) return ValidationResult.SUCCESS;
-		return ComponentAtTargetMatrixPosition<PlayerMove>.NoneMatchingCriteria(pm =>
-			pm != playerMove &&
-			pm.GetComponent<RegisterPlayer>().IsBlocking)
-			.Validate(drop, side);
-	}
+    private ValidationResult AdditionalValidation(MouseDrop drop, NetworkSide side)
+    {
+        //if the player to buckle is currently downed, we cannot buckle if there is another player on the tile
+        //(because buckling a player causes the tile to become unpassable, thus a player could end up
+        //occupying another player's space)
+        var playerMove = drop.UsedObject.GetComponent<PlayerMove>();
+        var registerPlayer = playerMove.GetComponent<RegisterPlayer>();
+        if (!registerPlayer.IsDown) return ValidationResult.SUCCESS;
+        return ComponentAtTargetMatrixPosition<PlayerMove>.NoneMatchingCriteria(pm =>
+            pm != playerMove &&
+            pm.GetComponent<RegisterPlayer>().IsBlocking)
+            .Validate(drop, side);
+    }
 
-	private InteractionResult ServerPerformInteraction(MouseDrop drop)
-	{
-		// server-side interaction logic + inform clients
+    private InteractionResult ServerPerformInteraction(MouseDrop drop)
+    {
+        // server-side interaction logic + inform clients
 
-		return InteractionResult.SOMETHING_HAPPENED;
-	}
+        return InteractionResult.SOMETHING_HAPPENED;
+    }
 
        //from IInteractable
        //delegate the interface method implementations to coordinator
-	public InteractionResult Interact(MouseDrop interaction)
-	{
-		return coordinator.ClientValidateAndRequest(interaction);
-	}
+    public InteractionResult Interact(MouseDrop interaction)
+    {
+        return coordinator.ClientValidateAndRequest(interaction);
+    }
        //from IInteractionProcessor
-	public InteractionResult ServerProcessInteraction(MouseDrop interaction)
-	{
-		return coordinator.ServerValidateAndPerform(interaction);
-	}
+    public InteractionResult ServerProcessInteraction(MouseDrop interaction)
+    {
+        return coordinator.ServerValidateAndPerform(interaction);
+    }
 }
 ```
 The flow for this approach is exactly the same as the first approach, but we are not limited by extending CoordinatedInteraction. 
@@ -144,28 +144,28 @@ With this approach, we can also modify the implementation of ServerProcessIneter
 public class BuckleInteractDIY : IInteractable<MouseDrop>, IInteractionProcessor<MouseDrop>
 {
         //from IInteractable
-	public InteractionResult Interact(MouseDrop interaction)
-	{
-		// We can still re-use validators if we want:
-		var validationResult = CanApply.EVEN_IF_SOFT_CRIT.Validate(interaction, NetworkSide.CLIENT);
+    public InteractionResult Interact(MouseDrop interaction)
+    {
+        // We can still re-use validators if we want:
+        var validationResult = CanApply.EVEN_IF_SOFT_CRIT.Validate(interaction, NetworkSide.CLIENT);
 
-		// do whatever we want - but remember this is only invoked
-		// on the client performing the interaction.
-		// It's up to us to communicate with the server and
-		// perform validation if needed.
-		
-		//if desired, we can send a RequestInteractMessage like so,
-		//indicating this component will process the interaction on the server side
+        // do whatever we want - but remember this is only invoked
+        // on the client performing the interaction.
+        // It's up to us to communicate with the server and
+        // perform validation if needed.
+        
+        //if desired, we can send a RequestInteractMessage like so,
+        //indicating this component will process the interaction on the server side
                 // in ServerProcessInteraction:
-		RequestInteractMessage.Send(interaction, this);
-	}
+        RequestInteractMessage.Send(interaction, this);
+    }
 
-	//from IInteractionProcessor, this will be invoked when the server gets the RequestInteractMessage
-	public InteractionResult ServerProcessInteraction(MouseDrop interaction)
-	{
-		//validate and perform the update server side after it gets the RequestInteractMessage,
+    //from IInteractionProcessor, this will be invoked when the server gets the RequestInteractMessage
+    public InteractionResult ServerProcessInteraction(MouseDrop interaction)
+    {
+        //validate and perform the update server side after it gets the RequestInteractMessage,
                 //then inform all clients.
-	}
+    }
 }
 
 With this approach, we implement IInteractable so that IF2 will invoke this component if the object it's on is involved in that type of interaction. However, it's up to us to handle all the rest of this interaction. If this was something that should only be client-side, for example, we could just implement the client-side logic here. But if there is any communication needed with the server we would have to implement that logic as well. 
