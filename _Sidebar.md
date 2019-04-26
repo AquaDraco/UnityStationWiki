@@ -1,4 +1,4 @@
-* **[[Homu]]**
+* **[[Home]]**
     * [[Roadmap]]
 
 * **The Codebase**
