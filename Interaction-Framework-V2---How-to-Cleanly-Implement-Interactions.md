@@ -1,3 +1,15 @@
+- [Using Interaction Framework V2](#using-interaction-framework-v2)
+  * [1. Extend CoordinatedInteraction - Most Convenient Approach](#1-extend-coordinatedinteraction---most-convenient-approach)
+  * [2. Delegate to InteractionCoordinator - More Control but More Verbose](#2-delegate-to-interactioncoordinator---more-control-but-more-verbose)
+  * [3. Implement IInteractable - Most Flexible, Least Convenient](#3-implement-iinteractable---most-flexible--least-convenient)
+- [Which Approach Is Best?](#which-approach-is-best-)
+- [Multiple Interaction Components](#multiple-interaction-components)
+- [Precedence of Interaction Components](#precedence-of-interaction-components)
+- [Migration](#migration)
+- [Interaction Types](#interaction-types)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 This page describes how to use the new interaction system, which I've dubbed "Interaction Framework V2" (I guess you could call it IF2 for short, at least until everything is ported over to it, and you could call the old system IF1). Please contact me @chairbender on Discord for any questions or concerns.
 
 We've all noticed some issues working with the old InputTrigger-based interaction system. Since interaction is such a vital and foundational part of the game, we decided it would be best to make it as polished as possible. The key design goals of the new system are:
