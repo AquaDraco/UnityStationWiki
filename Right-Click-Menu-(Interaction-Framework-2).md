@@ -1,3 +1,10 @@
+- [Overview](#overview)
+  * [1. Generate Options On-Demand with IRightClickable](#1-generate-options-on-demand-with-irightclickable)
+  * [2. Register Right Click Options Ahead of Time](#2-register-right-click-options-ahead-of-time)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
 This page describes how the new right click menu works. The new system uses Scriptable Objects and allows for dynamic changes to an object's right click menu (allows changing what options are presented based on an object's state). It also allows overriding the text, sprite, and background color of the menu items.
 
 # Overview
