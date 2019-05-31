@@ -1,5 +1,5 @@
 - [Using Interaction Framework V2](#using-interaction-framework-v2)
-  * [1. Extend CoordinatedInteraction - Most Convenient Approach](#1-extend-coordinatedinteraction---most-convenient-approach)
+  * [1. Extend CoordinatedInteraction or NetworkCoordinatedInteraction - Most Convenient Approach](#1-extend-coordinatedinteraction-or-networkcoordinatedinteraction---most-convenient-approach)
   * [2. Delegate to InteractionCoordinator - More Control but More Verbose](#2-delegate-to-interactioncoordinator---more-control-but-more-verbose)
   * [3. Implement IInteractable - Most Flexible, Least Convenient](#3-implement-iinteractable---most-flexible--least-convenient)
 - [Which Approach Is Best?](#which-approach-is-best-)
@@ -29,7 +29,7 @@ All code lives in Input System/InteractionV2 and is heavily documented, so refer
 
 When a player drags and drops their character on a chair, they should become buckled. Here's the various ways this can be implemented, starting with the approach which is most convenient and ending with the approach that provides the most control.
 
-## 1. Extend CoordinatedInteraction - Most Convenient Approach
+## 1. Extend CoordinatedInteraction or NetworkCoordinatedInteraction - Most Convenient Approach
 
 ```csharp
 // Extend CoordinatedInteraction and specify the type of interaction as the generic type argument
@@ -67,7 +67,9 @@ public class BuckleInteract : CoordinatedInteraction<MouseDrop>
 ```
 
 
-The InteractionCoordinator base class provides the maximum convenience for implementing an interaction component. It works as follows:
+The CoordinatedInteraction base class provides the maximum convenience for implementing an interaction component. It inherits from MonoBehavior, so if you wish to inherit from NetworkBehavior you can instead extend CoordinatedInteraction.
+
+It works as follows:
 1. When the client performs an interaction involving this object, each validator (implementation of IInteractionValidator interface) is invoked. Validators are able to tell if validation is happening on client or server side, so they can customize the validation if needed. All validators live in Input System/InteractionV2/Validations. It is highly recommended to re-use, modify, or implement new validators so that common validation logic can be shared.
 2. If all validators succeed, the client sends a RequestInteractMessage to the server. No further interaction components will be invoked on the client side for this interaction type during the current update.
 3. The server gets the RequestInteractMessage and invokes all of the validators again (each validator can modify the validation logic on the server-side if needed).
