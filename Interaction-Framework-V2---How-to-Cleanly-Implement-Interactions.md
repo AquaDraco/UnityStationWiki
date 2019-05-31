@@ -10,6 +10,7 @@
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
+
 For info on the Right Click Menu, see [[Right Click Menu (Interaction Framework 2)]].
 
 This page describes how to use the new interaction system, which I've dubbed "Interaction Framework V2" (I guess you could call it IF2 for short, at least until everything is ported over to it, and you could call the old system IF1). Please contact me @chairbender on Discord for any questions or concerns.
