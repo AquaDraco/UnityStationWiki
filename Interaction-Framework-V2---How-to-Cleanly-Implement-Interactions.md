@@ -67,8 +67,8 @@ public class BuckleInteract : CoordinatedInteraction<MouseDrop>
 ```
 
 
-The CoordinatedInteraction base class provides the maximum convenience for implementing an interaction component. It inherits from MonoBehavior. If you wish to use NetworkBehavior you must create a new base class to do this as
-Unity does not allow you to have a generic class that extends NetworkBehavior (see other examples of how to do this in InteractionV2/Components, such as NetworkCoordinatedHandInteraction).
+The CoordinatedInteraction base class provides the maximum convenience for implementing an interaction component. It inherits from MonoBehavior. If you wish to use NetworkBehavior you must use or create a base class to extend because
+Unity does not allow you to have a generic class that extends NetworkBehavior. See examples of how to do this in InteractionV2/Components, such as NetworkCoordinatedHandApplyInteraction.
 
 It works as follows:
 1. When the client performs an interaction involving this object, each validator (implementation of IInteractionValidator interface) is invoked. Validators are able to tell if validation is happening on client or server side, so they can customize the validation if needed. All validators live in Input System/InteractionV2/Validations. It is highly recommended to re-use, modify, or implement new validators so that common validation logic can be shared.
