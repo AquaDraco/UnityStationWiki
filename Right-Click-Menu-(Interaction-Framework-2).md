@@ -1,11 +1,13 @@
 - [Overview](#overview)
-  * [1. Generate Options On-Demand with IRightClickable](#1-generate-options-on-demand-with-irightclickable)
-  * [2. Register Right Click Options Ahead of Time](#2-register-right-click-options-ahead-of-time)
+- [1. Generate Options with IRightClickable](#1-generate-options-with-irightclickable)
+- [2. Use the [RightClickMenu] Attribute](#2-use-the-rightclickmenu-attribute)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
-This page describes how the new right click menu works. The new system uses Scriptable Objects and allows for dynamic changes to an object's right click menu (allows changing what options are presented based on an object's state). It also allows overriding the text, sprite, and background color of the menu items.
+This page describes how the new right click menu works. The new system uses Scriptable Objects and allows for dynamic changes to an object's right click menu (allows changing what options are presented based on an object's state). It also allows overriding the text, sprite, and background color of the menu items and is designed to be developer friendly and easy to quickly set up.
+
+If you have any issues or akwardness trying to use it, or you want to suggest an improvement, feel free to reach out to @chairbender on Discord or create an Issue.
 
 # Overview
 All possible right click options are defined as ScriptableObjects. These define the appearance of the right click option but do not define what happens when the option is selected. These are all in Resources/ScriptableObjects/Interaction/RightclickOptions.
@@ -14,69 +16,75 @@ To ensure consistent ordering, there is also a RightClickOptionOrder ScriptableO
 
 RightclickManager (formerly Rightclick) lives on Right click canvas.prefab and manages all right click logic, similarly to what Rightclick was doing before.
 
-Each object which is right-clickable now has a RightClickMenu component which holds the current menu items for that object (RightClickMenu.GetCurrentOptions). This may not exist on all objects that have right click options, so various approaches are used (discussed below) to ensure this component is added to the object if needed.
-
-RightClickMenu's fields can be used to customize the appearance of the object's menu item. The RightClickOption can be used to customize the appearance of a particular option.
+By default, an object's top-level right click menu button will use the first sprite on the object and a default color and name. You can override these by attaching a RightClickAppearance component. You only need to put this on objects whose right click icon appearance you want to change from the default behavior.
 
 There are 2 ways for a component to define right click menu options on its object.
 
-## 1. Generate Options On-Demand with IRightClickable
-A component can implement IRightClickable to define which options should be shown based on its current state.
-This is the generally recommended approach because it centralizes the right click option logic. The biggest limitation of this approach is that the options are always generated
-on-demand when the right click occurs, which might cause some lag if the logic is particularly complicated. Usually
-it is not, so this is the recommended approach.
+# 1. Generate Options with IRightClickable
+A component can implement IRightClickable to define which options should be shown based on its current state. All that
+is needed is to implement the method.
 
 To use this in a component:
-1. Create a RightClickOption for your option if it doesn't already exist, and set up its appearance. You can do this in Unity by the Create > Interaction > Right click option menu item.
-1. Add a field to cache the RightClickOption. Make it public so it is inspectable / editable. - `public RightClickOption someOption`
-1. Add `[RequireComponent(typeof(RightClickMenu))]` to the component ensure that the RightClickMenu is always added
-alongside your component. This doesn't effect existing prefabs...therefore
-2. In Start() or Awake() (or whatever startup method), add `RightClickMenu.EnsureComponentExists(gameObject)`. This 
-ensures that the component is added at runtime if it isn't present. Many objects do not have RightClickMenu since it
-was created after they were originally created. You can omit this if you know for sure that RightClickMenu exists
-on all prefabs that use your component.
-3. Implement IRightClickable, returning a dictionary of the currently-available options based on the component's current
-state.
+1. Create a RightClickOption for your option if it doesn't already exist, and set up its appearance. You can do this in Unity by the Create > Interaction > Right click option menu item. You must do this in Resources/ScriptableObjects/Interaction/RightclickOptions.
+1. Implement IRightClickable's GenerateRightClickOptions method. You must create a RightClickableResult and
+add use the available methods to add right click options based on the object's state. You can return null
+if no options should be generated. It is recommended to use the method-chaining features of RightClickableResult to
+improve conciseness and readability, if possible.
+
+Using the methods on RightClickableResult, it is also possible to override the default appearance of the RightClickOption, such as modifying its background color or icon.
 
 You can have this on multiple components on a given object - all of their right click options will be added together.
 
-Refer to the following example for PickUpTrigger:
+Here's a simple example for a behavior whose right click option doesn't depend on its state:
 ```csharp
-//Ensures the RightClickMenu is added when this component is added. 
-//This doesn't affect existing prefabs though.
-[RequireComponent(typeof(RightClickMenu))]
-public class PickUpTrigger : InputTrigger, IRightClickable
+public class ItemAttributes : NetworkBehaviour, IRightClickable
 {
-  //Allows caching of the option and overriding the display of this option in editor.
-  public RightClickOption pickUpOption;
-
-  public void Start()
-  {
-    //This ensures the RightClickMenu component exists at runtime.
-    RightClickMenu.EnsureComponentExists(gameObject);
-  }
-
   //implementation of the interface method. This is invoked by RightClickMenu when
   //it's time to display menu options.
-  public Dictionary<RightClickOption, Action> GenerateRightClickOptions()
+  public RightClickableResult GenerateRightClickOptions()
   {
-    //will return a dictionary mapping from the option to the Action to invoke 
-    //when the option is selected
-    var result = new Dictionary<RightClickOption, Action>();
-    
-    //Default to the specified option if pickUpOption is null.
-    //this assignment allows the resource to be cached so the lookup doesn't need to be performed every time.
-    pickUpOption = RightClickOption.DefaultIfNull("ScriptableObjects/Interaction/RightclickOptions/PickUp",
-			pickUpOption);
+    //Use method chaining to simplify readability.
+    //Note that the "Examine" string is the name of the RightClickOption ScriptableObject
+    //we want to display.
+    return RightClickableResult.Create()
+      .AddElement("Examine", OnExamine);
+  }
 
-    //if player can pick this up
-    if (...) //various validations
+  void OnExamine()
+  {
+    //...performs the examination logic
+  }
+}
+```
+
+
+Here's a more complex example in PickUpTrigger where the options shown depends on the state:
+```csharp
+public class PickUpTrigger : InputTrigger, IRightClickable
+{
+  //implementation of the interface method. This is invoked by RightClickMenu when
+  //it's time to display menu options.
+  public RightClickableResult GenerateRightClickOptions()
+  {
+    if (PlayerManager.LocalPlayerScript.canNotInteract())
     {
-      //add the pick up option, call GUIInteract if it is selected.
-      result.Add(pickUpOption, GUIInteract);
+      //return null if no options should be shown
+      return null;
     }
-    
-    return result;
+    var player = PlayerManager.LocalPlayerScript;
+    UISlotObject uiSlotObject = new UISlotObject(UIManager.Hands.CurrentSlot.inventorySlot.UUID, gameObject);
+    if (UIManager.CanPutItemToSlot(uiSlotObject))
+    {
+      if (player.IsInReach(this.gameObject, false))
+      {
+        //using method chaining to enhance readability
+        return RightClickableResult.Create()
+            //we specify the name of the RightClickOption ScriptableObject
+            .AddElement("PickUp", GUIInteract);
+      }
+    }
+
+    return null;
   }
 
   void GUIInteract()
@@ -85,36 +93,33 @@ public class PickUpTrigger : InputTrigger, IRightClickable
   }
 }
 ```
-## 2. Register Right Click Options Ahead of Time
-Rather than generating options on-demand, you can instead directly register and unregister RightClickOptions on
-RightClickMenu. This can be used for options which should always be present or which have expensive logic to
-determine if they should be shown which you want to calculate ahead of time. In general, however, it is recommended to use
-IRightClickable unless you have a good reason not to.
+
+# 2. Use the [RightClickMenu] Attribute
+This should only be used for development, as it can create performance issues if there are lots
+of usages of it. You can put this attribute on any no-arg method of a component and a right click
+menu option will be generated which invokes that method. This can be useful if you have a method
+you want to be able to invoke in game at will.
+
+For example, if we have a lot of useful development / debugging methods we'd want to invoke on an object,
+we could create a developer-only component and attach it to our prefabs (remove it for release builds) to
+provide a sort of "dev menu".
 
 To use this approach:
-1. Create a RightClickOption for your option if it doesn't already exist, and set up its appearance. You can do this in Unity by the Create > Interaction > Right click option menu item.
-1. Add a field to cache the RightClickOption. Make it public so it is inspectable / editable. - `public RightClickOption someOption`
-2. Now you can simply use RightClickMenu.AddRightClickOption and RightClickMenu.RemoveRightClickOption
-to register/unregister options as they should be made available / unavailable. These are static methods which
-also take care of creating RightClickMenu on your object if it doesn't already exist.
+1. Simply put the attribute on the no-arg method of the component you want to invoke. Refer to the
+various parameters of RightClickMenu to see how you can customize the color, label, or icon of the
+displayed option. By default, the attribute will show a question mark and be named after the method
+it is attached to.
 
-For example, here is how it is used in ItemAttributes for the Examine option:
+For example, here is how it is used in BatterySupplyingModule to allow toggling of charge:
 ```csharp
-public class ItemAttributes : NetworkBehaviour
+public class BatterySupplyingModule : ModuleSupplyingDevice
 {
-  //allows caching / overriding in editor.
-  public RightClickOption examineOption;
-
-  private void Awake()
+  
+  //We will see an option called "ToggleCharge" that invokes this method.
+  [RightClickMethod]
+  public void ToggleCharge()
   {
-    //Register our right click options. 
-    examineOption = RightClickMenu.AddRightClickOption("ScriptableObjects/Interaction/RightclickOptions/Examine",
-        gameObject, OnExamine, examineOption);
-  }
-
-  void OnExamine()
-  {
-    //...examine logic goes here
+    ToggleCanCharge = !ToggleCanCharge;
   }
 }
 ```
