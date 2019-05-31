@@ -67,7 +67,7 @@ public class BuckleInteract : CoordinatedInteraction<MouseDrop>
 ```
 
 
-The CoordinatedInteraction base class provides the maximum convenience for implementing an interaction component. It inherits from MonoBehavior. If you wish to use NetworkBehavior you must use or create a base class to extend because
+The CoordinatedInteraction base class provides the maximum convenience for implementing an interaction component. It inherits from MonoBehavior. If you wish to use NetworkBehavior things (like SyncVar) you must use or create a different base class to extend because
 Unity does not allow you to have a generic class that extends NetworkBehavior. See examples of how to do this in InteractionV2/Components, such as NetworkCoordinatedHandApplyInteraction.
 
 It works as follows:
