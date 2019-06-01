@@ -1,5 +1,5 @@
 - [Using Interaction Framework V2](#using-interaction-framework-v2)
-  * [1. Extend CoordinatedInteraction - Most Convenient Approach](#1-extend-coordinatedinteraction---most-convenient-approach)
+  * [1. Extend Interactable - Most Convenient Approach](#1-extend-interactable---most-convenient-approach)
   * [2. Delegate to InteractionCoordinator - More Control but More Verbose](#2-delegate-to-interactioncoordinator---more-control-but-more-verbose)
   * [3. Implement IInteractable - Most Flexible, Least Convenient](#3-implement-iinteractable---most-flexible--least-convenient)
 - [Which Approach Is Best?](#which-approach-is-best-)
@@ -29,11 +29,11 @@ All code lives in Input System/InteractionV2 and is heavily documented, so refer
 
 When a player drags and drops their character on a chair, they should become buckled. Here's the various ways this can be implemented, starting with the approach which is most convenient and ending with the approach that provides the most control.
 
-## 1. Extend CoordinatedInteraction - Most Convenient Approach
+## 1. Extend Interactable - Most Convenient Approach
 
 ```csharp
-// Extend CoordinatedInteraction and specify the type of interaction as the generic type argument
-public class BuckleInteract : CoordinatedInteraction<MouseDrop>
+// Extend Interaction and specify the type of interaction as the generic type argument
+public class BuckleInteract : Interactable<MouseDrop>
 {
     //Define the validations that must be done on client / server side for this interaction.
     protected override IList<IInteractionValidator<MouseDrop>> Validators()
@@ -67,8 +67,8 @@ public class BuckleInteract : CoordinatedInteraction<MouseDrop>
 ```
 
 
-The CoordinatedInteraction base class provides the maximum convenience for implementing an interaction component. It inherits from MonoBehavior. If you wish to use NetworkBehavior things (like SyncVar) you must use or create a different base class to extend because
-Unity does not allow you to have a generic class that extends NetworkBehavior. See examples of how to do this in InteractionV2/Components, such as NetworkCoordinatedHandApplyInteraction. All you need to do is extend the generic class and convert it to non-generic by specifying type arguments, then struggle to come up with a descriptive name that isn't too long.
+The Interactable base class provides the maximum convenience for implementing an interaction component. It inherits from MonoBehavior. If you wish to use NetworkBehavior things (like SyncVar) you must use or create a different base class to extend because
+Unity does not allow you to have a generic class that extends NetworkBehavior. See examples of how to do this in InteractionV2/Components, look at any class prefixed with "NB" (for NetworkBehavior), such as NBHandApplyInteractable. All you need to do is extend the generic class and convert it to non-generic by specifying type arguments, then name it "NB(interactions)Interactable". For example, if we want hand apply and mouse drop interaction, we would make it "NBHandApplyMouseDropInteractable". I know it's a long name but it's just trying to get around the inability to use generics.
 
 It works as follows:
 1. When the client performs an interaction involving this object, each validator (implementation of IInteractionValidator interface) is invoked. Validators are able to tell if validation is happening on client or server side, so they can customize the validation if needed. All validators live in Input System/InteractionV2/Validations. It is highly recommended to re-use, modify, or implement new validators so that common validation logic can be shared.
@@ -78,12 +78,12 @@ It works as follows:
 
 If common use cases emerge for the final server-side part of the interactions we can add this to IF2 to reduce code duplication. For example, a likely addition will be having a way to automatically broadcast a message to all clients so they can perform the update client-side, yet make it so that all of the logic for the client-side update still lives in the component that is handling the interaction.
 
-So, if your interaction fits into that pattern, you can use this approach. The limitation is that you must extend the CoordinatedInteraction class so you can't extend anything else.
+So, if your interaction fits into that pattern, you can use this approach. The limitation is that you must extend the Interactable class so you can't extend anything else.
 
-However, we have provided several versions of CoordinatedInteraction which accept additional interaction types. For example, if we want to implement logic so that the player is unbuckled when the chair is clicked, we would simply change the class definition to:
-`public class BuckleInteract : CoordinatedInteraction<MouseDrop,HandApply>`
+However, we have provided several versions of Interactable which accept additional interaction types. For example, if we want to implement logic so that the player is unbuckled when the chair is clicked, we would simply change the class definition to:
+`public class BuckleInteract : Interactable<MouseDrop,HandApply>`
 ...and then implement a second set of validators and server-side interaction logic for HandApply.
-We have defined CoordinatedInteraction to support from 1-5 generic type arguments.
+We have defined Interactable to support from 1-5 generic type arguments.
 
 ## 2. Delegate to InteractionCoordinator - More Control but More Verbose
 ```csharp
@@ -155,11 +155,11 @@ public class Chair: IInteractable<MouseDrop>, IInteractionProcessor<MouseDrop>
     }
 }
 ```
-The flow for this approach is exactly the same as the first approach, but we are not limited by extending CoordinatedInteraction. 
+The flow for this approach is exactly the same as the first approach, but we are not limited by extending Interactable. 
 
 The biggest advantage in flexibility of this approach is that you can use it on any existing component, since all you need to do is implement the indicated interfaces. In this example, we've added it on to our existing chair component. This CAN be useful to avoid having to create a new component for each new type of interaction, but you should be careful about putting too much logic into a single component. Unity components are designed to be re-usable, and combining lots of logic into a single component can hinder that. In general, I would suggest creating a new component and using approach 1 as a "sensible default". 
 
-The cost of that flexibility is that we have to add extra code to delegate to the coordinator. This is done for us in CoordinatedInteraction. 
+The cost of that flexibility is that we have to add extra code to delegate to the coordinator. This is done for us in Interactable. 
 
 The IInteractable interface tells IF2 that our component can process a MouseDrop interaction, as such the implementation of the interface method will be invoked when this component is on an object involved in the interaction. The IInteractionProcessor interfaces tells IF2 that our component can perform the server-side portion of an interaction. In order to use the InteractionCoordinator we have to pass it a component which implements IInteractionProcessor. We could pass it a different gameobject's IInteractionprocessor component if we wanted to, but for most use cases it should make the most sense to implement this directly on this component.
 
@@ -212,7 +212,7 @@ For something like a MouseDrop or HandApply interaction, there is the player per
 
 In IF2, for a given type of interaction, interaction components will be searched for on the used object and the target, so you can put the implementation of the interaction on whichever one makes the most sense. 
 
-At the time of writing, when any interaction component returns InteractionResult.SOMETHING_HAPPENED (which happens in CoordinatedInteraction if all validations succeed), no further interaction checks will be done. 
+At the time of writing, when any interaction component returns InteractionResult.SOMETHING_HAPPENED (which happens in Interactable if all validations succeed), no further interaction checks will be done. 
 
 The order of checking is:
 1. All components (in the order they appear in editor) are checked on the used object.
