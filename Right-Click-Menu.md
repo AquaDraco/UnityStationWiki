@@ -94,6 +94,43 @@ public class PickUpTrigger : InputTrigger, IRightClickable
 }
 ```
 
+Or, if you don't want to use method chaining, that can be done as well:
+Here's a more complex example in PickUpTrigger where the options shown depends on the state:
+```csharp
+public class PickUpTrigger : InputTrigger, IRightClickable
+{
+  //implementation of the interface method. This is invoked by RightClickMenu when
+  //it's time to display menu options.
+  public RightClickableResult GenerateRightClickOptions()
+  {
+    var result = RightClickableResult.Create();
+    if (PlayerManager.LocalPlayerScript.canNotInteract())
+    {
+      //return null or empty result if no options should be shown
+      return result;
+    }
+    var player = PlayerManager.LocalPlayerScript;
+    UISlotObject uiSlotObject = new UISlotObject(UIManager.Hands.CurrentSlot.inventorySlot.UUID, gameObject);
+    if (UIManager.CanPutItemToSlot(uiSlotObject))
+    {
+      if (player.IsInReach(this.gameObject, false))
+      {
+        //add to the result, not using method chaining.
+        result.AddElement("PickUp", GUIInteract);            
+      }
+    }
+
+    return result;
+  }
+
+  void GUIInteract()
+  {
+    //...performs the pickup logic
+  }
+}
+```
+
+
 # 2. Use the [RightClickMenu] Attribute
 This should only be used for development, as it can create performance issues if there are lots
 of usages of it. You can put this attribute on any no-arg method of a component and a right click
