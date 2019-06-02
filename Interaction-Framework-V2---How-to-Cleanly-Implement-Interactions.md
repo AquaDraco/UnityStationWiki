@@ -230,6 +230,6 @@ Currently only HandApply and MouseDrop interactions are implemented. Others will
 * MouseDrop - Click and drag a MouseDraggable object in the game world and release it to drop.
 * HandApply - click something in the game world. The item in the active hand (or empty hand) is applied to the thing that was clicked.
 * HoldHandApply - like hand apply, but occurs at some interval while the mouse is being held down after being clicked in the game world. For things like shooting an automatic weapon, spraying fire extinguisher, etc...
-* Activate - clicking an item in the active hand or pressing Z
+* Activate - clicking an item in inventory when active hand is full or pressing Z to activate the item in the active hand.
 * Combine - dragging and dropping an item from on UI slot to another, which may or may not be occupied
 * DragApply - dragging and dropping an item from a UI slot to the game world, which I think always just drops it on the ground but I'm making it separate for now just in case not.
