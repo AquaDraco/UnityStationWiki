@@ -36,18 +36,14 @@ When a player drags and drops their character on a chair, they should become buc
 public class BuckleInteract : Interactable<MouseDrop>
 {
     //Define the validations that must be done on client / server side for this interaction.
-    protected override IList<IInteractionValidator<MouseDrop>> Validators()
+    protected override InteractionValidationChain<MouseDrop> InteractionValidationChain()
     {
-        return new List<IInteractionValidator<MouseDrop>>
-        {
-            //use existing validators so we can re-use common validation logic
-            IsDroppedObjectAtTargetPosition.IS,
-            DoesDroppedObjectHaveComponent<PlayerMove>.DOES,
-            CanApply.EVEN_IF_SOFT_CRIT,
-            ComponentAtTargetMatrixPosition<PlayerMove>
-                .NoneMatchingCriteria(pm => pm.IsRestrained),
-            new FunctionValidator<MouseDrop>(AdditionalValidation)
-        };
+        return InteractionValidationChain<MouseDrop>.Create()
+            .WithValidation(IsDroppedObjectAtTargetPosition.IS)
+            .WithValidation(DoesDroppedObjectHaveComponent<PlayerMove>.DOES)
+            .WithValidation(CanApply.EVEN_IF_SOFT_CRIT)
+            .WithValidation(ComponentAtTargetMatrixPosition<PlayerMove>.NoneMatchingCriteria(pm => pm.IsRestrained))
+            .WithValidation(new FunctionValidator<MouseDrop>(AdditionalValidation));
     }
 
     private ValidationResult AdditionalValidation(MouseDrop drop, NetworkSide side)
@@ -55,26 +51,35 @@ public class BuckleInteract : Interactable<MouseDrop>
         //additional custom validation logic which is only needed for this class
     }
 
+    //invoked after client-side validation succeeds
+    protected override void ClientPredictInteraction(HandApply interaction)
+    {
+        //can do client-side prediction stuff here if desired
+    }
+
+    //invoked on the server after server-side validation fails
+    protected override void OnServerInteractionValidationFail(HandApply interaction)
+    {
+        //Can tell client to rollback their prediction
+    }
+
     // Define what the server should do once the interaction is validated server side
-    protected override InteractionResult ServerPerformInteraction(MouseDrop drop)
+    protected override void ServerPerformInteraction(MouseDrop drop)
     {
         // perform the interaction on the server side and update each
         // client by setting a syncvar that indicates the player is restrained
-
-        return InteractionResult.SOMETHING_HAPPENED;
     }
 }
 ```
-
 
 The Interactable base class provides the maximum convenience for implementing an interaction component. It inherits from MonoBehavior. If you wish to use NetworkBehavior things (like SyncVar) you must use or create a different base class to extend because
 Unity does not allow you to have a generic class that extends NetworkBehavior. See examples of how to do this in InteractionV2/Components, look at any class prefixed with "NB" (for NetworkBehavior), such as NBHandApplyInteractable. All you need to do is extend the generic class and convert it to non-generic by specifying type arguments, then name it "NB(interactions)Interactable". For example, if we want hand apply and mouse drop interaction, we would make it "NBHandApplyMouseDropInteractable". I know it's a long name but it's just trying to get around the inability to use generics.
 
 It works as follows:
 1. When the client performs an interaction involving this object, each validator (implementation of IInteractionValidator interface) is invoked. Validators are able to tell if validation is happening on client or server side, so they can customize the validation if needed. All validators live in Input System/InteractionV2/Validations. It is highly recommended to re-use, modify, or implement new validators so that common validation logic can be shared.
-2. If all validators succeed, the client sends a RequestInteractMessage to the server. No further interaction components will be invoked on the client side for this interaction type during the current update.
+2. If all validators succeed, the client sends a RequestInteractMessage to the server and the ClientPredictInteraction method is invoked (if defined). No further interaction components will be invoked on the client side for this interaction type during the current update.
 3. The server gets the RequestInteractMessage and invokes all of the validators again (each validator can modify the validation logic on the server-side if needed).
-4. If all validators succeed, the server invokes ServerPerformInteraction and from there can do whatever it wants to update the state of the game and communicate it to the players - setting syncvars, invoking Rpcs, or sending messages to clients. 
+4. If all validators succeed, the server invokes ServerPerformInteraction and from there can do whatever it wants to update the state of the game and communicate it to the players - setting syncvars, invoking Rpcs, or sending messages to clients. If validation fails on the server-side, the OnServerInteractionValidationFail method is invoked (if defined).
 
 If common use cases emerge for the final server-side part of the interactions we can add this to IF2 to reduce code duplication. For example, a likely addition will be having a way to automatically broadcast a message to all clients so they can perform the update client-side, yet make it so that all of the logic for the client-side update still lives in the component that is handling the interaction.
 
@@ -84,6 +89,9 @@ However, we have provided several versions of Interactable which accept addition
 `public class BuckleInteract : Interactable<MouseDrop,HandApply>`
 ...and then implement a second set of validators and server-side interaction logic for HandApply.
 We have defined Interactable to support from 1-5 generic type arguments.
+
+And, as mentioned above, if you wish the use NetworkBehavior features, you will need to copy the example from
+NBHandApplyInteractable or re-use an existing NB Interactable class.
 
 ## 2. Delegate to InteractionCoordinator - More Control but More Verbose
 ```csharp
@@ -102,20 +110,18 @@ public class Chair: IInteractable<MouseDrop>, IInteractionProcessor<MouseDrop>
     private void Start()
     {
         coordinator = new InteractionCoordinator<MouseDrop>(this, 
-            Validators(), ServerPerformInteraction);
+            InteractionValidationChain(), ServerPerformInteraction);
     }
 
-    private IList<IInteractionValidator<MouseDrop>> Validators()
+    private InteractionValidationChain<MouseDrop> InteractionValidationChain()
     {
-        return new List<IInteractionValidator<MouseDrop>>
-        {
-            IsDroppedObjectAtTargetPosition.IS,
-            DoesDroppedObjectHaveComponent<PlayerMove>.DOES,
-            CanApply.EVEN_IF_SOFT_CRIT,
-            ComponentAtTargetMatrixPosition<PlayerMove>
-                .NoneMatchingCriteria(pm => pm.IsRestrained),
-            new FunctionValidator<MouseDrop>(AdditionalValidation)
-        };
+        return InteractionValidationChain<MouseDrop>.Create()        
+            .WithValidation(IsDroppedObjectAtTargetPosition.IS)
+            .WithValidation(DoesDroppedObjectHaveComponent<PlayerMove>.DOES)
+            .WithValidation(CanApply.EVEN_IF_SOFT_CRIT)
+            .WithValidation(ComponentAtTargetMatrixPosition<PlayerMove>
+                .NoneMatchingCriteria(pm => pm.IsRestrained))
+            .WithValidation(new FunctionValidator<MouseDrop>(AdditionalValidation));
     }
 
     private ValidationResult AdditionalValidation(MouseDrop drop, NetworkSide side)
@@ -134,22 +140,20 @@ public class Chair: IInteractable<MouseDrop>, IInteractionProcessor<MouseDrop>
             .Validate(drop, side);
     }
 
-    private InteractionResult ServerPerformInteraction(MouseDrop drop)
+    private void ServerPerformInteraction(MouseDrop drop)
     {
         // server-side interaction logic + inform clients
-
-        return InteractionResult.SOMETHING_HAPPENED;
     }
 
    //from IInteractable
    //delegate the interface method implementations to coordinator
-    public InteractionResult Interact(MouseDrop interaction)
+    public InteractionControl Interact(MouseDrop interaction)
     {
         return coordinator.ClientValidateAndRequest(interaction);
     }
 
     //from IInteractionProcessor
-    public InteractionResult ServerProcessInteraction(MouseDrop interaction)
+    public InteractionControl ServerProcessInteraction(MouseDrop interaction)
     {
         return coordinator.ServerValidateAndPerform(interaction);
     }
@@ -163,14 +167,14 @@ The cost of that flexibility is that we have to add extra code to delegate to th
 
 The IInteractable interface tells IF2 that our component can process a MouseDrop interaction, as such the implementation of the interface method will be invoked when this component is on an object involved in the interaction. The IInteractionProcessor interfaces tells IF2 that our component can perform the server-side portion of an interaction. In order to use the InteractionCoordinator we have to pass it a component which implements IInteractionProcessor. We could pass it a different gameobject's IInteractionprocessor component if we wanted to, but for most use cases it should make the most sense to implement this directly on this component.
 
-With this approach, we can also modify the implementation of ServerProcessIneteraction and Interact so that we are not only limited to the functionality provided by the InteractionCoordinator.
+With this approach, we can also modify the implementation of ServerProcessInteraction and Interact so that we are not only limited to the functionality provided by the InteractionCoordinator.
 
 ## 3. Implement IInteractable - Most Flexible, Least Convenient
 ```csharp
 public class BuckleInteractDIY : IInteractable<MouseDrop>, IInteractionProcessor<MouseDrop>
 {
     //from IInteractable
-    public InteractionResult Interact(MouseDrop interaction)
+    public InteractionControl Interact(MouseDrop interaction)
     {
         // We can still re-use validators if we want:
         var validationResult = CanApply.EVEN_IF_SOFT_CRIT.Validate(interaction, NetworkSide.CLIENT);
@@ -187,7 +191,7 @@ public class BuckleInteractDIY : IInteractable<MouseDrop>, IInteractionProcessor
     }
 
     //from IInteractionProcessor, this will be invoked when the server gets the RequestInteractMessage
-    public InteractionResult ServerProcessInteraction(MouseDrop interaction)
+    public InteractionControl ServerProcessInteraction(MouseDrop interaction)
     {
         //validate and perform the update server side after it gets the RequestInteractMessage,
         //then inform all clients.
@@ -205,20 +209,20 @@ Each approach is a tradeoff between convenience and control. In general I would 
 Be warned that any changes to the core of IF2 will be inspected closely...we want to ensure that interaction code is as clean as possible since interaction is such a foundational aspect of the game.
 
 # Multiple Interaction Components
-In the old system, you could only have one interaction component per object. In the new system, **you can have multiple components on an object which implement interaction logic, even for the same type of interaction**. This means you no longer should need to do things like extending PickupTrigger. You can define a PickupInteraction component and a separate component for that object's specific interaction logic.
+In the old system, you could only have one interaction component per object. In the new system, **you can have multiple components on an object which implement interaction logic, even for the same type of interaction**. This means you no longer should need to do things like extending PickupTrigger. You can define a Pickupable component and a separate component for that object's specific interaction logic.
 
 # Precedence of Interaction Components
 For something like a MouseDrop or HandApply interaction, there is the player performing it (performer) the object they are using or dropping (used object) and the object they are dropping on or clicking in the game world (target). 
 
 In IF2, for a given type of interaction, interaction components will be searched for on the used object and the target, so you can put the implementation of the interaction on whichever one makes the most sense. 
 
-At the time of writing, when any interaction component returns InteractionResult.SOMETHING_HAPPENED (which happens in Interactable if all validations succeed), no further interaction checks will be done. 
+At the time of writing, when any interaction component returns InteractionControl.STOP_PROCESSING (which happens in Interactable if all validations succeed), no further interaction checks will be done. 
 
 The order of checking is:
 1. All components (in the order they appear in editor) are checked on the used object.
 2. All components (in the order they appear in editor) are checked on the target object.
 
-If more sophisticated coordination is needed between components (such as changing the order of precedence on an as-needed basis), we can expand IF2's interaction checking logic and modify InteractionResult so that this can be done.
+If more sophisticated coordination is needed between components (such as changing the order of precedence on an as-needed basis), we can expand IF2's interaction checking logic and modify InteractionControl so that this can be done.
 
 # Migration
 Migration will be done in a piecemeal fashion. Any time we discover usability, code duplication, or design issues with IF2, we will nip them at the bud before continuing to migrate. Please bring any design concerns to Discord. 
@@ -228,8 +232,8 @@ IF2 is designed such that it lives alongside the old interaction system. Once th
 # Interaction Types
 Currently only HandApply and MouseDrop interactions are implemented. Others will be implemented as needed. Here are the planned types of interactions:
 * MouseDrop - Click and drag a MouseDraggable object in the game world and release it to drop.
-* HandApply - click something in the game world. The item in the active hand (or empty hand) is applied to the thing that was clicked.
-* HoldHandApply - like hand apply, but occurs at some interval while the mouse is being held down after being clicked in the game world. For things like shooting an automatic weapon, spraying fire extinguisher, etc...
+* HandApply - click something in the game world. The item in the active hand (or empty hand) is applied to the thing that was clicked. Targets a specific object or tile.
+* AimApply - like hand apply, but does not have a specific targeted object (it simply aims where the mouse is) and can occur at some interval while the mouse is being held down after being clicked in the game world. For things like shooting a semi-auto or automatic weapon, spraying fire extinguisher, etc...
 * Activate - clicking an item in inventory when active hand is full or pressing Z to activate the item in the active hand.
 * Combine - dragging and dropping an item from on UI slot to another, which may or may not be occupied
 * DragApply - dragging and dropping an item from a UI slot to the game world. Usually this drops the item on the ground, but if you drag a container into another container you pass the items to it. There may be other cases.
