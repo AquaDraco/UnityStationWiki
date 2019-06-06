@@ -235,5 +235,5 @@ Currently only HandApply and MouseDrop interactions are implemented. Others will
 * HandApply - click something in the game world. The item in the active hand (or empty hand) is applied to the thing that was clicked. Targets a specific object or tile.
 * AimApply - like hand apply, but does not have a specific targeted object (it simply aims where the mouse is) and can occur at some interval while the mouse is being held down after being clicked in the game world. For things like shooting a semi-auto or automatic weapon, spraying fire extinguisher, etc...
 * Activate - clicking an item in inventory when active hand is full or pressing Z to activate the item in the active hand.
-* Combine - dragging and dropping an item from on UI slot to another, which may or may not be occupied
+* Combine - dragging and dropping an item from on UI slot to another, which may or may not be occupied. Clicking on a UI slot also triggers this with the active hand slot. 
 * DragApply - dragging and dropping an item from a UI slot to the game world. Usually this drops the item on the ground, but if you drag a container into another container you pass the items to it. There may be other cases.
