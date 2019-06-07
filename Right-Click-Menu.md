@@ -26,8 +26,7 @@ is needed is to implement the method.
 
 To use this in a component:
 1. Create a RightClickOption for your option if it doesn't already exist, and set up its appearance. You can do this in Unity by the Create > Interaction > Right click option menu item. You must do this in Resources/ScriptableObjects/Interaction/RightclickOptions.
-1. Implement IRightClickable's GenerateRightClickOptions method. You must create a RightClickableResult and
-add use the available methods to add right click options based on the object's state. You can return null
+1. Implement IRightClickable's GenerateRightClickOptions method. You must create a RightClickableResult and use the available methods to add right click options based on the object's state. You can return null
 if no options should be generated. It is recommended to use the method-chaining features of RightClickableResult to
 improve conciseness and readability, if possible.
 
