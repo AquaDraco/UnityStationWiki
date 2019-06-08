@@ -7,20 +7,13 @@
 - [Precedence of Interaction Components](#precedence-of-interaction-components)
 - [Migration](#migration)
 - [Interaction Types](#interaction-types)
+- [Motivation for IF2](#motivation-for-if2)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 
 For info on the Right Click Menu, see [[Right Click Menu]].
 
 This page describes how to use the new interaction system, which I've dubbed "Interaction Framework V2" (I guess you could call it IF2 for short, at least until everything is ported over to it, and you could call the old system IF1). Please contact me @chairbender on Discord for any questions or concerns.
-
-We've all noticed some issues working with the old InputTrigger-based interaction system. Since interaction is such a vital and foundational part of the game, we decided it would be best to make it as polished as possible. The key design goals of the new system are:
-* Minimize code duplication for existing and new interactions. There was a lot of this going on in the old system due to various challenges with trying to re-use code between components. The new system provides better ways to share common interaction logic, and should be easier to add on to when additional common use cases become needed.
-* Flexibility. The old system was completely based on inheritance from a base class, and extending that class was pretty much the only way of implementing a new interaction. The new system provides flexibility by providing different ways of implementing interactions, where each way provides different levels of control vs. convenience. Additionally, the core of the new system is based on interfaces and containment rather than inheritance, so it should be easier to add functionality to the core system as more use cases become apparent.
-* Clarity and consistency. The old system had many abstract methods in the base class which would be invoked under various unclear circumstances, and whose names did not make it obvious what those situations were. The new system provides a clear vocabulary and definitions of each different kind of interaction.
-* Separation of concern. In the old system, the client / server side portions of interactions sometimes would happen in the component, but sometimes would also happen in the NetMessage that corresponded to that interaction. In the new system, it's easier to keep all of the logic related to the interaction on both sides of the network all in a single component (though still possible to deviate from this if you really wanted to, but this should rarely / never be needed).
-* Networking support. The old system was basically a free-for-all in terms of how you could implement networking features, even though MANY of the interactions followed the same pattern of communication between client and server. The new system retains the flexibility of the old system while also providing functionality for common networking use cases that show up in our interaction system. This should simplify the networking aspect of interaction, making it easier to work with and understand.
 
 Without further ado, here's the many ways you can use it...
 
@@ -51,7 +44,7 @@ public class BuckleInteract : Interactable<MouseDrop>
         //additional custom validation logic which is only needed for this class
     }
 
-    //invoked after client-side validation succeeds
+    //invoked after client-side validation succeeds - NOT invoked for server player!
     protected override void ClientPredictInteraction(HandApply interaction)
     {
         //can do client-side prediction stuff here if desired
@@ -77,7 +70,7 @@ Unity does not allow you to have a generic class that extends NetworkBehavior. S
 
 It works as follows:
 1. When the client performs an interaction involving this object, each validator (implementation of IInteractionValidator interface) is invoked. Validators are able to tell if validation is happening on client or server side, so they can customize the validation if needed. All validators live in Input System/InteractionV2/Validations. It is highly recommended to re-use, modify, or implement new validators so that common validation logic can be shared.
-2. If all validators succeed, the client sends a RequestInteractMessage to the server and the ClientPredictInteraction method is invoked (if defined). No further interaction components will be invoked on the client side for this interaction type during the current update.
+2. If all validators succeed, the client sends a RequestInteractMessage to the server and the ClientPredictInteraction method is invoked if this isn't the server player (if defined). No further interaction components will be invoked on the client side for this interaction type during the current update.
 3. The server gets the RequestInteractMessage and invokes all of the validators again (each validator can modify the validation logic on the server-side if needed).
 4. If all validators succeed, the server invokes ServerPerformInteraction and from there can do whatever it wants to update the state of the game and communicate it to the players - setting syncvars, invoking Rpcs, or sending messages to clients. If validation fails on the server-side, the OnServerInteractionValidationFail method is invoked (if defined).
 
@@ -236,3 +229,13 @@ Currently only HandApply and MouseDrop interactions are implemented. Others will
 * AimApply - like hand apply, but does not have a specific targeted object (it simply aims where the mouse is) and can occur at some interval while the mouse is being held down after being clicked in the game world. For things like shooting a semi-auto or automatic weapon, spraying fire extinguisher, etc...
 * InventoryApply - Handles all inventory interactions. Has a source slot (and item) and target slot. Dragging an item from one slot to another applies the dragged item to the target (the target slot can be empty). Clicking a slot applies the active hand item to the clicked slot. Pressing the Activate key (normally 'Z') applies the active hand item to itself, which can also be accomplished by clicking the active hand item.
 * DragApply - NOTE: This will actually be added to MouseDrop once it is implemented. dragging and dropping an item from a UI slot to the game world. Usually this drops the item on the ground, but if you drag a container into another container you pass the items to it. There may be other cases.
+
+# Motivation for IF2
+
+We've all noticed some issues working with the old InputTrigger-based interaction system. Since interaction is such a vital and foundational part of the game, we decided it would be best to make it as polished as possible. The key design goals of the new system are:
+* Minimize code duplication for existing and new interactions. There was a lot of this going on in the old system due to various challenges with trying to re-use code between components. The new system provides better ways to share common interaction logic, and should be easier to add on to when additional common use cases become needed.
+* Flexibility. The old system was completely based on inheritance from a base class, and extending that class was pretty much the only way of implementing a new interaction. The new system provides flexibility by providing different ways of implementing interactions, where each way provides different levels of control vs. convenience. Additionally, the core of the new system is based on interfaces and containment rather than inheritance, so it should be easier to add functionality to the core system as more use cases become apparent.
+* Clarity and consistency. The old system had many abstract methods in the base class which would be invoked under various unclear circumstances, and whose names did not make it obvious what those situations were. The new system provides a clear vocabulary and definitions of each different kind of interaction.
+* Separation of concern. In the old system, the client / server side portions of interactions sometimes would happen in the component, but sometimes would also happen in the NetMessage that corresponded to that interaction. In the new system, it's easier to keep all of the logic related to the interaction on both sides of the network all in a single component (though still possible to deviate from this if you really wanted to, but this should rarely / never be needed).
+* Networking support. The old system was basically a free-for-all in terms of how you could implement networking features, even though MANY of the interactions followed the same pattern of communication between client and server. The new system retains the flexibility of the old system while also providing functionality for common networking use cases that show up in our interaction system. This should simplify the networking aspect of interaction, making it easier to work with and understand.
+
