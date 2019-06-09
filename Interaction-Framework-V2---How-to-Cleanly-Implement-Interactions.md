@@ -70,8 +70,8 @@ Unity does not allow you to have a generic class that extends NetworkBehavior. S
 
 It works as follows:
 1. When the client performs an interaction involving this object, each validator (implementation of IInteractionValidator interface) is invoked. Validators are able to tell if validation is happening on client or server side, so they can customize the validation if needed. All validators live in Input System/InteractionV2/Validations. It is highly recommended to re-use, modify, or implement new validators so that common validation logic can be shared.
-2. If all validators succeed, the client sends a RequestInteractMessage to the server and the ClientPredictInteraction method is invoked if this isn't the server player (if defined). No further interaction components will be invoked on the client side for this interaction type during the current update.
-3. The server gets the RequestInteractMessage and invokes all of the validators again (each validator can modify the validation logic on the server-side if needed).
+2. If all validators succeed, the client sends an interaction message (in this case RequestMouseDropInteract) to the server and the ClientPredictInteraction method is invoked if this isn't the server player (if defined). No further interaction components will be invoked on the client side for this interaction type during the current update.
+3. The server gets the RequestMouseDropInteract and invokes all of the validators again (each validator can modify the validation logic on the server-side if needed).
 4. If all validators succeed, the server invokes ServerPerformInteraction and from there can do whatever it wants to update the state of the game and communicate it to the players - setting syncvars, invoking Rpcs, or sending messages to clients. If validation fails on the server-side, the OnServerInteractionValidationFail method is invoked (if defined).
 
 If common use cases emerge for the final server-side part of the interactions we can add this to IF2 to reduce code duplication. For example, a likely addition will be having a way to automatically broadcast a message to all clients so they can perform the update client-side, yet make it so that all of the logic for the client-side update still lives in the component that is handling the interaction.
@@ -177,23 +177,23 @@ public class BuckleInteractDIY : IInteractable<MouseDrop>, IInteractionProcessor
         // It's up to us to communicate with the server and
         // perform validation if needed.
         
-        //if desired, we can send a RequestInteractMessage like so,
+        //if desired, we can send a RequestMouseDropMessage like so,
         //indicating this component will process the interaction on the server side
         // in ServerProcessInteraction:
-        RequestInteractMessage.Send(interaction, this);
+        InteractionMessageUtils.SendRequest(interaction, this);
     }
 
-    //from IInteractionProcessor, this will be invoked when the server gets the RequestInteractMessage
+    //from IInteractionProcessor, this will be invoked when the server gets the RequestMouseDropMessage
     public InteractionControl ServerProcessInteraction(MouseDrop interaction)
     {
-        //validate and perform the update server side after it gets the RequestInteractMessage,
+        //validate and perform the update server side after it gets the RequestMouseDropMessage,
         //then inform all clients.
     }
 }
 ```
 With this approach, we implement IInteractable so that IF2 will invoke this component if the object it's on is involved in that type of interaction. However, it's up to us to handle all the rest of this interaction. If this was something that should only be client-side, for example, we could just implement the client-side logic here. But if there is any communication needed with the server we would have to implement that logic as well. 
 
-We can re-use validators here as well as RequestInteractMessage / IInteractionProcessor as shown.
+We can re-use validators here as well as interaction messages like RequestMouseDropMessage / IInteractionProcessor as shown. Each interaction type has its own message and can be sent using InteractionMessageUtils.SendRequest.
 
 As with the previous approach, we can also implement this on any existing component if we want.
 # Which Approach Is Best?
