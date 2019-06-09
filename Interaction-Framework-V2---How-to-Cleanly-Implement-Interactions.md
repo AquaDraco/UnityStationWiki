@@ -242,48 +242,48 @@ When the active hand doesn't have a loaded gun:
        button is released.
     2. If mouse is not over a MouseDraggable...
         1. IF2 - HandApply - check interactions in the following order until one occurs.
-            1. IInteractable<HandApply> components on used object (for the object in the active hand, if occupied), in 
+            1. IInteractable&lt;HandApply> components on used object (for the object in the active hand, if occupied), in 
                component order.
-            2. IInteractable<HandApply> components on target object in component order.
+            2. IInteractable&lt;HandApply> components on target object in component order.
         2. If no HandApply interactions occurred, check the old system to see if a click interaction occurs - uses 
-           InputTrigger.
-        3. If no interactions have occurred, check IF2 AimApply interactions. This runs last so you can still melee / 
-           click things if adjacent when a gun is in hand)
-           1. Checks for IInteractable<AimApply> components on used object (object in the active hand), in component 
+           InputTrigger and stop as soon as one occurs.
+        3. If no interactions have occurred, check IF2 AimApply interactions and stop as soon as one occurs. This runs 
+           last so you can still melee / click things if adjacent when a gun is in hand)
+           1. Checks for IInteractable&lt;AimApply> components on used object (object in the active hand), in component 
               order.
 2. Mouse held down.
     1. If we saved a MouseDraggable during the initial click and the mouse has been dragged far enough (past MouseDragDeadzone), initiate a drag and drop (show the drag shadow of the object being dragged).
        Until the object is dropped, no further interactions will occur.
 3. Mouse Button Released
     1. If we are dragging something, drop it and trigger MouseDrop interactions in the following order... 
-        1. IInteractable<MouseDrop> components on dropped object in 
+        1. IInteractable&lt;MouseDrop> components on dropped object in 
                component order.
-        2. IInteractable<MouseDrop > components on target object in component order.
+        2. IInteractable&lt;MouseDrop > components on target object in component order.
     2. If we saved a MouseDraggable during the initial click but the mouse never moved past the drag deadzone
        and we have not held the mouse button down longer than MaxClickDuration...
         1. IF2 - HandApply - check interactions in the following order until one occurs.
-            1. IInteractable<HandApply> components on used object (for the object in the active hand, if occupied), in 
+            1. IInteractable&lt;HandApply> components on used object (for the object in the active hand, if occupied), in 
                component order.
-            2. IInteractable<HandApply> components on target object in component order.
+            2. IInteractable&lt;HandApply> components on target object in component order.
         2. If no HandApply interactions occurred, check the old system to see if a click interaction occurs - uses 
-           InputTrigger.
+           InputTrigger and stop as soon as one occurs.
 
 
 When there is a loaded gun in the active hand.
 1. Mouse Clicked Down
-    1. Are we on Harm intent? If so, shoot (trigger IInteractable<AimApply> components on Gun).
+    1. Are we on Harm intent? If so, shoot (trigger IInteractable&lt;AimApply> components on Gun).
     2. If not on Harm intent...
         1. IF2 - HandApply - check interactions in the following order until one occurs.
-            1. IInteractable<HandApply> components on used object (for the object in the active hand, if occupied), in 
+            1. IInteractable&lt;HandApply> components on used object (for the object in the active hand, if occupied), in 
                component order.
-            2. IINteractable<HandApply> components on target object in component order.
+            2. IINteractable&lt;HandApply> components on target object in component order.
         2. If no HandApply interactions occurred, check the old system to see if a click interaction occurs - uses 
-           InputTrigger.
-        3. If no interactions have occurred, check IF2 AimApply interactions. This runs last so you can still melee / 
-           click things if adjacent when a gun is in hand)
-           1. Checks for IInteractable<AimApply> components on used object (object in the active hand), in component 
+           InputTrigger and stop as soon as one occurs.
+        3. If no interactions have occurred, check IF2 AimApply interactions and stop as soon as one occurs. This runs 
+           last so you can still melee / click things if adjacent when a gun is in hand)
+           1. Checks for IInteractable&lt;AimApply> components on used object (object in the active hand), in component 
               order.
-2. Mouse held down - continue shooting if we have an automatic (keep triggering IInteractable<AimApply> components on Gun).
+2. Mouse held down - continue shooting if we have an automatic (keep triggering IInteractable&lt;AimApply> components on Gun).
       
 # Migration
 Migration will be done in a piecemeal fashion. Any time we discover usability, code duplication, or design issues with IF2, we will nip them at the bud before continuing to migrate. Please bring any design concerns to Discord. 
