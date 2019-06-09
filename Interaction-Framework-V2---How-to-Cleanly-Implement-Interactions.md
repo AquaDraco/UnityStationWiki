@@ -205,7 +205,7 @@ Be warned that any changes to the core of IF2 will be inspected closely...we wan
 In the old system, you could only have one interaction component per object. In the new system, **you can have multiple components on an object which implement interaction logic, even for the same type of interaction**. This means you no longer should need to do things like extending PickupTrigger. You can define a Pickupable component and a separate component for that object's specific interaction logic.
 
 # Precedence of Interaction Components
-For something like a MouseDrop or HandApply interaction, there is the player performing it (performer) the object they are using or dropping (used object) and the object they are dropping on or clicking in the game world (target). 
+For MouseDrop, InventoryApply, or HandApply interaction, there is the player performing it (performer) the object they are using or dropping (used object) and the object they are dropping on or clicking in the game world or inventory (target). 
 
 In IF2, for a given type of interaction, interaction components will be searched for on the used object and the target, so you can put the implementation of the interaction on whichever one makes the most sense. 
 
