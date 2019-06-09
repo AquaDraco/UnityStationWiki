@@ -6,6 +6,7 @@
 - [Interaction Types](#interaction-types)
 - [Multiple Interaction Components](#multiple-interaction-components)
 - [Precedence of Interaction Components](#precedence-of-interaction-components)
+- [Interaction Logic Flow](#interaction-logic-flow)
 - [Migration](#migration)
 - [Motivation for IF2](#motivation-for-if2)
 
@@ -214,7 +215,7 @@ Here are the planned types of interactions, as well as implementation status:
 In the old system, you could only have one interaction component per object. In the new system, **you can have multiple components on an object which implement interaction logic, even for the same type of interaction**. This means you no longer should need to do things like extending PickupTrigger. You can define a Pickupable component and a separate component for that object's specific interaction logic.
 
 # Precedence of Interaction Components
-This list indicates the current order of precedence for checking for an interaction on a given frame. It is being updated as the old interaction systems is refactored to IF2, so expect it to change. 
+This list indicates the current order of precedence for checking for an interaction on a given frame. Consider this an "abridged version" of the next section.
 
 Remember that there can be multiple components on the used object or the targeted object which implement IInteractable<>, for multiple interaction types, so this list can help you figure out which will be invoked first. Further checking of interactions will be stopped as soon as any of these components indicates that an interaction has occurred (in the old system, this is done by returning true from InputTrigger, in IF2 it is done by returning InteractionControl.STOP_PROCESSING).
 
@@ -227,6 +228,63 @@ Remember that there can be multiple components on the used object or the targete
 5. IF2 - AimApply (this runs last so you can still melee / click things if adjacent when a gun is in hand)
     1. Components on used object (object in the active hand), in component order.
 
+# Interaction Logic Flow
+Because the mouse can do so many things, the logic for interactions is a bit complicated. This section describes it in detail.
+
+Due to wanting to make guns more usable, there are 2 main different cases - when you have a loaded gun in the active hand vs. not.
+
+Alt click and throw are always checked first and have no special logic.
+
+When the active hand doesn't have a loaded gun:
+1. Mouse Clicked Down
+    1. Is the mouse over an object with a MouseDraggable? We need to wait and see if we should drag it or click on it. 
+       Save the MouseDraggable and wait until mouse is dragged or mouse 
+       button is released.
+    2. If mouse is not over a MouseDraggable...
+        1. IF2 - HandApply - check interactions in the following order until one occurs.
+            1. IInteractable<HandApply> components on used object (for the object in the active hand, if occupied), in 
+               component order.
+            2. IInteractable<HandApply> components on target object in component order.
+        2. If no HandApply interactions occurred, check the old system to see if a click interaction occurs - uses 
+           InputTrigger.
+        3. If no interactions have occurred, check IF2 AimApply interactions. This runs last so you can still melee / 
+           click things if adjacent when a gun is in hand)
+           1. Checks for IInteractable<AimApply> components on used object (object in the active hand), in component 
+              order.
+2. Mouse held down.
+    1. If we saved a MouseDraggable during the initial click and the mouse has been dragged far enough (past MouseDragDeadzone), initiate a drag and drop (show the drag shadow of the object being dragged).
+       Until the object is dropped, no further interactions will occur.
+3. Mouse Button Released
+    1. If we are dragging something, drop it and trigger MouseDrop interactions in the following order... 
+        1. IInteractable<MouseDrop> components on dropped object in 
+               component order.
+        2. IInteractable<MouseDrop > components on target object in component order.
+    2. If we saved a MouseDraggable during the initial click but the mouse never moved past the drag deadzone
+       and we have not held the mouse button down longer than MaxClickDuration...
+        1. IF2 - HandApply - check interactions in the following order until one occurs.
+            1. IInteractable<HandApply> components on used object (for the object in the active hand, if occupied), in 
+               component order.
+            2. IInteractable<HandApply> components on target object in component order.
+        2. If no HandApply interactions occurred, check the old system to see if a click interaction occurs - uses 
+           InputTrigger.
+
+
+When there is a loaded gun in the active hand.
+1. Mouse Clicked Down
+    1. Are we on Harm intent? If so, shoot (trigger IInteractable<AimApply> components on Gun).
+    2. If not on Harm intent...
+        1. IF2 - HandApply - check interactions in the following order until one occurs.
+            1. IInteractable<HandApply> components on used object (for the object in the active hand, if occupied), in 
+               component order.
+            2. IINteractable<HandApply> components on target object in component order.
+        2. If no HandApply interactions occurred, check the old system to see if a click interaction occurs - uses 
+           InputTrigger.
+        3. If no interactions have occurred, check IF2 AimApply interactions. This runs last so you can still melee / 
+           click things if adjacent when a gun is in hand)
+           1. Checks for IInteractable<AimApply> components on used object (object in the active hand), in component 
+              order.
+2. Mouse held down - continue shooting if we have an automatic (keep triggering IInteractable<AimApply> components on Gun).
+      
 # Migration
 Migration will be done in a piecemeal fashion. Any time we discover usability, code duplication, or design issues with IF2, we will nip them at the bud before continuing to migrate. Please bring any design concerns to Discord. 
 
