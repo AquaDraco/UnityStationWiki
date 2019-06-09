@@ -24,16 +24,7 @@ This is a custom message the client sends that get executed by the server.
 ![](https://unitystation.org/wp-content/uploads/Screenshotcallmessage.png)
 
 ## Client Interact Message
-If you just want your interact to be networked, there is a simple solution.
-You can just call the client message Interact from any InputTrigger script:
-
-
-`UI_ItemSlot slot = UIManager.Hands.CurrentSlot;` <br>
-`InteractMessage.Send(gameObject, position, slot.eventName);`
-
-
-This runs your whole interaction script as server.
-Be mindfull you should use if(IsServer) for all server-only code in your interact
+See [Interaction Framework V2](https://github.com/unitystation/unitystation/wiki/Interaction-Framework-V2---How-to-Cleanly-Implement-Interactions)
 
 ## Server message to all
 
