@@ -205,17 +205,31 @@ Be warned that any changes to the core of IF2 will be inspected closely...we wan
 In the old system, you could only have one interaction component per object. In the new system, **you can have multiple components on an object which implement interaction logic, even for the same type of interaction**. This means you no longer should need to do things like extending PickupTrigger. You can define a Pickupable component and a separate component for that object's specific interaction logic.
 
 # Precedence of Interaction Components
-For MouseDrop, InventoryApply, or HandApply interaction, there is the player performing it (performer) the object they are using or dropping (used object) and the object they are dropping on or clicking in the game world or inventory (target). 
+This list indicates the current order of precedence for checking for an interaction on a given frame. It is being updated as the old interaction systems is refactored to IF2, so expect it to change. 
 
-In IF2, for a given type of interaction, interaction components will be searched for on the used object and the target, so you can put the implementation of the interaction on whichever one makes the most sense. 
+Remember that there can be multiple components on the used object or the targeted object which implement IInteractable<>, for multiple interaction types, so this list can help you figure out which will be invoked first. Further checking of interactions will be stopped as soon as any of these components indicates that an interaction has occurred (in the old system, this is done by returning true from InputTrigger, in IF2 it is done by returning InteractionControl.STOP_PROCESSING).
 
-At the time of writing, when any interaction component returns InteractionControl.STOP_PROCESSING (which happens in Interactable if all validations succeed), no further interaction checks will be done. 
+When mouse button is initially clicked down:
+1. Old system - alt click.
+2. Old system - throw
+3. IF2 - HandApply
+    1. Components on used object (for the object in the active hand, if occupied), in component order.
+    2. Components on target object in component order.
+4. IF2 - AimApply
+    1. Components on used object (object in the active hand), in component order.
+5. old system - click (checks for InputTrigger).
 
-The order of checking is:
-1. All components (in the order they appear in editor) are checked on the used object.
-2. All components (in the order they appear in editor) are checked on the target object.
+While mouse button is being held down:
+1. IF2 AimApply
+    1. Components on used object (object in the active hand), in component order.
+2. Old system - check drag.
+3. IF2 - MouseDrop
+    1. Checks if any components under mouse have MouseDraggable component, initiates drag and drop if so.
 
-If more sophisticated coordination is needed between components (such as changing the order of precedence on an as-needed basis), we can expand IF2's interaction checking logic and modify InteractionControl so that this can be done.
+When mouse button is released:
+1. IF2 - MouseDrop - if we were dragging a MouseDraggable:
+    1. Components on dropped object, in component order.
+    2. Components on target object (the thing we dropped the object on) in component order.
 
 # Migration
 Migration will be done in a piecemeal fashion. Any time we discover usability, code duplication, or design issues with IF2, we will nip them at the bud before continuing to migrate. Please bring any design concerns to Discord. 
