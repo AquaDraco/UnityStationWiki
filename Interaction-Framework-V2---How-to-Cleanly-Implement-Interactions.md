@@ -218,7 +218,6 @@ This list indicates the current order of precedence for checking for an interact
 
 Remember that there can be multiple components on the used object or the targeted object which implement IInteractable<>, for multiple interaction types, so this list can help you figure out which will be invoked first. Further checking of interactions will be stopped as soon as any of these components indicates that an interaction has occurred (in the old system, this is done by returning true from InputTrigger, in IF2 it is done by returning InteractionControl.STOP_PROCESSING).
 
-When mouse button is initially clicked down:
 1. Old system - alt click.
 2. Old system - throw
 3. IF2 - HandApply
@@ -227,18 +226,6 @@ When mouse button is initially clicked down:
 4. old system - click (checks for InputTrigger).
 5. IF2 - AimApply (this runs last so you can still melee / click things if adjacent when a gun is in hand)
     1. Components on used object (object in the active hand), in component order.
-
-While mouse button is being held down:
-1. IF2 AimApply
-    1. Components on used object (object in the active hand), in component order.
-2. Old system - check drag.
-3. IF2 - MouseDrop
-    1. Checks if any components under mouse have MouseDraggable component, initiates drag and drop if so.
-
-When mouse button is released:
-1. IF2 - MouseDrop - if we were dragging a MouseDraggable:
-    1. Components on dropped object, in component order.
-    2. Components on target object (the thing we dropped the object on) in component order.
 
 # Migration
 Migration will be done in a piecemeal fashion. Any time we discover usability, code duplication, or design issues with IF2, we will nip them at the bud before continuing to migrate. Please bring any design concerns to Discord. 
