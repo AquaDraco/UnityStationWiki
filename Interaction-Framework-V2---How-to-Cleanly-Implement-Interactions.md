@@ -3,10 +3,10 @@
   * [2. Delegate to InteractionCoordinator - More Control but More Verbose](#2-delegate-to-interactioncoordinator---more-control-but-more-verbose)
   * [3. Implement IInteractable - Most Flexible, Least Convenient](#3-implement-iinteractable---most-flexible--least-convenient)
 - [Which Approach Is Best?](#which-approach-is-best-)
+- [Interaction Types](#interaction-types)
 - [Multiple Interaction Components](#multiple-interaction-components)
 - [Precedence of Interaction Components](#precedence-of-interaction-components)
 - [Migration](#migration)
-- [Interaction Types](#interaction-types)
 - [Motivation for IF2](#motivation-for-if2)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
@@ -201,6 +201,15 @@ Each approach is a tradeoff between convenience and control. In general I would 
 
 Be warned that any changes to the core of IF2 will be inspected closely...we want to ensure that interaction code is as clean as possible since interaction is such a foundational aspect of the game.
 
+# Interaction Types
+Here are the planned types of interactions, as well as implementation status:
+* MouseDrop (implemented) - Click and drag a MouseDraggable object in the game world and release it to drop.
+* HandApply (implemented) - click something in the game world. The item in the active hand (or empty hand) is applied to the thing that was clicked. Targets a specific object or tile.
+* AimApply (implemented) - like hand apply, but does not have a specific targeted object (it simply aims where the mouse is) and can occur at some interval while the mouse is being held down after being clicked in the game world. For things like shooting a semi-auto or automatic weapon, spraying fire extinguisher, etc...
+* Activate (implemented) - Triggers when using the "Z" key or clicking the item while it is in the active hand.
+* InventoryApply (implemented) - Like HandApply, but targeting something in the inventory rather than in the world. Triggers when clicking an item in the inventory when the active hand has an item.
+* DragApply - NOTE: This will actually be added to MouseDrop once it is implemented. dragging and dropping an item from a UI slot to the game world. Usually this drops the item on the ground, but if you drag a container into another container you pass the items to it. There may be other cases.
+
 # Multiple Interaction Components
 In the old system, you could only have one interaction component per object. In the new system, **you can have multiple components on an object which implement interaction logic, even for the same type of interaction**. This means you no longer should need to do things like extending PickupTrigger. You can define a Pickupable component and a separate component for that object's specific interaction logic.
 
@@ -235,15 +244,6 @@ When mouse button is released:
 Migration will be done in a piecemeal fashion. Any time we discover usability, code duplication, or design issues with IF2, we will nip them at the bud before continuing to migrate. Please bring any design concerns to Discord. 
 
 IF2 is designed such that it lives alongside the old interaction system. Once the old interaction system is complete, we should remove the last vestiges of the old code.
-
-# Interaction Types
-Currently only HandApply and MouseDrop interactions are implemented. Others will be implemented as needed. Here are the planned types of interactions:
-* MouseDrop - Click and drag a MouseDraggable object in the game world and release it to drop.
-* HandApply - click something in the game world. The item in the active hand (or empty hand) is applied to the thing that was clicked. Targets a specific object or tile.
-* AimApply - like hand apply, but does not have a specific targeted object (it simply aims where the mouse is) and can occur at some interval while the mouse is being held down after being clicked in the game world. For things like shooting a semi-auto or automatic weapon, spraying fire extinguisher, etc...
-* Activate - Triggers when using the "Z" key or clicking the item while it is in the active hand.
-* InventoryApply - Like HandApply, but targeting something in the inventory rather than in the world. Triggers when clicking an item in the inventory when the active hand has an item.
-* DragApply - NOTE: This will actually be added to MouseDrop once it is implemented. dragging and dropping an item from a UI slot to the game world. Usually this drops the item on the ground, but if you drag a container into another container you pass the items to it. There may be other cases.
 
 # Motivation for IF2
 
