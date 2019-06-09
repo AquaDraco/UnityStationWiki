@@ -224,9 +224,9 @@ When mouse button is initially clicked down:
 3. IF2 - HandApply
     1. Components on used object (for the object in the active hand, if occupied), in component order.
     2. Components on target object in component order.
-4. IF2 - AimApply
+4. old system - click (checks for InputTrigger).
+5. IF2 - AimApply (this runs last so you can still melee / click things if adjacent when a gun is in hand)
     1. Components on used object (object in the active hand), in component order.
-5. old system - click (checks for InputTrigger).
 
 While mouse button is being held down:
 1. IF2 AimApply
