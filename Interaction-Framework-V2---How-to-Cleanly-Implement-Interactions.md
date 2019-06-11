@@ -209,7 +209,7 @@ Here are the planned types of interactions, as well as implementation status:
 * AimApply (implemented) - like hand apply, but does not have a specific targeted object (it simply aims where the mouse is) and can occur at some interval while the mouse is being held down after being clicked in the game world. For things like shooting a semi-auto or automatic weapon, spraying fire extinguisher, etc...
 * Activate (implemented) - Triggers when using the "Z" key or clicking the item while it is in the active hand.
 * InventoryApply (implemented) - Like HandApply, but targeting something in the inventory rather than in the world. Triggers when clicking an item in the inventory when the active hand has an item.
-* DragApply - NOTE: This will actually be added to MouseDrop once it is implemented. dragging and dropping an item from a UI slot to the game world. Usually this drops the item on the ground, but if you drag a container into another container you pass the items to it. There may be other cases.
+* DragApply -Dragging and dropping an item from a UI slot to the game world. Usually this drops the item on the ground, but if you drag a container into another container you pass the items to it. There may be other cases.
 
 # Multiple Interaction Components
 In the old system, you could only have one interaction component per object. In the new system, **you can have multiple components on an object which implement interaction logic, even for the same type of interaction**. This means you no longer should need to do things like extending PickupTrigger. You can define a Pickupable component and a separate component for that object's specific interaction logic.
