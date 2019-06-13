@@ -16,6 +16,8 @@ For info on the Right Click Menu, see [[Right Click Menu]].
 
 This page describes how to use the new interaction system, which I've dubbed "Interaction Framework V2" (I guess you could call it IF2 for short, at least until everything is ported over to it, and you could call the old system IF1). Please contact me @chairbender on Discord for any questions or concerns.
 
+At the time of writing, everything has been ported over to IF2 and there are no more traces of the old system.
+
 Without further ado, here's the many ways you can use it...
 
 # Using Interaction Framework V2
@@ -203,13 +205,13 @@ Each approach is a tradeoff between convenience and control. In general I would 
 Be warned that any changes to the core of IF2 will be inspected closely...we want to ensure that interaction code is as clean as possible since interaction is such a foundational aspect of the game.
 
 # Interaction Types
-Here are the planned types of interactions, as well as implementation status:
-* MouseDrop (implemented) - Click and drag a MouseDraggable object in the game world and release it to drop.
-* HandApply (implemented) - click something in the game world. The item in the active hand (or empty hand) is applied to the thing that was clicked. Targets a specific object or tile.
-* AimApply (implemented) - like hand apply, but does not have a specific targeted object (it simply aims where the mouse is) and can occur at some interval while the mouse is being held down after being clicked in the game world. For things like shooting a semi-auto or automatic weapon, spraying fire extinguisher, etc...
-* Activate (implemented) - Triggers when using the "Z" key or clicking the item while it is in the active hand.
-* InventoryApply (implemented) - Like HandApply, but targeting something in the inventory rather than in the world. Triggers when clicking an item in the inventory when the active hand has an item.
-* DragApply -Dragging and dropping an item from a UI slot to the game world. Usually this drops the item on the ground, but if you drag a container into another container you pass the items to it. There may be other cases.
+Here are the current interactions. More may be added as different objects require different use cases:
+* MouseDrop - Click and drag a MouseDraggable object in the game world and release it to drop.
+* HandApply - click something in the game world. The item in the active hand (or empty hand) is applied to the thing that was clicked. Targets a specific object or tile.
+* PositionalHandApply - like hand apply, but stores (and transmits) the specific position on the object that was clicked - useful for large objects which have different behavior based on where they are clicked (such as tilemaps). This is separate from HandApply so that the length of netmessages can be reduced (the vector of the position is only added to the message for PositionalHandApply but can be excluded for HandApply).
+* AimApply - like hand apply, but does not have a specific targeted object (it simply aims where the mouse is) and can occur at some interval while the mouse is being held down after being clicked in the game world. For things like shooting a semi-auto or automatic weapon, spraying fire extinguisher, etc...
+* HandActivate - Triggers when using the "Z" key or clicking the item while it is in the active hand.
+* InventoryApply - Like HandApply, but targeting something in the inventory rather than in the world. Triggers when clicking an item in the inventory when the active hand has an item or is empty (in which case UsedObject will be null).
 
 # Multiple Interaction Components
 In the old system, you could only have one interaction component per object. In the new system, **you can have multiple components on an object which implement interaction logic, even for the same type of interaction**. This means you no longer should need to do things like extending PickupTrigger. You can define a Pickupable component and a separate component for that object's specific interaction logic.
@@ -221,6 +223,9 @@ Remember that there can be multiple components on the used object or the targete
 
 1. Old system - alt click.
 2. Old system - throw
+3. IF2 - PositionalHandApply
+    1. Components on used object (for the object in the active hand, if occupied), in component order.
+    2. Components on target object in component order.
 3. IF2 - HandApply
     1. Components on used object (for the object in the active hand, if occupied), in component order.
     2. Components on target object in component order.
@@ -241,7 +246,12 @@ When the active hand doesn't have a loaded gun:
        Save the MouseDraggable and wait until mouse is dragged or mouse 
        button is released.
     2. If mouse is not over a MouseDraggable...
-        1. IF2 - HandApply - check interactions in the following order until one occurs.
+        1. IF2 - PositionalHandApply - check interactions in the following order until one occurs.
+            1. IInteractable&lt;PositionalHandApply> components on used object (for the object in the active hand, if 
+               occupied), in 
+               component order.
+            2. IInteractable&lt;PositionalHandApply> components on target object in component order.
+        1. IF2 - HandApply - if no PositionalHandApply interactions happened, check interactions in the following order until one occurs.
             1. IInteractable&lt;HandApply> components on used object (for the object in the active hand, if occupied), in 
                component order.
             2. IInteractable&lt;HandApply> components on target object in component order.
@@ -261,7 +271,12 @@ When the active hand doesn't have a loaded gun:
         2. IInteractable&lt;MouseDrop > components on target object in component order.
     2. If we saved a MouseDraggable during the initial click but the mouse never moved past the drag deadzone
        and we have not held the mouse button down longer than MaxClickDuration...
-        1. IF2 - HandApply - check interactions in the following order until one occurs.
+         1. IF2 - PositionalHandApply - check interactions in the following order until one occurs.
+            1. IInteractable&lt;PositionalHandApply> components on used object (for the object in the active hand, if 
+               occupied), in 
+               component order.
+            2. IInteractable&lt;PositionalHandApply> components on target object in component order.
+        1. IF2 - HandApply - if no PositionalHandApply interactions happened, check interactions in the following order until one occurs.
             1. IInteractable&lt;HandApply> components on used object (for the object in the active hand, if occupied), in 
                component order.
             2. IInteractable&lt;HandApply> components on target object in component order.
@@ -273,7 +288,12 @@ When there is a loaded gun in the active hand.
 1. Mouse Clicked Down
     1. Are we on Harm intent? If so, shoot (trigger IInteractable&lt;AimApply> components on Gun).
     2. If not on Harm intent...
-        1. IF2 - HandApply - check interactions in the following order until one occurs.
+         1. IF2 - PositionalHandApply - check interactions in the following order until one occurs.
+            1. IInteractable&lt;PositionalHandApply> components on used object (for the object in the active hand, if 
+               occupied), in 
+               component order.
+            2. IInteractable&lt;PositionalHandApply> components on target object in component order.
+        1. IF2 - HandApply - if no PositionalHandApply interactions occurred, check interactions in the following order until one occurs.
             1. IInteractable&lt;HandApply> components on used object (for the object in the active hand, if occupied), in 
                component order.
             2. IINteractable&lt;HandApply> components on target object in component order.
@@ -284,12 +304,7 @@ When there is a loaded gun in the active hand.
            1. Checks for IInteractable&lt;AimApply> components on used object (object in the active hand), in component 
               order.
 2. Mouse held down - continue shooting if we have an automatic (keep triggering IInteractable&lt;AimApply> components on Gun).
-      
-# Migration
-Migration will be done in a piecemeal fashion. Any time we discover usability, code duplication, or design issues with IF2, we will nip them at the bud before continuing to migrate. Please bring any design concerns to Discord. 
-
-IF2 is designed such that it lives alongside the old interaction system. Once the old interaction system is complete, we should remove the last vestiges of the old code.
-
+     
 # Motivation for IF2
 
 We've all noticed some issues working with the old InputTrigger-based interaction system. Since interaction is such a vital and foundational part of the game, we decided it would be best to make it as polished as possible. The key design goals of the new system are:
