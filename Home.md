@@ -18,7 +18,7 @@ As this project is in its early stages, this wiki will serve the purpose of prov
 * **Development**
     * [[Directory Structure]]
     * [[Module Structure]]
-    * [[Interaction Framework V2 - How to Cleanly Implement Interactions]]
+    * [[Implementing Interactions]]
     * [[Right Click Menu]]
     * [[How to Map]]
     * [[Writing Scripts]]
