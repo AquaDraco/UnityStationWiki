@@ -47,7 +47,7 @@ public class HasNetworkTab : Interactable<HandApply>
 }
 ```
 
-As shown above, by Interactable, the interactable component gains a few nice capabilities:
+As shown above, by extending Interactable, the interactable component gains a few nice capabilities:
   * Automatic networking - IF2 takes care of informing the server of the interaction. All you need to implement is the server-side logic of the interaction and a way to communicate the result back to the client (if needed).
   * No mouse / keyboard logic - IF2 figures out when your component's interaction logic should be invoked.
   * Interaction info object - the HandApply class contains all the info you should need in order to decide what should happen.
