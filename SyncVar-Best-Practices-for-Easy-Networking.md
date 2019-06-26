@@ -13,8 +13,18 @@ These are things you should almost ALWAYS do if using syncvar. If you see places
       
     }
     ```
-    * If the field needs to be viewable externally, create a public readonly accessor.
+    * If the field needs to be viewable externally, create a public readonly accessor:
+        ```csharp
+        public bool OnFire => onFire;
+        ```
     * If other components need to know when the syncvar changes, create a UnityEvent they can subscribe to which you invoke in your hook method.
+        ```csharp
+        [NonSerialized] // usually don't want these to be assignable in editor
+        public OnFireChangeEvent OnFireChange = new OnFireChangeEvent();
+        
+        // event class - declare this outside of component class
+        class OnFireChangeEvent : UnityEvent<bool> { }
+        ```
 2. Define a private hook method named "Sync(name of field)". The first line of the hook should update the field based on the new value. Do NOT make a protected or public hook method. Starting the method name with Sync is important because it makes it easier for others to know that this method is exclusively for changing this syncvar.
     ```csharp
       private void SyncOnFire(bool newValue)
