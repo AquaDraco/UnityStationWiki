@@ -1,7 +1,8 @@
 The [SyncVar attribute](https://docs.unity3d.com/Manual/UNetStateSync.html) can save a lot of time and code for syncing data from server to all clients (because it avoids having to implement a custom Net Message), but many of us have struggled with understanding its peculiarities (of which it has many) especially as it pertains to how Unitystation is put together. Having used it quite a bit now, I've developed a set of simple "best practices" for how to use them which should hopefully save future developers from struggling with it.
 
 # Proper SyncVar Usage
-These are things you should almost ALWAYS do if using syncvar.
+These are things you should almost ALWAYS do if using syncvar. If you see places in the code where these rules are violated, be suspicious of bugs.
+
 TODO: Code examples
 1. Add SyncVar to the field you want to sync. The field should almost ALWAYS be private. NEVER allow the field to be directly modified by other components.
     * If the field needs to be viewable externally, create a public readonly accessor.
