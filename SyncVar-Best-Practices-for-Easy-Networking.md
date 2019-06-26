@@ -44,17 +44,17 @@ These are things you should almost ALWAYS do if using syncvar. If you see places
         base.OnStartClient();
       }
     ```
-4. Define an OnEnable method (if not already defined) and invoke the hook. This ensures the hook is called on the server side for the initial value of the field as well as ensuring the hook is called when the component is disabled and then enabled, which can happen due to VisibleBehavior and object pooling logic.
+4. Define an OnStartServer method (if not already defined) and invoke the hook. This ensures the hook is called on the server side for the initial value of the field.
     ```csharp
-      private void OnEnable()
+      private void OnStartServer()
       {
         SyncOnFire(this.onFire);
         
         //if extending another component
-        base.OnEnable();
+        base.OnStartServer();
       }
     ```
-    * In some cases, you might also want to put this logic into OnStartServer, but OnEnable is a pretty safe bet.
+    * In some cases, you might want to have this logic also / instead in Awake() or OnEnabled(), but OnStartServer is a safe bet.
 5. Implement OnSpawnedServer and set the syncvar field to the default value. This is a method which is invoked when an object is being spawned, regardless of if it's coming from the pool or not. This ensures that the object is properly re-initialized when it is being spawned from the object pool.
     ```csharp
       private void OnSpawnedServer()
