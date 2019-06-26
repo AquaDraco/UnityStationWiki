@@ -23,6 +23,7 @@ As this project is in its early stages, this wiki will serve the purpose of prov
     * [[How to Map]]
     * [[Writing Scripts]]
     * [[How to Use and Hate UniCloth]]
+    * [[SyncVar Best Practices for Easy Networking]]
     * [[RPC vs Netmsg]]
     * [[Networking (Network Messages)]]
     * [[Creating items in UnityStation]]
