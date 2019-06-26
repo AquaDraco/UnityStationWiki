@@ -13,7 +13,16 @@ TODO: Code examples
 3. Override OnStartClient and invoke the hook, passing it the current value of the field. If you are extending a component, make sure to call base.OnStartClient(). This ensures the SyncVar hook is called based on the initial value of the field that the server sends.
 4. Define an Awake method (if not already defined) and invoke the hook. This ensures the hook is called on the server side for the initial value of the field as well as ensuring the hook is called when the component is disabled / enabled, which can happen due to VisibleBehavior and object pooling logic.
     * In some cases, you might instead want to put this logic into OnStartServer, but Awake is a pretty safe bet.
+5. TODO: Correct message name - Implement OnSpawn and set the syncvar field to the default value if isServer = true. This ensures that the object is properly re-initialized when it is being spawned from the object pool.
 5. The ONLY place you are allowed to change the value of the syncvar field is via the syncvar hook and only on the server! Never change the value on the client side, and never modify the field directly. If you are on the server and you want to change the field value, call the hook method and pass it the new value. This ensures that the hook logic will always be fired on both client and server side.
+6. Do not rely on a consistent ordering when it comes to syncvar changes and net messages sent from the server. Due to network latency, if you change 2 syncvars and send a net message on the server, the updates could arrive on the client in any order.
+
+# Various Issues Caused by Improper SyncVar Usage
+Here's some symptoms of improper syncvar usage:
+1. Clients who join after the syncvar field has been updated during gameplay (sometimes called "late joining clients") will not display the correct game state. Usually caused by not calling the hook in OnStartClient.
+2. Server player sees a different game state than the client. Usually caused by setting the syncvar field directly without going through the hook method.
+3. Client intermittently sees the incorrect game state related to a sync var. Usually caused by having SyncVar logic which has a race condition - the client is relying on the syncvar updates / server messages arriving in a particular order.
+4. A newly-spawned object behaves differently than other objects of its type. This is almost always due to failing to account for object pooling. Your SyncVar field value was set to something other than the default, then was destroyed and returned to pool, then spawned from the pool with that same field value. This is solved by implementing OnSpawn and initializing the syncvar value. TODO: Correct name
 
 # Surprising SyncVar Facts
 Here are some of the things you might not know about how they work which explains the reasoning for the above practices. Not 100% certain on all of these but they might as well be true.
