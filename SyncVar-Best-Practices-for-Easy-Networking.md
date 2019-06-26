@@ -15,7 +15,7 @@ These are things you should almost ALWAYS do if using syncvar. If you see places
     ```
     * If the field needs to be viewable externally, create a public readonly accessor.
     * If other components need to know when the syncvar changes, create a UnityEvent they can subscribe to which you invoke in your hook method.
-2. Define a private hook method named "Sync(name of field)" and add the Server attribute to it. The first line of the hook should update the field based on the new value. Do NOT make a protected or public hook method. Starting the method name with Sync is important because it makes it easier for others to know that this method is exclusively for changing this syncvar.
+2. Define a private hook method named "Sync(name of field)". The first line of the hook should update the field based on the new value. Do NOT make a protected or public hook method. Starting the method name with Sync is important because it makes it easier for others to know that this method is exclusively for changing this syncvar.
     ```csharp
       private void SyncOnFire(bool newValue)
       {
@@ -57,6 +57,17 @@ These are things you should almost ALWAYS do if using syncvar. If you see places
       }
     ```
 5. The ONLY place you are allowed to change the value of the syncvar field is via the syncvar hook and only on the server! Never change the value on the client side, and never modify the field directly. If you are on the server and you want to change the field value, call the hook method and pass it the new value. This ensures that the hook logic will always be fired on both client and server side.
+    ```csharp
+      [Server]
+      private void BecomeOnFire()
+      {
+        //NO! BAD! DON'T DO THIS!
+        this.onFire = true;
+
+        //YES! GOOD! DO THIS INSTEAD!
+        SyncOnFire(true);
+      }
+    ```
 6. Do not rely on a consistent ordering when it comes to syncvar changes and net messages sent from the server. Due to network latency, if you change 2 syncvars and send a net message on the server, the updates could arrive on the client in any order.
 
 # Various Issues Caused by Improper SyncVar Usage
