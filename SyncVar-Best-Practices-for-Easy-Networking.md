@@ -14,7 +14,8 @@ TODO: Code examples
 
 # Surprising SyncVar Facts
 Here are some of the things you might not know about how they work which explains the reasoning for the above practices. Not 100% certain on all of these but they might as well be true.
-1. SyncVar hooks don't fire when the server changes the field. They only fire on the client when the client receives the new value. Thus the server player will not have the hook called. This is the reason to always change the syncvar by way of the hook method.
+1. SyncVar hooks don't fire on the server when the server changes the field. They only fire on the client when the client receives the new value. Thus the server player will not have the hook called. This is the reason to always change the syncvar by way of the hook method on the server.
 2. SyncVar hooks don't fire when client connects and receives the initial value of the field. This is why you should call the syncvar hook manually in OnStartClient.
 3. SyncVar only works properly on specific types of fields ([see the docs](https://docs.unity3d.com/Manual/UNetStateSync.html)), but Unity does not seem to complain very noisily if you use it on an invalid type - the game still builds. If your syncvar doesn't appear to be working, chances are you are using it on an invalid type.
 4. If you don't update the field's value in the syncvar hook using the new value passed to the hook method, the client-side value won't be updated. This is why you should always update the field in the first line of the hook method.
+5. It takes a varying amount of time for the server to send the updated SyncVar field to the client, so make sure the code doesn't depend on the syncvar change arriving at a particular time or in a particular order in relation to other network messages or syncvar updates. If you change 2 syncvars on the server and also send a net message, they could arrive on the client in any order.
