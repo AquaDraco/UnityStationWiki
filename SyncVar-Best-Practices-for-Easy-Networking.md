@@ -8,7 +8,7 @@ TODO: Code examples
     * If other components need to know when the syncvar changes, create a UnityEvent they can subscribe to which you invoke in your hook method.
 2. Define a private hook method named "Sync(name of field)". The first line of the hook should update the field based on the new value. Do NOT make a protected or public hook method.
     * There don't seem to be many cases where you would want a syncvar without a hook, because that implies the 
-   client would need to be polling the SyncVar field on a regular basis.
+   client would need to be polling the SyncVar field on a regular basis, which could be a performance issue.
 3. Override OnStartClient and invoke the hook, passing it the current value of the field. If you are extending a component, make sure to call base.OnStartClient(). This ensures the SyncVar hook is called based on the initial value of the field that the server sends.
 4. Define an Awake method (if not already defined) and invoke the hook. This ensures the hook is called on the server side for the initial value of the field as well as ensuring the hook is called when the component is disabled / enabled, which can happen due to VisibleBehavior and object pooling logic.
 5. The ONLY place you are allowed to change the value of the syncvar field is via the syncvar hook and only on the server! Never change the value on the client side, and never modify the field directly. If you are on the server and you want to change the field value, call the hook method and pass it the new value. This ensures that the hook logic will always be fired on both client and server side.
