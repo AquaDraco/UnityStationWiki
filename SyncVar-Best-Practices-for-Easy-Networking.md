@@ -5,6 +5,7 @@ These are things you should almost ALWAYS do if using syncvar.
 TODO: Code examples
 1. Add SyncVar to the field you want to sync. The field should almost ALWAYS be private. NEVER allow the field to be directly modified by other components.
     * If the field needs to be viewable externally, create a public readonly accessor.
+    * If other components need to know when the syncvar changes, create a UnityEvent they can subscribe to which you invoke in your hook method.
 2. Define a private hook method named "Sync(name of field)". The first line of the hook should update the field based on the new value.
     * There don't seem to be many cases where you would want a syncvar without a hook, because that implies the 
    client would need to be polling the SyncVar field on a regular basis.
