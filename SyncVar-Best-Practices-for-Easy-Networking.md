@@ -4,9 +4,9 @@ The [SyncVar attribute](https://docs.unity3d.com/Manual/UNetStateSync.html) can 
 These are things you should almost ALWAYS do if using syncvar.
 TODO: Code examples
 1. Add SyncVar to the field you want to sync. The field should almost ALWAYS be private. NEVER allow the field to be directly modified by other components.
-  1. If the field needs to be viewable externally, create a public readonly accessor.
+    * If the field needs to be viewable externally, create a public readonly accessor.
 2. Define a private hook method named "Sync(name of field)". The first line of the hook should update the field based on the new value.
-  1. There don't seem to be many cases where you would want a syncvar without a hook, because that implies the 
+    * There don't seem to be many cases where you would want a syncvar without a hook, because that implies the 
    client would need to be polling the SyncVar field on a regular basis.
 3. Override OnStartClient and invoke the hook, passing it the current value of the field. If you are extending a component, make sure to call base.OnStartClient(). This ensures the SyncVar hook is called based on the initial value of the field that the server sends.
 4. Define an Awake method (if not already defined) and invoke the hook. This ensures the hook is called on the server side for the initial value of the field as well as ensuring the hook is called when the component is disabled / enabled, which can happen due to VisibleBehavior and object pooling logic.
