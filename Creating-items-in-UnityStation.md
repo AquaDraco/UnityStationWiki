@@ -127,9 +127,16 @@ This is for the people that just want to add a new item.
 
 Use the following asset workflow:
 1. Create your GameObject and name it. 
-2. Add the **Network Identity**, **Custom Net Transform**, **Item Attributes** and **Pickupable** components to it. You may add other components your item needs as necessary.
+2. Add the **Item Attributes** component and it will tell you all the other required components to add, which are: 
+    * **Network Identity**
+    * **Custom Net Transform**
+    * **Pickupable**
+    * **Object Behaviour**
+    * **Register Item**
+    * **Sprite Rotation Matrix**
+    * Plus any other components which are necessary.
 3. Edit the fields to suit your needs.
-4. Add your prefab to suitable directory under `../Prefabs/Items/[ Item Type ]/Resources`.
+4. Add your prefab to suitable directory under `Assets/Resources/Prefabs/Objects/[ Item Type ]/`.
 
 ## OR
 
