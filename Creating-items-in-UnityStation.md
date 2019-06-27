@@ -53,7 +53,7 @@ References:
 * https://docs.unity3d.com/Manual/UNetUsingHLAPI.html
 
 # Items
-Items in unity station are composed of four primary components, **Item Attributes**, **Custom Net Transform**, **Network Identity** and the **Pick Up Trigger** component. Of these, Custom Net Transform, Network Identity and Pick Up Trigger can just be attached to an object without any further changes to the fields provided by these components.
+Items in unity station are composed of four primary components, **Item Attributes**, **Custom Net Transform**, **Network Identity** and the **Pickupable** component. Of these, Custom Net Transform, Network Identity and Pickupable can just be attached to an object without any further changes to the fields provided by these components.
 
 Other components you might wish to attach are **Food Behaviour** for food items or components derived **Health Behaviour** for items that can be damaged.
 
@@ -102,8 +102,8 @@ References:
 * https://docs.unity3d.com/Manual/class-NetworkBehaviour.html
 * https://docs.unity3d.com/ScriptReference/Networking.NetworkBehaviour.html
 
-# Pick Up Trigger
-The **Pick Up Trigger** component allows an item to be picked up. Contains some additional server-side functionality for predicting the success or failure of an attempt to grab the item.
+# Pickupable
+The **Pickupable** component allows an item to be picked up. Contains some additional server-side functionality for predicting the success or failure of an attempt to grab the item.
 
 # The Custom Network Manager and caching
 The **custom network manager** component is a singleton component that manages the network.
@@ -127,7 +127,7 @@ This is for the people that just want to add a new item.
 
 Use the following asset workflow:
 1. Create your GameObject and name it. 
-2. Add the **Network Identity**, **Custom Net Transform**, **Item Attributes** and **Pick Up Trigger** components to it. You may add other components your item needs as necessary.
+2. Add the **Network Identity**, **Custom Net Transform**, **Item Attributes** and **Pickupable** components to it. You may add other components your item needs as necessary.
 3. Edit the fields to suit your needs.
 4. Add your prefab to suitable directory under `../Prefabs/Items/[ Item Type ]/Resources`.
 
