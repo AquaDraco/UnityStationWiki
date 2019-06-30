@@ -53,7 +53,7 @@ References:
 * https://docs.unity3d.com/Manual/UNetUsingHLAPI.html
 
 # Items
-Items in unity station are composed of four primary components, **Item Attributes**, **Custom Net Transform**, **Network Identity** and the **Pickupable** component. Of these, Custom Net Transform, Network Identity and Pickupable can just be attached to an object without any further changes to the fields provided by these components.
+Items in unity station are composed of six primary components, **Item Attributes**, **Custom Net Transform**, **Network Identity**, **Object Behaviour**, **Register Item**, **Pickupable** and the **Sprite Rotation Matrix** component. Of these, Custom Net Transform, Network Identity, Pickupable and Sprite Rotation Matrix can just be attached to an object without any further changes to the fields provided by these components.
 
 Other components you might wish to attach are **Food Behaviour** for food items or components derived **Health Behaviour** for items that can be damaged.
 
