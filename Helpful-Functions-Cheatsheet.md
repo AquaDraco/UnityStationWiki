@@ -70,5 +70,6 @@ Get the room number of a tile (only enclosed spaces will be defined as a room. R
 ```cs
 MatrixManager.GetMetaDataAt(Vector3Int.RoundToInt(world_position)).RoomNumber
 ```
-
+# Other Useful Scripts
+The `Assets\Scripts\Util` folder also contains a bunch of useful scripts to help deal with common problems. Have a look through there and you might find something useful!
 
