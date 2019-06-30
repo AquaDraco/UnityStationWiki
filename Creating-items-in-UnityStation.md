@@ -136,7 +136,7 @@ Use the following asset workflow:
     * **Sprite Rotation Matrix**
     * Plus any other components which are necessary.
 3. Edit the fields to suit your needs.
-4. Add your prefab to suitable directory under `Assets/Resources/Prefabs/Objects/[ Item Type ]/`.
+4. Add your prefab to suitable directory under `Assets/Resources/Prefabs/Items/[ Item Type ]/`.
 
 ## OR
 
