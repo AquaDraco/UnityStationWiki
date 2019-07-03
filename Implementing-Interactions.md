@@ -221,10 +221,7 @@ Remember that there can be multiple components on the used object or the targete
 
 1. alt click
 2. throw
-3. PositionalHandApply
-    1. Components on used object (for the object in the active hand, if occupied), in component order.
-    2. Components on target object in component order.
-3. HandApply
+3. HandApply + PositionalHandApply
     1. Components on used object (for the object in the active hand, if occupied), in component order.
     2. Components on target object in component order.
 5. AimApply (this runs last so you can still melee / click things if adjacent when a gun is in hand)
@@ -243,17 +240,10 @@ When the active hand doesn't have a loaded gun:
        Save the MouseDraggable and wait until mouse is dragged or mouse 
        button is released.
     2. If mouse is not over a MouseDraggable...
-        1. IF2 - PositionalHandApply - check interactions in the following order until one occurs.
-            1. IInteractable&lt;PositionalHandApply> components on used object (for the object in the active hand, if 
-               occupied), in 
+        1. IF2 - HandApply and PositionalHandApply - check interactions in the following order until one occurs.
+            1. IInteractable&lt;HandApply or PositionalHandApply> components on used object (for the object in the active hand, if occupied), in 
                component order.
-            2. IInteractable&lt;PositionalHandApply> components on target object in component order.
-        1. IF2 - HandApply - if no PositionalHandApply interactions happened, check interactions in the following order until one occurs.
-            1. IInteractable&lt;HandApply> components on used object (for the object in the active hand, if occupied), in 
-               component order.
-            2. IInteractable&lt;HandApply> components on target object in component order.
-        2. If no HandApply interactions occurred, check the old system to see if a click interaction occurs - uses 
-           InputTrigger and stop as soon as one occurs.
+            2. IInteractable&lt;HandApply or PositionalHandApply> components on target object in component order.
         3. If no interactions have occurred, check IF2 AimApply interactions and stop as soon as one occurs. This runs 
            last so you can still melee / click things if adjacent when a gun is in hand)
            1. Checks for IInteractable&lt;AimApply> components on used object (object in the active hand), in component 
@@ -268,16 +258,11 @@ When the active hand doesn't have a loaded gun:
         2. IInteractable&lt;MouseDrop > components on target object in component order.
     2. If we saved a MouseDraggable during the initial click but the mouse never moved past the drag deadzone
        and we have not held the mouse button down longer than MaxClickDuration...
-         1. IF2 - PositionalHandApply - check interactions in the following order until one occurs.
-            1. IInteractable&lt;PositionalHandApply> components on used object (for the object in the active hand, if 
-               occupied), in 
+        1. IF2 - HandApply and PositionalHandApply - check interactions in the following order until one occurs.
+            1. IInteractable&lt;HandApply or PositionalHandApply > components on used object (for the object in the active hand, if occupied), in 
                component order.
-            2. IInteractable&lt;PositionalHandApply> components on target object in component order.
-        1. IF2 - HandApply - if no PositionalHandApply interactions happened, check interactions in the following order until one occurs.
-            1. IInteractable&lt;HandApply> components on used object (for the object in the active hand, if occupied), in 
-               component order.
-            2. IInteractable&lt;HandApply> components on target object in component order.
-        2. If no HandApply interactions occurred, check the old system to see if a click interaction occurs - uses 
+            2. IInteractable&lt;HandApply or PositionalHandApply > components on target object in component order.
+        2. If no HandApply or PositionalHandApply  interactions occurred, check the old system to see if a click interaction occurs - uses 
            InputTrigger and stop as soon as one occurs.
 
 
@@ -285,15 +270,10 @@ When there is a loaded gun in the active hand.
 1. Mouse Clicked Down
     1. Are we on Harm intent? If so, shoot (trigger IInteractable&lt;AimApply> components on Gun).
     2. If not on Harm intent...
-         1. IF2 - PositionalHandApply - check interactions in the following order until one occurs.
-            1. IInteractable&lt;PositionalHandApply> components on used object (for the object in the active hand, if 
-               occupied), in 
+        1. IF2 - HandApply and PositionalHandApply - check interactions in the following order until one occurs.
+            1. IInteractable&lt;HandApply or PositionalHandApply> components on used object (for the object in the active hand, if occupied), in 
                component order.
-            2. IInteractable&lt;PositionalHandApply> components on target object in component order.
-        1. IF2 - HandApply - if no PositionalHandApply interactions occurred, check interactions in the following order until one occurs.
-            1. IInteractable&lt;HandApply> components on used object (for the object in the active hand, if occupied), in 
-               component order.
-            2. IINteractable&lt;HandApply> components on target object in component order.
+            2. IInteractable&lt;HandApply or PositionalHandApply> components on target object in component order.
         2. If no HandApply interactions occurred, check the old system to see if a click interaction occurs - uses 
            InputTrigger and stop as soon as one occurs.
         3. If no interactions have occurred, check IF2 AimApply interactions and stop as soon as one occurs. This runs 
