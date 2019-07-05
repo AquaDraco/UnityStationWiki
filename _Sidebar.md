@@ -1,6 +1,6 @@
 * **[[Home]]**
     * [[Roadmap]]
-    * [How to play the game from source (for newbies)](https://github.com/unitystation/unitystation/wiki/How-to-play-the-game-from-source-%5BFor-Newbies%5D)
+    * [How to load and play the game from source code (newbie guide)](https://github.com/unitystation/unitystation/wiki/How-to-load-and-play-the-game-from-source-code-(newbie-guide))
 
 * **The Codebase**
     * [[The Basic Structure]]
