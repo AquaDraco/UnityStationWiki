@@ -8,7 +8,7 @@ As this project is in its early stages, this wiki will serve the purpose of prov
 * **[[Home]]**
     * [[Roadmap]]
     * [Current Goal Scope - Push to 0.4 and Steam Beta Release](https://github.com/unitystation/unitystation/wiki/0.4---Overview-Scope---(Non-Technical)-Index)
-    * [How to play the game from source (for newbies)](https://github.com/unitystation/unitystation/wiki/How-to-play-the-game-from-source-%5BFor-Newbies%5D)
+    * [How to load and play the game from source code (newbie guide)](https://github.com/unitystation/unitystation/wiki/How-to-load-and-play-the-game-from-source-code-(newbie-guide))
 
 * **Contribution Guides**
     * [[Development Standards Guide]]
