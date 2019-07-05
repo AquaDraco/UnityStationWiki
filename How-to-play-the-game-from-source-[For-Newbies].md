@@ -3,8 +3,6 @@
 ### by Schneckenhof
 
 
-
-
 #### OK. Listen up Recruit ! 
 
 Congratulations, you went through the ~~convoluted @ss~~ process of getting GitHub and authorized your account via email. 
@@ -23,13 +21,13 @@ Its CURSED!
 
 0 out of 10, cursed project, would not play again. The The End.
 
-Well Good for you! We don't want your lazy butt. But since you're new here, I will let you in on a secret. 
+Well Good for you! We don't want your lazy butt. But since you're new here, I will let you in on a sekrit. 
 
 #### You're only 90% done. 
 
 But you're not there yet. Contrary to popular belief you didn't screw up, and the project isn't dead. You just need to do a few tweaks and you will be well on your way to joining this station before it falls into the sun, or cuthulu devours your soul, .....whichever comes first. 
 
-Here's how you get there. Don't worry, I know you can't read, or probably code, that's why you're assigned to be a ~~guinea pig~~ ...ahem..."valued new recruit" on this ~~hell hole~~ Prototype station. 
+Here's how you get there. Don't worry, I know you can't read, or probably code, thats why you're assigned to be a ~~guinea pig~~ ...ahem..."valued new recruit" on this ~~hell hole~~ Prototype station. 
 
 **Don't Panic**, I took pictures. 
 
@@ -52,11 +50,11 @@ I don't know if that is important but I made it bold anyways.
 The unity loading screen appears with the logo and multicolored strands of fiber i guess.
 
 When it loads you're going to have two grid like screens on the left. The top one will say "scene" on the tab. The bottom one will say "game"
-Then on the right there's some menus that say things like "hierarchy" "project" and "inspector"
+Then on the right theres some menus that say things like "hiearchy" "project" and "inspector"
 I don't know what any of that **Christian Server** does. 
 It frankly doesn't matter if you're just trying to get in game.
 
-Under the bottom grid like screen that says "game" (I think it looks like it has a pac-man beside the word game). There's a few sub menus. 
+Under the bottom gridlike screen that says "game" (I think it looks like it has a packman beside the word game). There's a few sub menus. 
 
 They are: 
 
@@ -68,7 +66,7 @@ Then go hit the Triangle play button at the Vertical Top of the screen, middle h
 
 This will make all these UI elements look less like the back end of a database program and more like they would appear in the end product.
 
-Then you are presented with a mock up of a login screen.
+Then you are presented with a mockup of a login screen.
 
 Login
 
@@ -79,7 +77,7 @@ Then you accept defaults and click 'start game'
 
 ##### Menu as soon as you load up the project
 
-![](https://cdn.discordapp.com/attachments/273774715741667329/596158960558407680/Menu_as_it_initially_appears.PNG)
+https://cdn.discordapp.com/attachments/312454684021620736/596547044538187789/Menu_as_it_initially_appears.PNG
 
 Make sure Maximize on Play is selected.
 
@@ -88,26 +86,27 @@ Hit login
 
 ##### Login Part 1
 
-![]( https://cdn.discordapp.com/attachments/273774715741667329/596159760647323689/After_you_hit_play_with_Maxmize_on_Play_selected.PNG)
+
+https://cdn.discordapp.com/attachments/273774715741667329/596159760647323689/After_you_hit_play_with_Maxmize_on_Play_selected.PNG
 
 ##### Login Part 2. Start Game
 
-![](https://cdn.discordapp.com/attachments/273774715741667329/596160026637500416/Login_Part_2.PNG)
+https://cdn.discordapp.com/attachments/273774715741667329/596160026637500416/Login_Part_2.PNG
 
 Wait for it to load.
 
 ##### Choose a side. I don't think it matters. I just go with station crew.
 
-![]( https://cdn.discordapp.com/attachments/273774715741667329/596160352614350869/Choose_a_side.PNG)
+https://cdn.discordapp.com/attachments/273774715741667329/596160352614350869/Choose_a_side.PNG
 
 ##### Choose a job. I like botany. Sue me.
 
-![](https://cdn.discordapp.com/attachments/273774715741667329/596160641559953461/Choose_a_job.PNG)
+https://cdn.discordapp.com/attachments/273774715741667329/596160641559953461/Choose_a_job.PNG
 
 
 ##### Congratulations you are now "IN" the game 
 
-![](https://cdn.discordapp.com/attachments/273774715741667329/596160984557813780/Congratulations_you_are_now_in_the_game.PNG)
+https://cdn.discordapp.com/attachments/273774715741667329/596160984557813780/Congratulations_you_are_now_in_the_game.PNG
 
 ## :video_game:
 
