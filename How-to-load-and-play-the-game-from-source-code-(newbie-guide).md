@@ -2,7 +2,6 @@
 
 ### by Schneckenhof
 
-### Multiple Apologies in advance to @Doobly for making a mess of things while I learn gitub and Unity simultaneously.
 ### Without Further Ado, here is my humble guide on how to land on Unity Station.
 
 #### OK. Listen up Recruit ! 
@@ -79,7 +78,7 @@ Then you accept defaults and click 'start game'
 
 ##### Menu as soon as you load up the project
 
-https://cdn.discordapp.com/attachments/312454684021620736/596547044538187789/Menu_as_it_initially_appears.PNG
+![](https://cdn.discordapp.com/attachments/312454684021620736/596547044538187789/Menu_as_it_initially_appears.PNG)
 
 Make sure Maximize on Play is selected.
 
@@ -89,26 +88,26 @@ Hit login
 ##### Login Part 1
 
 
-https://cdn.discordapp.com/attachments/273774715741667329/596159760647323689/After_you_hit_play_with_Maxmize_on_Play_selected.PNG
+![](https://cdn.discordapp.com/attachments/273774715741667329/596159760647323689/After_you_hit_play_with_Maxmize_on_Play_selected.PNG)
 
 ##### Login Part 2. Start Game
 
-https://cdn.discordapp.com/attachments/273774715741667329/596160026637500416/Login_Part_2.PNG
+![](https://cdn.discordapp.com/attachments/273774715741667329/596160026637500416/Login_Part_2.PNG)
 
 Wait for it to load.
 
 ##### Choose a side. I don't think it matters. I just go with station crew.
 
-https://cdn.discordapp.com/attachments/273774715741667329/596160352614350869/Choose_a_side.PNG
+![]( https://cdn.discordapp.com/attachments/273774715741667329/596160352614350869/Choose_a_side.PNG)
 
 ##### Choose a job. I like botany. Sue me.
 
-https://cdn.discordapp.com/attachments/273774715741667329/596160641559953461/Choose_a_job.PNG
+![](https://cdn.discordapp.com/attachments/273774715741667329/596160641559953461/Choose_a_job.PNG)
 
 
 ##### Congratulations you are now "IN" the game 
 
-https://cdn.discordapp.com/attachments/273774715741667329/596160984557813780/Congratulations_you_are_now_in_the_game.PNG
+![](https://cdn.discordapp.com/attachments/273774715741667329/596160984557813780/Congratulations_you_are_now_in_the_game.PNG)
 
 ## :video_game:
 
