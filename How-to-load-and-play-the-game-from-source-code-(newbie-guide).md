@@ -1,8 +1,7 @@
-# How to GET IN THE GAME
+## How to GET IN THE GAME
 
-### by Schneckenhof
+## by Schneckenhof
 
-### Without Further Ado, here is my humble guide on how to land on Unity Station.
 
 #### OK. Listen up Recruit ! 
 
