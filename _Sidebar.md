@@ -1,5 +1,6 @@
 * **[[Home]]**
     * [[Roadmap]]
+    * [How to play the game from source (for newbies)](https://github.com/unitystation/unitystation/wiki/How-to-play-the-game-from-source-%5BFor-Newbies%5D)
 
 * **The Codebase**
     * [[The Basic Structure]]
@@ -18,8 +19,7 @@
 
 * **Quick Guides**
     * [[Networking Quicky]]
-    * [How to play the game from source (for newbies)](https://github.com/unitystation/unitystation/wiki/How-to-play-the-game-from-source-%5BFor-Newbies%5D)
-
+ 
 * **Contribution Guides**
     * [[Development Standards Guide]]
     * [[Starting Contribution]]
