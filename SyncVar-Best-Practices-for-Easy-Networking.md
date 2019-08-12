@@ -46,7 +46,7 @@ These are things you should almost ALWAYS do if using syncvar. If you see places
     ```
 4. Define an OnStartServer method (if not already defined) and invoke the hook. This ensures the hook is called on the server side for the initial value of the field.
     ```csharp
-      private void OnStartServer()
+      public override void OnStartServer()
       {
         SyncOnFire(this.onFire);
         
