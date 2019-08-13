@@ -1,7 +1,8 @@
 The [SyncVar attribute](https://docs.unity3d.com/Manual/UNetStateSync.html) can save a lot of time and code for syncing data from server to all clients (because it avoids having to implement a custom Net Message), but many of us have struggled with understanding its peculiarities (of which it has many) especially as it pertains to how Unitystation is put together. Having used it quite a bit now, I've developed a set of simple "best practices" for how to use them which should hopefully save future developers from struggling with it.
 
 # Proper SyncVar Usage
-These are things you should almost ALWAYS do if using syncvar. If you see places in the code where these rules are violated, be suspicious of bugs.
+These are things you should almost ALWAYS do if using syncvar. If you see places in the code where these rules are violated, be suspicious of bugs. Note that most of these tips only apply if you define a "hook" method.
+
 
 1. Add SyncVar to the field you want to sync. The field should almost ALWAYS be private. NEVER allow the field to be directly modified by other components.
     ```csharp
@@ -25,7 +26,7 @@ These are things you should almost ALWAYS do if using syncvar. If you see places
         // event class - declare this outside of component class
         class OnFireChangeEvent : UnityEvent<bool> { }
         ```
-2. Define a private hook method named "Sync(name of field)". The first line of the hook should update the field based on the new value. Do NOT make a protected or public hook method. Starting the method name with Sync is important because it makes it easier for others to know that this method is exclusively for changing this syncvar.
+2. (Only if you have a hook method) Define a private hook method named "Sync(name of field)". The first line of the hook should update the field based on the new value. Do NOT make a protected or public hook method. Starting the method name with Sync is important because it makes it easier for others to know that this method is exclusively for changing this syncvar.
     ```csharp
       private void SyncOnFire(bool newValue)
       {
@@ -33,9 +34,8 @@ These are things you should almost ALWAYS do if using syncvar. If you see places
         //snip - Update object sprite to indicate burning
       }
     ```
-    * There don't seem to be many cases where you would want a syncvar without a hook, because that implies the 
-   client would need to be polling the SyncVar field on a regular basis, which could be a performance issue.
-3. Override OnStartClient (make sure to use the "override" keyword!) and invoke the hook, passing it the current value of the field. If you are extending a component, make sure to call base.OnStartClient(). This ensures the SyncVar hook is called based on the initial value of the field that the server sends.
+    * You generally will need a hook unless the client doesn't need to invoke any special logic when the value changes.
+3. (Only if you have a hook method) Override OnStartClient (make sure to use the "override" keyword!) and invoke the hook, passing it the current value of the field. If you are extending a component, make sure to call base.OnStartClient(). This ensures the SyncVar hook is called based on the initial value of the field that the server sends.
     ```csharp
       //make sure to use "override" and use correct name "OnStartClient"
       public override void OnStartClient()
@@ -44,7 +44,7 @@ These are things you should almost ALWAYS do if using syncvar. If you see places
         base.OnStartClient();
       }
     ```
-4. Define an OnStartServer method (if not already defined) and invoke the hook. This ensures the hook is called on the server side for the initial value of the field.
+4. (Only if you have a hook method) Define an OnStartServer method (if not already defined) and invoke the hook. This ensures the hook is called on the server side for the initial value of the field.
     ```csharp
       public override void OnStartServer()
       {
@@ -55,7 +55,7 @@ These are things you should almost ALWAYS do if using syncvar. If you see places
       }
     ```
     * In some cases, you might want to have this logic also / instead in Awake() or OnEnabled(), but OnStartServer is a safe bet.
-5. Implement OnSpawnedServer and set the syncvar field to the default value. This is a method which is invoked when an object is being spawned, regardless of if it's coming from the pool or not. This ensures that the object is properly re-initialized when it is being spawned from the object pool.
+5. (Only if you have a hook method) Implement OnSpawnedServer and set the syncvar field to the default value. This is a method which is invoked when an object is being spawned, regardless of if it's coming from the pool or not. This ensures that the object is properly re-initialized when it is being spawned from the object pool.
     ```csharp
       private void OnSpawnedServer()
       {
@@ -66,7 +66,7 @@ These are things you should almost ALWAYS do if using syncvar. If you see places
         base.OnSpawnedServer();
       }
     ```
-5. The ONLY place you are allowed to change the value of the syncvar field is via the syncvar hook and only on the server! Never change the value on the client side, and never modify the field directly. If you are on the server and you want to change the field value, call the hook method and pass it the new value. This ensures that the hook logic will always be fired on both client and server side.
+5. (Only if you have a hook method) The ONLY place you are allowed to change the value of the syncvar field is via the syncvar hook and only on the server! Never change the value on the client side, and never modify the field directly. If you are on the server and you want to change the field value, call the hook method and pass it the new value. This ensures that the hook logic will always be fired on both client and server side.
     ```csharp
       [Server]
       private void BecomeOnFire()
