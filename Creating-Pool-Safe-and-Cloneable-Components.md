@@ -6,13 +6,13 @@ We use a technique called object pooling. Objects are created ahead of time and 
 1. Do something to the object in the game that would modify your component's state.
 2. Right click the object and choose the "Respawn" option. This will simulate putting it into the pool and taking it back out.
 3. Validate that the respawned object behaves as if it was newly-spawned and initialized, and has nothing left over from its state before it was respawned.
-4. If there is some leftover state, make sure you have properly implemented any necessary `IOnStageServer` / `IOnStageClient` / `IOffStageClient` hooks. Note that mapped objects bypass these methods.
+4. If there is some leftover state or any errors with initialization, make sure you have properly implemented any necessary `IOnStageServer` / `IOnStageClient` / `IOffStageClient` hooks and validate the logic you have for any Unity methods such as Awake, Start, OnStartClient, OnStartServer.
 
 **To test that your component clones properly, and preserves the state of the object it was cloned from:**
 1. Do something to the object in the game that would modify your component's state.
 2. Use the Dev Cloner tool to clone the object
 3. Validate that the new clone has the same state as the object it was cloned from. It should not reset to its initial state.
-4. If its state is not cloning, make sure you have properly implemented cloning logic in `IOnStageServer` / `IOnStageClient` (check `info.IsCloned` and `info.ClonedFrom`). 
+4. If its state is not cloning, make sure you have properly implemented cloning logic in `IOnStageServer` / `IOnStageClient` (check `info.IsCloned` and `info.ClonedFrom`) and validate the logic you have for any Unity methods such as Awake, Start, OnStartClient, OnStartServer. 
 
 ## Examples
 
