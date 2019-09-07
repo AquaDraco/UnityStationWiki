@@ -30,6 +30,7 @@
     * [[Directory Structure]]
     * [[Module Structure]]
     * ★ [[Implementing Interactions]]
+    * [[Component Development Checklist]]
     * [[Right Click Menu]]
     * [[Physics Layers]]
     * [[NetUI]]
