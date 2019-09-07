@@ -1,8 +1,13 @@
 We use a technique called object pooling. Objects are created ahead of time and added to a pool, then simply moved into the right location in the game when an object of that type needs to be spawned. When a pooled object is despawned, it is simply returned to the pool. This avoids expensive object creation logic. It is particularly useful for things like bullets or casings, which spawn rapidly. But it creates some complications due to re-using objects which may be in different states from when they were originally despawned.
 
+"Non-pooled" objects are those which bypass the pool. Only some of our objects are actually pooled - this is configurable. Typically we would want objects which are frequently created to be pooled. Non-pooled objects are simply created / destroyed using normal Unity methods and do not have problems with re-use.
+
 "Mapped objects" (objects which are placed in the scene in the editor) do not spawn from the pool. They are just there when the scene loads in whatever state they are mapped in.
 
+We also discuss how to ensure objects are properly cloneable.
+
 **To test that your component is "pool safe", i.e. that it initializes itself properly even when being re-used:**
+1. If your component is only used on non-pooled objects, it is inherently pool safe, otherwise...
 1. Do something to the object in the game that would modify your component's state.
 2. Right click the object and choose the "Respawn" option. This will simulate putting it into the pool and taking it back out.
 3. Validate that the respawned object behaves as if it was newly-spawned and initialized, and has nothing left over from its state before it was respawned.
