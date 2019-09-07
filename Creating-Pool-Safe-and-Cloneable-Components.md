@@ -8,7 +8,7 @@ We also discuss how to ensure objects are properly cloneable.
 
 **What lifecycle methods must you implement?**
 1. All components should put their init logic in the normal Unity methods (`Start`, `Awake`, etc...) regardless of the situation.
-1. If your component is going to be on pooled objects, you should implement init logic using `IOnStageServer` / `IOnStageClient` / `IOffStageServer` so it can be safely reused. Non pooled objects can ignore these.
+1. If your component is going to be on pooled objects or needs special cloning logic, you should implement init logic using `IOnStageServer` / `IOnStageClient` / `IOffStageServer` so it can be safely reused and / or cloned. Non pooled objects can ignore these.
 
 **To test that your component is "pool safe", i.e. that it initializes itself properly even when being re-used:**
 1. If your component is only used on non-pooled objects, it is inherently pool safe, otherwise...
