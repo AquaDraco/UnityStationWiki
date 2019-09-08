@@ -10,12 +10,14 @@ All components in the game still follow the [normal Unity function flow as docum
 1. You should ALSO implement init logic using `IOnStageServer` / `IOnStageClient` / `IOffStageServer` so it can be safely reused and / or cloned. Note that objects without an ObjectBehavior (which is rare) are not pool-able.
 
 **To test that your component spawns / despawns properly**
-1. Use dev spawner to spawn an object contains your component. This will ensure it gets the PoolPrefabTracker component so it will be pooled. Objects which start in the scene do not have PoolPrefabTracker thus aren't pooled until they are spawned
+1. Use dev spawner to spawn an object contains your component. This will ensure it gets the PoolPrefabTracker component so it will be pooled. Objects which start in the scene do not have PoolPrefabTracker thus aren't pooled.
 1. Validate that your object initializes itself and works properly. In general, you mustn't rely on an object being mapped in the Scene for it to work - all objects in the game should be spawn-able (though there may be a few rare exceptions).
 1. Do something to the object in the game that would modify your component's state.
 2. Right click the object and choose the "Respawn" option. This will simulate putting it into the pool and taking it back out.
 3. Validate that the respawned object behaves as if it was newly-spawned and initialized, and has nothing left over from its state before it was respawned.
-4. If there is some leftover state or any errors with initialization, make sure you have properly implemented any necessary `IOnStageServer` / `IOnStageClient` / `IOffStageClient` hooks and validate the logic you have for any Unity methods such as Awake, Start, OnStartClient, OnStartServer.
+4. If there is some leftover state or any errors with initialization, make sure you have properly implemented any necessary `IOnStageServer` / `IOnStageClient` / `IOffStageServer` hooks and validate the logic you have for any Unity methods such as Awake, Start, OnStartClient, OnStartServer.
+5. Destroy your object using Dev Destroyer.
+6. Validate that the object properly destroys itself - it no longer affects the game world and there aren't any errors caused by the object being destroyed. If there are any problems, ensure you have implemented necessary destruction logic in `IOffStageServer` hooks in your component.
 
 **To test that your component clones properly, and preserves the state of the object it was cloned from:**
 1. Do something to the object in the game that would modify your component's state.
@@ -25,15 +27,15 @@ All components in the game still follow the [normal Unity function flow as docum
 
 ## Examples
 
-See `Integrity.GoingOnStageServer`. It implements cloning and normal pool-safe spawning.
+See `Integrity.GoingOnStageServer`. It implements cloning and proper spawn / despawn logic.
 
 ## Lifecycle Flow Details
 
 This section clarifies which lifecycle methods are called in different situations.
 
-**When an object is _mapped_ in the scene and the scene loads**:
+**When an object is mapped in the scene and the scene loads**:
 1. The object components follow the [normal Unity function flow](https://docs.unity3d.com/Manual/ExecutionOrder.html) (Start, Awake, etc...).
-2. IOnStageServer / IOnStageClient are NOT called!
+2. IOnStageServer / IOnStageClient are NOT called! These objects bypassed the pool, which is usually correct behavior because some objects have special mapped configuration. TODO: Maybe reconsider this?
 
 **When an object is going to be spawned and doesn't exist in the pool**:
 1. The object is created and the components follow the [normal Unity function flow](https://docs.unity3d.com/Manual/ExecutionOrder.html) (Start, Awake, etc...).
@@ -50,12 +52,8 @@ This section clarifies which lifecycle methods are called in different situation
 2. The new object is moved into the proper location on the scene and made visible / active
 3. `IOnStageServer` and `IOnStageClient` hooks are called on each component. The OnStageInfo contains a reference to the GameObject that the object was cloned from so any needed state can be copied.
 
-**When a _non-pooled_ object is going to be despawned**:
-1. `IOffStageServer` hooks are called on each component
-2. Object is destroyed via normal Unity approach, each component follows [normal Unity function flow](https://docs.unity3d.com/Manual/ExecutionOrder.html)
-
 **When an object is going to be despawned**:
 1. `IOffStageServer` hooks are called on each component
-2. If the object has no PoolPrefabTracker, it is simply destroyed. Otherwise...
+2. If the object has no PoolPrefabTracker or no ObjectBehavior, it is simply destroyed. Otherwise...
 2. The object is moved back into the pool - back to HiddenPos, made invisible / inactive.
 3. If the pool is full, the object is destroyed via normal Unity approach, each component follows [normal Unity function flow](https://docs.unity3d.com/Manual/ExecutionOrder.html)
