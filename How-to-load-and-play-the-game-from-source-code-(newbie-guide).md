@@ -43,7 +43,7 @@ One window is somewhat zoomed out with what appears to be a login screen. The ot
 
 Starting from the point where you load the project from unity hub, here's how you get "In Game".
 
-Note that I am loading the project with **Unity Version 2018.3.14f1**
+Note that I am loading the project with **Unity Version 2019.2.5**
 from the Unity Hub launcher. 
 I don't know if that is important but I made it bold anyways.
 
