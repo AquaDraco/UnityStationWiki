@@ -38,7 +38,7 @@
     * [[Writing Scripts]]
     * [[How to Use and Hate UniCloth]]
     * [[SyncVar Best Practices for Easy Networking]]
-    * [[Object Lifecycle Best Practices]]
+    * ★ [[Object Lifecycle Best Practices]]
     * [[RPC vs Netmsg]]
     * [[Networking (Network Messages)]]
     * [[Creating items in UnityStation]]
